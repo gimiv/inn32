@@ -1,12 +1,10 @@
-import React from 'react';
-
 interface LogoProps {
     className?: string;
     variant?: 'color' | 'white';
     isScrolled?: boolean;
 }
 
-export default function Logo({ className = "", isScrolled = false }: LogoProps) {
+export default function Logo({ className = "" }: LogoProps) {
     return (
         <a href="/" className={`inline-flex items-center gap-2 ${className}`}>
             <img

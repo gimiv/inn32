@@ -90,7 +90,6 @@ export default function GroupReservations() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                transition={{ delay: index * 0.1 }}
                                 className="bg-white dark:bg-slate-700 p-6 rounded-xl shadow-sm hover:shadow-md transition-all border border-transparent dark:border-slate-600"
                             >
                                 <div className="w-12 h-12 bg-primary/10 dark:bg-blue-900/40 rounded-full flex items-center justify-center mb-4 text-primary dark:text-blue-400">

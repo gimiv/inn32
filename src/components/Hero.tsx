@@ -6,7 +6,7 @@ interface HeroProps {
 }
 
 export default function Hero({ hero }: HeroProps) {
-    const { heading, subheading, ctaText, ctaLink, secondaryCtaText, secondaryCtaLink, backgroundImage, backgroundVideo, backgroundVideos } = hero.content
+    const { heading, subheading, ctaText, secondaryCtaText, secondaryCtaLink, backgroundImage, backgroundVideo, backgroundVideos } = hero.content
 
     // Use the array if available, otherwise fallback to single video, or empty array
     const videos = backgroundVideos || (backgroundVideo ? [backgroundVideo] : [])
