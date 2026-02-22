@@ -10,9 +10,10 @@ interface BookingWidgetProps {
     isOpen: boolean
     onClose: () => void
     promoCode?: string
+    roomId?: string
 }
 
-export default function BookingWidget({ isOpen, onClose, promoCode }: BookingWidgetProps) {
+export default function BookingWidget({ isOpen, onClose, promoCode, roomId }: BookingWidgetProps) {
     const [mewsApi, setMewsApi] = useState<any>(null)
 
     // Initialize Mews
@@ -44,25 +45,29 @@ export default function BookingWidget({ isOpen, onClose, promoCode }: BookingWid
     // If we are just a wrapper, we should probably just be a "Loading..." state while Mews opens
     useEffect(() => {
         if (isOpen && mewsApi) {
+
+            const openOptions: any = {}
+            if (roomId) {
+                openOptions.resourceCategoryId = roomId // Standard Mews property mapping for room categories
+            }
+
             if (promoCode) {
                 // Try to set voucher code if API supports it
                 if (typeof mewsApi.setVoucherCode === 'function') {
                     mewsApi.setVoucherCode(promoCode)
-                    mewsApi.open()
+                    mewsApi.open(openOptions)
                 } else {
                     // Fallback: try passing in open options if setVoucherCode isn't available
-                    // Note: The standard open() might not take args, but some versions do. 
-                    // If setVoucherCode fails, we just open.
-                    mewsApi.open()
-                    console.warn('Mews API does not support setVoucherCode, opening without it.')
+                    mewsApi.open({ ...openOptions, voucherCode: promoCode })
+                    console.warn('Mews API does not support setVoucherCode, opening with fallback options.')
                 }
             } else {
-                mewsApi.open()
+                mewsApi.open(openOptions)
             }
             // Close our state immediately to prevent conflicts
             onClose()
         }
-    }, [isOpen, mewsApi, onClose, promoCode])
+    }, [isOpen, mewsApi, onClose, promoCode, roomId])
 
     return null
 }

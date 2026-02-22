@@ -17,24 +17,7 @@ export default function Home() {
     const location = useLocation()
 
     useEffect(() => {
-        if (location.state && location.state.scrollTo) {
-            const id = location.state.scrollTo
-            setTimeout(() => {
-                const element = document.getElementById(id)
-                if (element) {
-                    const navHeight = 80
-                    const elementPosition = element.getBoundingClientRect().top
-                    const offsetPosition = elementPosition + window.pageYOffset - navHeight
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    })
-                }
-            }, 100)
-        } else {
-            window.scrollTo(0, 0)
-        }
+        window.scrollTo(0, 0)
     }, [location])
 
     return (

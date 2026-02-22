@@ -16,21 +16,22 @@ export default function Navigation() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const [isBookingOpen, setIsBookingOpen] = useState(false)
     const [bookingPromoCode, setBookingPromoCode] = useState<string | undefined>(undefined)
+    const [bookingRoomId, setBookingRoomId] = useState<string | undefined>(undefined)
 
     const navLinks = [
-        { name: 'Rooms', href: '#rooms' },
-        { name: 'Amenities', href: '#amenities' },
-        { name: 'Things To Do', href: '#things-to-do' },
-        { name: 'Events', href: '#events' },
+        { name: 'Rooms', href: '/rooms' },
+        { name: 'Amenities', href: '/amenities' },
+        { name: 'Things To Do', href: '/things-to-do' },
+        { name: 'Events', href: '/events' },
         { name: 'Groups', href: '/groups' },
-        { name: 'Blog', href: '#blog' },
-        { name: 'Location', href: '#location' },
+        { name: 'Blog', href: '/blog' },
+        { name: 'Location', href: '/#location' },
     ]
 
     const handleNavClick = (e: React.MouseEvent, href: string) => {
-        e.preventDefault()
-        if (href.startsWith('#')) {
-            const id = href.substring(1)
+        if (href.startsWith('/#')) {
+            e.preventDefault()
+            const id = href.substring(2) // Get the hash part
             if (location.pathname === '/') {
                 const element = document.getElementById(id)
                 if (element) {
@@ -46,8 +47,6 @@ export default function Navigation() {
             } else {
                 navigate('/', { state: { scrollTo: id } })
             }
-        } else {
-            navigate(href)
         }
         setIsMobileMenuOpen(false)
     }
@@ -67,10 +66,12 @@ export default function Navigation() {
 
         const handleOpenWidget = (e: any) => {
             setIsBookingOpen(true)
-            if (e.detail && e.detail.promoCode) {
+            if (e.detail) {
                 setBookingPromoCode(e.detail.promoCode)
+                setBookingRoomId(e.detail.roomId)
             } else {
                 setBookingPromoCode(undefined)
+                setBookingRoomId(undefined)
             }
         }
 
@@ -123,7 +124,7 @@ export default function Navigation() {
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    onClick={(e) => handleNavClick(e, link.href)}
+                                    onClick={(e) => link.href.startsWith('/#') ? handleNavClick(e, link.href) : undefined}
                                     className={cn(
                                         "text-sm font-medium hover:opacity-80 transition-colors",
                                         isScrolled ? "text-gray-800 dark:text-gray-200" : "text-white"
@@ -152,19 +153,22 @@ export default function Navigation() {
                         <div className="flex items-center gap-4 md:hidden">
                             <button
                                 onClick={toggleTheme}
-                                className={cn(
+                                className={cn("p-2",
                                     isScrolled ? "text-gray-800 dark:text-white" : "text-white"
                                 )}
+                                aria-label="Toggle theme"
                             >
-                                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                                {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
                             </button>
                             <button
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                className="p-2"
+                                aria-label="Toggle mobile menu"
                             >
                                 {isMobileMenuOpen ? (
-                                    <X className={isScrolled ? 'text-gray-800 dark:text-white' : 'text-white'} />
+                                    <X className={isScrolled ? 'text-gray-800 dark:text-white' : 'text-white'} size={28} />
                                 ) : (
-                                    <Menu className={isScrolled ? 'text-gray-800 dark:text-white' : 'text-white'} />
+                                    <Menu className={isScrolled ? 'text-gray-800 dark:text-white' : 'text-white'} size={28} />
                                 )}
                             </button>
                         </div>
@@ -178,8 +182,14 @@ export default function Navigation() {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-gray-800 dark:text-gray-200 font-medium py-2"
-                                onClick={(e) => handleNavClick(e, link.href)}
+                                className="text-gray-800 dark:text-gray-200 font-medium py-3 px-2 active:bg-slate-100 dark:active:bg-slate-800 rounded-md transition-colors"
+                                onClick={(e) => {
+                                    if (link.href.startsWith('/#')) {
+                                        handleNavClick(e, link.href)
+                                    } else {
+                                        setIsMobileMenuOpen(false)
+                                    }
+                                }}
                             >
                                 {link.name}
                             </a>
@@ -210,6 +220,7 @@ export default function Navigation() {
                 isOpen={isBookingOpen}
                 onClose={() => setIsBookingOpen(false)}
                 promoCode={bookingPromoCode}
+                roomId={bookingRoomId}
             />
         </>
     )

@@ -67,7 +67,7 @@ export default function Events({ limit }: EventsProps) {
                     <div className="overflow-hidden -mx-4 px-4" ref={emblaRef}>
                         <div className="flex gap-6">
                             {displayEvents.map((event) => (
-                                <div key={event.id} className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_30%] min-w-0">
+                                <div key={event.id} className="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_30%] min-w-0">
                                     <EventCard event={event} />
                                 </div>
                             ))}
@@ -106,6 +106,7 @@ function EventCard({ event }: { event: typeof websiteData.events[0] }) {
                 <img
                     src={event.image}
                     alt={event.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
 

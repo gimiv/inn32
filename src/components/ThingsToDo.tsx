@@ -1,6 +1,6 @@
-import { useState, useMemo, useCallback, useEffect } from 'react'
+import { useMemo, useCallback, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import useEmblaCarousel from 'embla-carousel-react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { websiteData } from '../data/website-data'
@@ -13,7 +13,19 @@ interface ThingsToDoProps {
 
 export default function ThingsToDo({ limit, showFilters = true }: ThingsToDoProps) {
     const { thingsToDo } = websiteData
-    const [activeCategory, setActiveCategory] = useState("All Activities")
+    const [searchParams, setSearchParams] = useSearchParams()
+
+    // Derived state from URL parameter, defaulting to "All Activities"
+    const activeCategory = searchParams.get('category') || "All Activities"
+
+    const handleCategorySelect = (category: string) => {
+        if (category === "All Activities") {
+            setSearchParams({})
+        } else {
+            setSearchParams({ category })
+        }
+    }
+
     const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: false, containScroll: 'trimSnaps' })
 
     const scrollPrev = useCallback(() => {
@@ -71,7 +83,7 @@ export default function ThingsToDo({ limit, showFilters = true }: ThingsToDoProp
                         {categories.map((category) => (
                             <button
                                 key={category}
-                                onClick={() => setActiveCategory(category)}
+                                onClick={() => handleCategorySelect(category)}
                                 className={cn(
                                     "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 transform",
                                     activeCategory === category
@@ -90,7 +102,7 @@ export default function ThingsToDo({ limit, showFilters = true }: ThingsToDoProp
                     <div className="overflow-hidden p-4 -m-4" ref={emblaRef}>
                         <div className="flex touch-pan-y" style={{ gap: '1.5rem' }}>
                             {filteredItems.map((item) => (
-                                <div key={item.id} className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_28%] min-w-0">
+                                <div key={item.id} className="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_28%] min-w-0">
                                     <Link to="/things-to-do" className="block group relative overflow-hidden rounded-xl aspect-[4/5] cursor-pointer">
                                         <img
                                             src={item.image}

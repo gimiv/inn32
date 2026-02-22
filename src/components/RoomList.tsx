@@ -38,6 +38,7 @@ export default function RoomList({ limit }: RoomListProps) {
                 <img
                     src={room.images[0]}
                     alt={room.name}
+                    loading="lazy"
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
 
@@ -74,7 +75,7 @@ export default function RoomList({ limit }: RoomListProps) {
 
                 <div className="border-t pt-4">
                     <button
-                        onClick={() => window.dispatchEvent(new CustomEvent('open-booking-widget'))}
+                        onClick={() => window.dispatchEvent(new CustomEvent('open-booking-widget', { detail: { roomId: room.id } }))}
                         className="flex items-center justify-center w-full py-3 bg-slate-900 dark:bg-slate-700 text-white rounded-lg hover:bg-slate-800 dark:hover:bg-slate-600 transition-colors font-medium"
                     >
                         Check Availability
@@ -113,7 +114,7 @@ export default function RoomList({ limit }: RoomListProps) {
                     <div className="overflow-hidden p-4 -m-4" ref={emblaRef}>
                         <div className="flex touch-pan-y" style={{ gap: '2rem' }}>
                             {roomTypes.map((room) => (
-                                <div key={room.id} className="flex-[0_0_85%] md:flex-[0_0_48%] lg:flex-[0_0_32%] min-w-0">
+                                <div key={room.id} className="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_48%] lg:flex-[0_0_32%] min-w-0">
                                     {renderRoomCard(room)}
                                 </div>
                             ))}
