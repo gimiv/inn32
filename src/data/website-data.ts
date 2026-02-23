@@ -633,41 +633,94 @@ export const websiteData: GuestWebsiteProps = {
     ],
     gallery: [
         {
-            id: "hero-cabin",
-            url: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&q=80&w=1200",
-            alt: "Cozy exterior view",
+            id: "front-view",
+            url: "/gallery/front-view.webp",
+            alt: "Inn 32 Front Exterior View",
             category: "Exterior"
         },
         {
-            id: "hotel-lobby",
-            url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200",
-            alt: "Main Lobby",
+            id: "river-entry",
+            url: "/gallery/river-entry.webp",
+            alt: "River Entry Area",
+            category: "Exterior"
+        },
+        {
+            id: "living-room-01",
+            url: "/gallery/living-room-01--1-.webp",
+            alt: "Apartment Living Room",
             category: "Interior"
         },
         {
-            id: "room-detail",
-            url: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=1200",
-            alt: "Room Interior Detail",
+            id: "living-room-02",
+            url: "/gallery/living-room-02.webp",
+            alt: "Apartment Living Room Alternate View",
+            category: "Interior"
+        },
+        {
+            id: "sunroom",
+            url: "/gallery/sunroom.webp",
+            alt: "Bright Sunroom Area",
+            category: "Interior"
+        },
+        {
+            id: "dining",
+            url: "/gallery/dining-1--1-.webp",
+            alt: "Dining Area setup",
+            category: "Interior"
+        },
+        {
+            id: "kitchen",
+            url: "/gallery/kitchen-1--1-.webp",
+            alt: "Full Kitchen Area",
+            category: "Interior"
+        },
+        {
+            id: "bedroom-01",
+            url: "/gallery/bedroom.webp",
+            alt: "Cozy Bedroom setup",
             category: "Rooms"
         },
-        // Adding more images for masonry layout
         {
-            id: "woodstock-brewery",
-            url: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=800",
-            alt: "Local Brewery",
-            category: "Surroundings"
-        },
-        {
-            id: "flume-gorge",
-            url: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&q=80&w=800",
-            alt: "Flume Gorge",
-            category: "Surroundings"
-        },
-        {
-            id: "room-living",
-            url: "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/0f3063bf-5bb4-44e5-97eb-16a8cbad558e/Living_Room_02.jpg",
-            alt: "Apartment Living Area",
+            id: "bedroom-02",
+            url: "/gallery/bedroom-02.webp",
+            alt: "Secondary Bedroom setup",
             category: "Rooms"
+        },
+        {
+            id: "room03",
+            url: "/gallery/room03.webp",
+            alt: "Room 3 Interior",
+            category: "Rooms"
+        },
+        {
+            id: "room04",
+            url: "/gallery/room04-1.webp",
+            alt: "Room 4 Layout",
+            category: "Rooms"
+        },
+        {
+            id: "room02-02",
+            url: "/gallery/room02-02--2-.webp",
+            alt: "Room 2 Alternate Layout",
+            category: "Rooms"
+        },
+        {
+            id: "room14-bed",
+            url: "/gallery/room14-bed.webp",
+            alt: "Room 14 Bed Detail",
+            category: "Rooms"
+        },
+        {
+            id: "room04-bath",
+            url: "/gallery/room04-bath.webp",
+            alt: "Room 4 Bathroom Details",
+            category: "Interior"
+        },
+        {
+            id: "bathroom-general",
+            url: "/gallery/bathroom.webp",
+            alt: "Newly Renovated Bathroom",
+            category: "Interior"
         }
     ]
 }
