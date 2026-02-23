@@ -60,16 +60,6 @@ export default function Temperature({ className, variant = 'white' }: Temperatur
                 <AnimatePresence mode="wait">
                     {theme === 'dark' ? (
                         <motion.div
-                            key="moon"
-                            initial={{ y: -20, opacity: 0, rotate: -90 }}
-                            animate={{ y: 0, opacity: 1, rotate: 0 }}
-                            exit={{ y: 20, opacity: 0, rotate: 90 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            <Moon className="w-4 h-4 text-warm-gold" />
-                        </motion.div>
-                    ) : (
-                        <motion.div
                             key="sun"
                             initial={{ y: 20, opacity: 0, rotate: 90 }}
                             animate={{ y: 0, opacity: 1, rotate: 0 }}
@@ -77,6 +67,16 @@ export default function Temperature({ className, variant = 'white' }: Temperatur
                             transition={{ duration: 0.3 }}
                         >
                             <Sun className="w-4 h-4 text-amber-500" />
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            key="moon"
+                            initial={{ y: -20, opacity: 0, rotate: -90 }}
+                            animate={{ y: 0, opacity: 1, rotate: 0 }}
+                            exit={{ y: 20, opacity: 0, rotate: 90 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <Moon className="w-4 h-4 text-slate-700" />
                         </motion.div>
                     )}
                 </AnimatePresence>
