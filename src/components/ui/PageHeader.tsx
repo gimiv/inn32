@@ -27,17 +27,12 @@ export default function PageHeader({ title, subtitle, description, backgroundIma
             {/* Content Container */}
             <div className={`relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 ${isImageBg ? 'text-white' : 'text-navy dark:text-white'}`}>
                 <div className="max-w-3xl mx-auto">
-                    {subtitle && (
-                        <span className={`font-sans text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-4 block ${isImageBg ? 'text-white/80' : 'text-mountain-blue'}`}>
-                            {subtitle}
-                        </span>
-                    )}
                     <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight drop-shadow-sm">
                         {title}
                     </h1>
-                    {description && (
+                    {(subtitle || description) && (
                         <p className={`font-sans text-lg md:text-xl leading-relaxed font-light drop-shadow-sm max-w-2xl mx-auto ${isImageBg ? 'text-white/90' : 'text-charcoal dark:text-gray-300'}`}>
-                            {description}
+                            {subtitle || description}
                         </p>
                     )}
                     {children && (
