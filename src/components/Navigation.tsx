@@ -215,14 +215,14 @@ export default function Navigation() {
             </nav>
 
             {/* Mobile Sticky Booking Bar */}
-            <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-gray-200 dark:border-slate-800 p-4 pb-safe flex justify-between items-center shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
-                <div>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wider">Book Your Stay</p>
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white">Best rates guaranteed</p>
+            <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-gray-200 dark:border-slate-800 p-4 pb-safe flex justify-between items-center shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+                <div className="min-w-0 pr-3">
+                    <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wider truncate">Book Your Stay</p>
+                    <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white truncate">Best rates guaranteed</p>
                 </div>
                 <button
                     onClick={() => setIsBookingOpen(true)}
-                    className="bg-primary text-white px-6 py-2.5 rounded-full font-medium shadow-md active:scale-95 transition-transform"
+                    className="flex-shrink-0 bg-primary text-white px-5 sm:px-6 py-2.5 rounded-full font-medium shadow-md active:scale-95 transition-transform text-sm sm:text-base"
                 >
                     Book Now
                 </button>

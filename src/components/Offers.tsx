@@ -6,7 +6,7 @@ import Link from 'next/link'
 import useEmblaCarousel from 'embla-carousel-react'
 import { websiteData } from '../data/website-data'
 import { cn } from '../utils/cn'
-import ImageCard from './ui/ImageCard'
+import StandardCard from './ui/StandardCard'
 import CarouselNavigation from './ui/CarouselNavigation'
 
 interface OffersProps {
@@ -56,30 +56,41 @@ export default function Offers({ limit }: OffersProps) {
                     <div className="overflow-hidden p-4 -m-4" ref={emblaRef}>
                         <div className="flex touch-pan-y" style={{ gap: '1.5rem' }}>
                             {displayOffers.map((offer) => (
-                                <div key={offer.id} className="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_30%] min-w-0">
-                                    <ImageCard
-                                        href={`/offers#${offer.id}`}
-                                        image={offer.image!}
-                                        title={offer.title}
-                                        subtitle={offer.promoCode ? `Code: ${offer.promoCode}` : 'Special Package'}
-                                        description={offer.description}
-                                    />
+                                <div key={offer.id} className="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_30%] min-w-0 h-full">
+                                    <div className="h-full block">
+                                        <StandardCard
+                                            image={offer.image!}
+                                            title={offer.title}
+                                            subtitle={offer.promoCode ? `Promo Code: ${offer.promoCode}` : 'Special Package'}
+                                            description={offer.description}
+                                            actions={
+                                                <Link href={`/offers#${offer.id}`} className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center">
+                                                    View Details <span className="ml-1">→</span>
+                                                </Link>
+                                            }
+                                        />
+                                    </div>
                                 </div>
                             ))}
                         </div>
                     </div>
                 ) : (
                     /* Grid View */
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
                         {displayOffers.map((offer) => (
-                            <ImageCard
-                                key={offer.id}
-                                href={`/offers#${offer.id}`}
-                                image={offer.image!}
-                                title={offer.title}
-                                subtitle={offer.promoCode ? `Code: ${offer.promoCode}` : 'Special Package'}
-                                description={offer.description}
-                            />
+                            <div key={offer.id} className="h-full block">
+                                <StandardCard
+                                    image={offer.image!}
+                                    title={offer.title}
+                                    subtitle={offer.promoCode ? `Promo Code: ${offer.promoCode}` : 'Special Package'}
+                                    description={offer.description}
+                                    actions={
+                                        <Link href={`/offers#${offer.id}`} className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center">
+                                            View Details <span className="ml-1">→</span>
+                                        </Link>
+                                    }
+                                />
+                            </div>
                         ))}
                     </div>
                 )}

@@ -244,7 +244,7 @@ export const websiteData: GuestWebsiteProps = {
             name: "Truant's Taverne",
             category: "Food & Drink",
             description: "A local favorite featuring a classic pub atmosphere and delicious eats.",
-            image: "https://images.unsplash.com/photo-1572116469696-95fa0a631627?auto=format&fit=crop&q=80&w=800"
+            image: "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&q=80&w=800"
         },
         {
             id: "coneheads",
@@ -520,7 +520,7 @@ export const websiteData: GuestWebsiteProps = {
             id: "winter-escape",
             title: "Winter Wonderland Escape",
             description: "Save 20% on mid-week stays this winter. Includes complimentary hot cocoa and snowshoe rentals.",
-            image: "https://images.unsplash.com/photo-1517228816480-16353d9f3f4e?auto=format&fit=crop&q=80&w=800",
+            image: "https://images.unsplash.com/photo-1551524164-687a55dd1126?auto=format&fit=crop&q=80&w=800",
             validUntil: "Mar 31, 2026",
             promoCode: "WINTER20"
         },

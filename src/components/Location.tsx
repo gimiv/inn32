@@ -56,7 +56,7 @@ export default function Location({ property, standalone }: LocationProps) {
     const { theme } = useTheme();
     const mapStyle = theme === 'dark' ? darkMapStyle : lightMapStyle;
     return (
-        <section id="location" className={cn("transition-colors duration-300", standalone ? "pb-12 pt-4 md:pt-8 bg-transparent" : "py-20 md:py-28 bg-gray-50 dark:bg-slate-900")}>
+        <section id="location" className={cn("transition-colors duration-300", standalone ? "pb-20 pt-4 md:pt-8 bg-transparent" : "py-20 bg-gray-50 dark:bg-slate-900")}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 {!standalone && (
