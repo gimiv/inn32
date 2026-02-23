@@ -1,3 +1,5 @@
+'use client'
+
 import useEmblaCarousel from 'embla-carousel-react'
 import { Instagram } from 'lucide-react'
 import { websiteData } from '../data/website-data'
@@ -19,7 +21,10 @@ export default function SocialReel() {
                 <div className="inline-flex items-center justify-center p-3 bg-white/10 rounded-full mb-6">
                     <Instagram className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
+                <span className="font-sans text-sm font-semibold text-mountain-blue uppercase tracking-wider mb-2 block">
+                    Our Community
+                </span>
+                <h2 className="font-display text-page-title text-white mb-4">
                     Follow the Adventure
                 </h2>
                 <p className="text-lg text-slate-400 max-w-2xl mx-auto">

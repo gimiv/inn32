@@ -1,4 +1,7 @@
+'use client'
+
 import React, { createContext, useContext, useEffect, useState } from 'react'
+import { ThemeProvider as NextThemesProvider, useTheme as useNextTheme } from 'next-themes'
 
 type Theme = 'light' | 'dark'
 
@@ -10,22 +13,28 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-    const [theme, setTheme] = useState<Theme>(() => {
-        const savedTheme = localStorage.getItem('theme') as Theme
-        return savedTheme || 'light'
-    })
+    return (
+        <NextThemesProvider attribute="class" defaultTheme="light" enableSystem={false}>
+            <ThemeProviderInner>{children}</ThemeProviderInner>
+        </NextThemesProvider>
+    )
+}
+
+function ThemeProviderInner({ children }: { children: React.ReactNode }) {
+    const { theme: nextTheme, setTheme } = useNextTheme()
+    const [mounted, setMounted] = useState(false)
 
     useEffect(() => {
-        const root = window.document.documentElement
-        root.classList.remove('light', 'dark')
-        root.classList.add(theme)
-        localStorage.setItem('theme', theme)
-    }, [theme])
+        setMounted(true)
+    }, [])
+
+    const theme = (nextTheme as Theme) || 'light'
 
     const toggleTheme = () => {
-        setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
+        setTheme(theme === 'light' ? 'dark' : 'light')
     }
 
+    // Wrap children but avoiding hidden flash if we don't strictly need to.
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
             {children}

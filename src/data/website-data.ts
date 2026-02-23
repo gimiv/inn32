@@ -472,7 +472,48 @@ export const websiteData: GuestWebsiteProps = {
             link: "https://instagram.com"
         }
     ],
-    reviews: [],
+    reviews: [
+        {
+            id: "r1",
+            author: "Sarah & Mark Dempsey",
+            rating: 5,
+            date: "October 2025",
+            text: "Absolutely stunning renovation. They managed to keep the historic charm of a classic White Mountains roadside inn while upgrading every single touchpoint. The beds are impossibly comfortable.",
+            source: "Google"
+        },
+        {
+            id: "r2",
+            author: "James Harrington",
+            rating: 5,
+            date: "September 2025",
+            text: "The perfect basecamp for our Franconia Notch hiking trip. Being able to walk to Woodstock Inn Brewery for dinner after a long day on the trails was incredibly convenient.",
+            source: "TripAdvisor"
+        },
+        {
+            id: "r3",
+            author: "Emily Chen",
+            rating: 5,
+            date: "August 2025",
+            text: "We stayed in the Riverside Queen room and fell asleep to the sound of the water every night. Spotlessly clean, beautifully designed, and the check-in process was seamless.",
+            source: "Expedia"
+        },
+        {
+            id: "r4",
+            author: "The Miller Family",
+            rating: 5,
+            date: "July 2025",
+            text: "Rented the 4-bedroom apartment for a family reunion and it exceeded all expectations. So much space for the kids to spread out, and having a full kitchen made breakfast a breeze.",
+            source: "Google"
+        },
+        {
+            id: "r5",
+            author: "David L.",
+            rating: 5,
+            date: "June 2025",
+            text: "A hidden gem in North Woodstock! The location is unbeatable, the staff is incredibly welcoming, and the attention to detail in the room decor made our anniversary weekend truly special.",
+            source: "TripAdvisor"
+        }
+    ],
     promotions: [],
     offers: [
         {

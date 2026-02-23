@@ -1,10 +1,15 @@
+'use client'
+
 import { useMemo, useCallback, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Link, useSearchParams } from 'react-router-dom'
+import Link from 'next/link'
+import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import useEmblaCarousel from 'embla-carousel-react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { websiteData } from '../data/website-data'
 import { cn } from '../utils/cn'
+import ImageCard from './ui/ImageCard'
+import CarouselNavigation from './ui/CarouselNavigation'
 
 interface ThingsToDoProps {
     limit?: number
@@ -13,17 +18,21 @@ interface ThingsToDoProps {
 
 export default function ThingsToDo({ limit, showFilters = true }: ThingsToDoProps) {
     const { thingsToDo } = websiteData
-    const [searchParams, setSearchParams] = useSearchParams()
+    const searchParams = useSearchParams()
+    const router = useRouter()
+    const pathname = usePathname()
 
     // Derived state from URL parameter, defaulting to "All Activities"
     const activeCategory = searchParams.get('category') || "All Activities"
 
     const handleCategorySelect = (category: string) => {
+        const params = new URLSearchParams(searchParams.toString())
         if (category === "All Activities") {
-            setSearchParams({})
+            params.delete('category')
         } else {
-            setSearchParams({ category })
+            params.set('category', category)
         }
+        router.push(pathname + '?' + params.toString(), { scroll: false })
     }
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: false, containScroll: 'trimSnaps' })
@@ -54,32 +63,31 @@ export default function ThingsToDo({ limit, showFilters = true }: ThingsToDoProp
         if (emblaApi) emblaApi.scrollTo(0)
     }, [emblaApi, activeCategory])
 
-    return (
-        <section id="things-to-do" className="py-20 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
-            <div className="container mx-auto px-4 md:px-6">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-12">
-                    <div className="text-center md:text-left w-full md:w-auto">
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 dark:text-white mb-4">Things To Do</h2>
-                        <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
-                            North Woodstock is your gateway to the White Mountains.
-                        </p>
-                    </div>
+    const isSlider = limit !== undefined; // Determine if it's in slider mode (home page)
 
-                    {limit && (
-                        <div className="hidden md:flex space-x-2 mt-4 md:mt-0">
-                            <button onClick={scrollPrev} className="p-2 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors">
-                                <ChevronLeft size={20} />
-                            </button>
-                            <button onClick={scrollNext} className="p-2 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors">
-                                <ChevronRight size={20} />
-                            </button>
+    return (
+        <section id="things-to-do" className={cn("transition-colors duration-300", isSlider ? "py-20 bg-cream dark:bg-slate-900" : "pb-20 pt-4 md:pt-8 bg-transparent")}>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {isSlider && (
+                    <div className="transition-spacing duration-300 mb-12">
+                        <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-8">
+                            <div className="text-center md:text-left">
+                                <span className="font-sans text-sm font-semibold text-mountain-blue uppercase tracking-wider mb-2 block">
+                                    Explore The Area
+                                </span>
+                                <h2 className="font-display text-page-title text-navy dark:text-white mb-4">Things To Do</h2>
+                                <p className="font-sans text-subheading text-charcoal dark:text-gray-300 max-w-2xl">
+                                    North Woodstock is your gateway to the White Mountains.
+                                </p>
+                            </div>
+                            <CarouselNavigation onPrev={scrollPrev} onNext={scrollNext} />
                         </div>
-                    )}
-                </div>
+                    </div>
+                )}
 
                 {/* Filter Bar - Hide if limit (Home mode) */}
                 {showFilters && (
-                    <div className="flex flex-wrap justify-center gap-3 mb-8">
+                    <div className="flex flex-wrap justify-start gap-3 mb-8">
                         {categories.map((category) => (
                             <button
                                 key={category}
@@ -103,23 +111,13 @@ export default function ThingsToDo({ limit, showFilters = true }: ThingsToDoProp
                         <div className="flex touch-pan-y" style={{ gap: '1.5rem' }}>
                             {filteredItems.map((item) => (
                                 <div key={item.id} className="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_28%] min-w-0">
-                                    <Link to="/things-to-do" className="block group relative overflow-hidden rounded-xl aspect-[4/5] cursor-pointer">
-                                        <img
-                                            src={item.image}
-                                            alt={item.name}
-                                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
-                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                            <span className="text-xs font-semibold tracking-wider uppercase text-blue-200 mb-2 block">
-                                                {item.category}
-                                            </span>
-                                            <h3 className="text-xl font-bold mb-2">{item.name}</h3>
-                                            <p className="text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 line-clamp-2">
-                                                {item.description}
-                                            </p>
-                                        </div>
-                                    </Link>
+                                    <ImageCard
+                                        href="/things-to-do"
+                                        image={item.image}
+                                        title={item.name}
+                                        subtitle={item.category}
+                                        description={item.description}
+                                    />
                                 </div>
                             ))}
                         </div>
@@ -139,24 +137,14 @@ export default function ThingsToDo({ limit, showFilters = true }: ThingsToDoProp
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.9 }}
                                     transition={{ duration: 0.3 }}
-                                    className="group relative overflow-hidden rounded-xl aspect-[4/5] cursor-pointer"
                                 >
-                                    <img
-                                        src={item.image}
-                                        alt={item.name}
-                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    <ImageCard
+                                        href="/things-to-do"
+                                        image={item.image}
+                                        title={item.name}
+                                        subtitle={item.category}
+                                        description={item.description}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
-
-                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                        <span className="text-xs font-semibold tracking-wider uppercase text-blue-200 mb-2 block">
-                                            {item.category}
-                                        </span>
-                                        <h3 className="text-xl font-bold mb-2">{item.name}</h3>
-                                        <p className="text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 line-clamp-2">
-                                            {item.description}
-                                        </p>
-                                    </div>
                                 </motion.div>
                             ))}
                         </AnimatePresence>
@@ -166,9 +154,8 @@ export default function ThingsToDo({ limit, showFilters = true }: ThingsToDoProp
                 {limit && (
                     <div className="mt-12 text-center">
                         <Link
-                            to="/things-to-do"
+                            href="/things-to-do"
                             className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-primary hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                            onClick={() => window.scrollTo(0, 0)}
                         >
                             See All Activities
                         </Link>

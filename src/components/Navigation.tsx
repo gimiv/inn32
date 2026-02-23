@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 import { Menu, X, Phone, Sun, Moon } from 'lucide-react'
 import { cn } from '../utils/cn'
@@ -5,18 +7,25 @@ import { websiteData } from '../data/website-data'
 import Logo from './Logo'
 import BookingWidget from './BookingWidget'
 import { useTheme } from '../context/ThemeContext'
+import Temperature from './Temperature'
 
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useRouter, usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 export default function Navigation() {
-    const navigate = useNavigate()
-    const location = useLocation()
+    const router = useRouter()
+    const pathname = usePathname()
     const { theme, toggleTheme } = useTheme()
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const [isBookingOpen, setIsBookingOpen] = useState(false)
     const [bookingPromoCode, setBookingPromoCode] = useState<string | undefined>(undefined)
     const [bookingRoomId, setBookingRoomId] = useState<string | undefined>(undefined)
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
 
     const navLinks = [
         { name: 'Rooms', href: '/rooms' },
@@ -25,19 +34,19 @@ export default function Navigation() {
         { name: 'Events', href: '/events' },
         { name: 'Groups', href: '/groups' },
         { name: 'Blog', href: '/blog' },
-        { name: 'Location', href: '/#location' },
+        { name: 'Location', href: '/location' },
     ]
 
     const handleNavClick = (e: React.MouseEvent, href: string) => {
         if (href.startsWith('/#')) {
             e.preventDefault()
             const id = href.substring(2) // Get the hash part
-            if (location.pathname === '/') {
+            if (pathname === '/') {
                 const element = document.getElementById(id)
                 if (element) {
                     const navHeight = 80 // Approx header height
                     const elementPosition = element.getBoundingClientRect().top
-                    const offsetPosition = elementPosition + window.pageYOffset - navHeight
+                    const offsetPosition = elementPosition + window.scrollY - navHeight
 
                     window.scrollTo({
                         top: offsetPosition,
@@ -45,7 +54,7 @@ export default function Navigation() {
                     })
                 }
             } else {
-                navigate('/', { state: { scrollTo: id } })
+                router.push(`/?scrollTo=${id}`)
             }
         }
         setIsMobileMenuOpen(false)
@@ -54,7 +63,7 @@ export default function Navigation() {
     useEffect(() => {
         const handleScroll = () => {
             // If we're not on home page, always treat as scrolled (solid background)
-            if (location.pathname !== '/') {
+            if (pathname !== '/') {
                 setIsScrolled(true)
             } else {
                 setIsScrolled(window.scrollY > 50)
@@ -82,7 +91,7 @@ export default function Navigation() {
             window.removeEventListener('scroll', handleScroll)
             window.removeEventListener('open-booking-widget', handleOpenWidget)
         }
-    }, [location.pathname])
+    }, [pathname])
 
     return (
         <>
@@ -93,91 +102,74 @@ export default function Navigation() {
                 )}
             >
                 <div className="container mx-auto px-4 md:px-6">
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-center">
-                            <a href="/" onClick={(e) => handleNavClick(e, '#root')} className="flex-shrink-0">
+                    <div className="flex items-center justify-between w-full relative">
+                        {/* Logo */}
+                        <div className="flex items-center flex-shrink-0">
+                            <Link href="/">
                                 <Logo
-                                    className="h-12 w-auto"
+                                    className="h-10 md:h-12 w-auto"
                                     isScrolled={isScrolled}
                                 />
-                            </a>
-                            <div className="hidden md:block ml-4">
-                                <button
-                                    onClick={toggleTheme}
-                                    className={cn(
-                                        "p-2 rounded-full transition-colors",
-                                        isScrolled
-                                            ? "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800"
-                                            : "text-white hover:bg-white/10"
-                                    )}
-                                    aria-label="Toggle theme"
-                                >
-                                    {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-                                </button>
-                            </div>
+                            </Link>
+                        </div>
+
+                        {/* Mobile Centered Temperature/Theme Toggle */}
+                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:hidden">
+                            <Temperature variant={isScrolled ? 'color' : 'white'} />
                         </div>
 
                         {/* Desktop Nav */}
-                        <div className="hidden md:flex items-center space-x-8">
-
+                        <div className="hidden lg:flex items-center space-x-8">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
                                     onClick={(e) => link.href.startsWith('/#') ? handleNavClick(e, link.href) : undefined}
                                     className={cn(
-                                        "text-sm font-medium hover:opacity-80 transition-colors",
-                                        isScrolled ? "text-gray-800 dark:text-gray-200" : "text-white"
+                                        "text-sm font-medium hover:opacity-80 transition-colors font-sans",
+                                        isScrolled ? "text-navy dark:text-gray-200" : "text-white"
                                     )}
                                 >
                                     {link.name}
                                 </a>
                             ))}
+                        </div>
 
-                            {/* Theme Toggle moved to left */}
-
+                        {/* Desktop Action Buttons */}
+                        <div className="hidden lg:flex items-center gap-4">
+                            <Temperature variant={isScrolled ? 'color' : 'white'} />
                             <button
                                 onClick={() => setIsBookingOpen(true)}
                                 className={cn(
-                                    "px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105 active:scale-95",
+                                    "px-5 py-2.5 rounded-full text-sm font-sans font-medium transition-all hover:scale-105 active:scale-95",
                                     isScrolled
-                                        ? "bg-primary text-white hover:bg-primary/90"
-                                        : "bg-white text-primary hover:bg-gray-100"
+                                        ? "bg-navy text-white hover:bg-mountain-blue"
+                                        : "bg-white text-navy hover:bg-cream"
                                 )}
                             >
                                 Book Now
                             </button>
                         </div>
 
-                        {/* Mobile Menu Button */}
-                        <div className="flex items-center gap-4 md:hidden">
-                            <button
-                                onClick={toggleTheme}
-                                className={cn("p-2",
-                                    isScrolled ? "text-gray-800 dark:text-white" : "text-white"
-                                )}
-                                aria-label="Toggle theme"
-                            >
-                                {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
-                            </button>
+                        {/* Mobile Menu Button (Now properly grouped on the right) */}
+                        <div className="flex items-center lg:hidden">
                             <button
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                className="p-2"
+                                className="p-2 -mr-2"
                                 aria-label="Toggle mobile menu"
                             >
                                 {isMobileMenuOpen ? (
-                                    <X className={isScrolled ? 'text-gray-800 dark:text-white' : 'text-white'} size={28} />
+                                    <X className={isScrolled ? 'text-navy dark:text-white' : 'text-white'} size={28} />
                                 ) : (
-                                    <Menu className={isScrolled ? 'text-gray-800 dark:text-white' : 'text-white'} size={28} />
+                                    <Menu className={isScrolled ? 'text-navy dark:text-white' : 'text-white'} size={28} />
                                 )}
                             </button>
                         </div>
                     </div>
                 </div>
-
                 {/* Mobile Menu Overlay */}
                 {isMobileMenuOpen && (
-                    <div className="absolute top-full left-0 right-0 bg-white dark:bg-slate-900 shadow-lg p-4 md:hidden flex flex-col space-y-4 animate-in slide-in-from-top-2 border-t dark:border-slate-800">
+                    <div className="absolute top-full left-0 right-0 bg-white dark:bg-slate-900 shadow-lg p-4 lg:hidden flex flex-col space-y-4 animate-in slide-in-from-top-2 border-t dark:border-slate-800">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
@@ -194,18 +186,7 @@ export default function Navigation() {
                                 {link.name}
                             </a>
                         ))}
-                        <div className="py-2 border-t border-gray-100 dark:border-slate-800 flex justify-center">
-                            {/* Temperature removed */}
-                        </div>
-                        <button
-                            onClick={() => {
-                                setIsMobileMenuOpen(false)
-                                setIsBookingOpen(true)
-                            }}
-                            className="bg-primary text-white text-center py-3 rounded-md font-medium"
-                        >
-                            Book Now
-                        </button>
+
                         <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400 pt-4 border-t dark:border-slate-800">
                             <Phone size={16} />
                             <span>{websiteData.property.contact.phone}</span>
@@ -213,6 +194,20 @@ export default function Navigation() {
                     </div>
                 )}
             </nav>
+
+            {/* Mobile Sticky Booking Bar */}
+            <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-gray-200 dark:border-slate-800 p-4 pb-safe flex justify-between items-center shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+                <div>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wider">Book Your Stay</p>
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white">Best rates guaranteed</p>
+                </div>
+                <button
+                    onClick={() => setIsBookingOpen(true)}
+                    className="bg-primary text-white px-6 py-2.5 rounded-full font-medium shadow-md active:scale-95 transition-transform"
+                >
+                    Book Now
+                </button>
+            </div>
 
             {/* Weather Widget (Mobile/Tablet View adjustment might be needed, but placing here for now) */}
 

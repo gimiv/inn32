@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import { Users, Calendar, Utensils, Music, Mail, Phone, Check } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -40,48 +42,10 @@ export default function GroupReservations() {
     ]
 
     return (
-        <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
-            {/* Hero Section */}
-            <div className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
-                <div className="absolute inset-0">
-                    <img
-                        src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=2000"
-                        alt="Group Events at Inn 32"
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/40" />
-                </div>
-                <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-                    <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-white/90 text-sm md:text-base font-medium tracking-wider uppercase mb-4 block"
-                    >
-                        Weddings • Retreats • Reunions
-                    </motion.span>
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-6xl font-serif font-bold text-white mb-6"
-                    >
-                        Host Your Event at Inn 32
-                    </motion.h1>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto"
-                    >
-                        Create unforgettable memories in the heart of the White Mountains.
-                        Perfect for intimate weddings, family reunions, and corporate retreats.
-                    </motion.p>
-                </div>
-            </div>
-
+        <div className="bg-transparent transition-colors duration-300">
             {/* Benefits Section */}
-            <section className="py-20 bg-slate-50 dark:bg-slate-800 transition-colors duration-300">
-                <div className="container mx-auto px-4">
+            <section className="pb-12 pt-4 md:pt-8 bg-transparent transition-colors duration-300">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {benefits.map((benefit, index) => (
                             <motion.div
@@ -104,15 +68,18 @@ export default function GroupReservations() {
             </section>
 
             {/* Content & Form Split */}
-            <section className="py-20">
-                <div className="container mx-auto px-4">
+            <section className="pt-8 pb-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col lg:flex-row gap-16">
                         {/* Text Content */}
                         <div className="lg:w-1/2">
-                            <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 dark:text-white mb-6">
+                            <span className="font-sans text-sm font-semibold text-mountain-blue uppercase tracking-wider mb-2 block">
+                                Group Accommodations
+                            </span>
+                            <h2 className="font-display text-page-title text-navy dark:text-white mb-6">
                                 Bring Everyone Together
                             </h2>
-                            <div className="prose prose-lg text-slate-600 mb-8">
+                            <div className="prose prose-lg text-slate-600 dark:text-slate-300 mb-8">
                                 <p className="mb-4">
                                     Whether you're planning a dream wedding, a milestone family reunion, or a focused corporate retreat,
                                     Inn 32 offers the perfect blend of comfort, style, and location.
@@ -127,11 +94,11 @@ export default function GroupReservations() {
                             <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
                                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Contact Our Group Coordinator</h3>
                                 <div className="space-y-4">
-                                    <div className="flex items-center text-slate-600 dark:text-gray-300">
+                                    <div className="flex items-center text-slate-600 dark:text-slate-300">
                                         <Phone className="w-5 h-5 mr-3 text-primary dark:text-blue-400" />
                                         <span>{websiteData.property.contact.phone}</span>
                                     </div>
-                                    <div className="flex items-center text-slate-600 dark:text-gray-300">
+                                    <div className="flex items-center text-slate-600 dark:text-slate-300">
                                         <Mail className="w-5 h-5 mr-3 text-primary dark:text-blue-400" />
                                         <span>{websiteData.property.contact.email}</span>
                                     </div>
@@ -149,8 +116,8 @@ export default function GroupReservations() {
                                         <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                             <Check className="w-8 h-8 text-green-600" />
                                         </div>
-                                        <h4 className="text-2xl font-bold text-slate-900 mb-2">Message Sent!</h4>
-                                        <p className="text-slate-600">
+                                        <h4 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Message Sent!</h4>
+                                        <p className="text-slate-600 dark:text-slate-300">
                                             Thank you for your inquiry. Our team will get back to you within 24 hours to discuss your event.
                                         </p>
                                         <button

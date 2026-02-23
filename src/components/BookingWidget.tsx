@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 
 declare global {
@@ -16,56 +18,82 @@ interface BookingWidgetProps {
 export default function BookingWidget({ isOpen, onClose, promoCode, roomId }: BookingWidgetProps) {
     const [mewsApi, setMewsApi] = useState<any>(null)
 
-    // Initialize Mews
+    // Pre-initialize Mews when script loads
     useEffect(() => {
-        if (window.Mews && window.Mews.Distributor) {
-            window.Mews.Distributor(
-                {
-                    configurationIds: ["8834fbb1-b9a1-4dbf-8e18-b2ba003e2e3d"],
-                },
-                (api: any) => {
-                    console.log('Mews API Object:', api)
-                    setMewsApi(api)
-                }
-            )
-        }
-    }, [])
-
-    // Prevent body scroll only when open
-    useEffect(() => {
-        if (isOpen) {
-            // If Mews API is ready, open it immediately
-            if (window.Mews && window.Mews.Distributor) {
-                // We don't need to do anything here, the handleBookNow in Navigation should likely trigger Mews directly
-                // But if we want to keep the "smooth motion" of our sidebar as a "loading" state...
+        const initMews = () => {
+            if (window.Mews && window.Mews.Distributor && !mewsApi) {
+                window.Mews.Distributor(
+                    {
+                        configurationIds: ["8834fbb1-b9a1-4dbf-8e18-b2ba003e2e3d"],
+                    },
+                    (api: any) => {
+                        console.log('Mews API initialized on background:', api)
+                        setMewsApi(api)
+                    }
+                )
             }
         }
-    }, [isOpen])
 
-    // If we are just a wrapper, we should probably just be a "Loading..." state while Mews opens
+        // Try immediately
+        initMews()
+
+        // Fallback polling in case the Next.js <Script> loads slightly later
+        const interval = setInterval(() => {
+            if (window.Mews && window.Mews.Distributor) {
+                initMews()
+                clearInterval(interval)
+            }
+        }, 500)
+
+        // Stop polling after 10 seconds to avoid infinite background loops
+        const timeout = setTimeout(() => clearInterval(interval), 10000)
+
+        return () => {
+            clearInterval(interval)
+            clearTimeout(timeout)
+        }
+    }, [mewsApi])
+
+    // Handle opening the widget
     useEffect(() => {
-        if (isOpen && mewsApi) {
+        if (isOpen) {
+            if (mewsApi) {
+                openMews(mewsApi)
+            } else if (window.Mews && window.Mews.Distributor) {
+                // Failsafe in case the user clicked immediately before background init succeeded
+                window.Mews.Distributor(
+                    { configurationIds: ["8834fbb1-b9a1-4dbf-8e18-b2ba003e2e3d"] },
+                    (api: any) => {
+                        setMewsApi(api)
+                        openMews(api)
+                    }
+                )
+            } else {
+                console.warn('Mews script has not finished loading.')
+                // Keep trying to open once it loads ? 
+                // In actual UX, you'd show a "Loading..." spinner, but it loads very fast.
+                onClose()
+            }
+        }
 
+        function openMews(api: any) {
             const openOptions: any = {}
             if (roomId) {
-                openOptions.resourceCategoryId = roomId // Standard Mews property mapping for room categories
+                openOptions.resourceCategoryId = roomId
             }
 
             if (promoCode) {
-                // Try to set voucher code if API supports it
-                if (typeof mewsApi.setVoucherCode === 'function') {
-                    mewsApi.setVoucherCode(promoCode)
-                    mewsApi.open(openOptions)
+                if (typeof api.setVoucherCode === 'function') {
+                    api.setVoucherCode(promoCode)
+                    api.open(openOptions)
                 } else {
-                    // Fallback: try passing in open options if setVoucherCode isn't available
-                    mewsApi.open({ ...openOptions, voucherCode: promoCode })
-                    console.warn('Mews API does not support setVoucherCode, opening with fallback options.')
+                    api.open({ ...openOptions, voucherCode: promoCode })
                 }
             } else {
-                mewsApi.open(openOptions)
+                api.open(openOptions)
             }
-            // Close our state immediately to prevent conflicts
-            onClose()
+
+            onClose() // Reset our internal open state so it can be re-triggered later
         }
     }, [isOpen, mewsApi, onClose, promoCode, roomId])
 

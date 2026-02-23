@@ -1,8 +1,12 @@
+'use client'
+
 import { useCallback } from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import useEmblaCarousel from 'embla-carousel-react'
-import { Wifi, Wind, Coffee, Car, Tv, Snowflake, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Wifi, Wind, Coffee, Car, Tv, Snowflake } from 'lucide-react'
 import { websiteData } from '../data/website-data'
+import CarouselNavigation from './ui/CarouselNavigation'
+import { cn } from '../utils/cn'
 
 const iconMap: Record<string, any> = {
     wifi: Wifi,
@@ -30,27 +34,22 @@ export default function Amenities({ limit }: AmenitiesProps) {
     }, [emblaApi])
 
     return (
-        <section id="amenities" className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
-            <div className="container mx-auto px-4 md:px-6">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-                    <div className="text-center md:text-left w-full md:w-auto">
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 dark:text-white mb-4">Amenities</h2>
-                        <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
-                            Enjoy these complimentary comforts during your stay.
-                        </p>
-                    </div>
-
-                    {limit && (
-                        <div className="hidden md:flex space-x-2 mt-4 md:mt-0">
-                            <button onClick={scrollPrev} className="p-2 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors">
-                                <ChevronLeft size={20} />
-                            </button>
-                            <button onClick={scrollNext} className="p-2 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors">
-                                <ChevronRight size={20} />
-                            </button>
+        <section id="amenities" className={cn("transition-colors duration-300", limit ? "py-20 bg-slate-50 dark:bg-slate-900" : "pb-20 pt-4 md:pt-8 bg-transparent")}>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {limit && (
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+                        <div className="text-center md:text-left w-full md:w-auto">
+                            <span className="font-sans text-sm font-semibold text-mountain-blue uppercase tracking-wider mb-2 block">
+                                Property Features
+                            </span>
+                            <h2 className="font-display text-page-title text-navy dark:text-white mb-4">Amenities</h2>
+                            <p className="font-sans text-subheading text-charcoal dark:text-gray-300 max-w-2xl">
+                                Enjoy these complimentary comforts during your stay.
+                            </p>
                         </div>
-                    )}
-                </div>
+                        <CarouselNavigation onPrev={scrollPrev} onNext={scrollNext} />
+                    </div>
+                )}
 
                 {limit ? (
                     /* Carousel View */
@@ -93,9 +92,8 @@ export default function Amenities({ limit }: AmenitiesProps) {
                 {limit && (
                     <div className="mt-12 text-center">
                         <Link
-                            to="/amenities"
+                            href="/amenities"
                             className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-primary hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                            onClick={() => window.scrollTo(0, 0)}
                         >
                             View All Amenities
                         </Link>
