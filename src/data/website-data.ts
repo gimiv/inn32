@@ -475,43 +475,83 @@ export const websiteData: GuestWebsiteProps = {
     reviews: [
         {
             id: "r1",
-            author: "Sarah & Mark Dempsey",
+            author: "Ryan",
             rating: 5,
-            date: "October 2025",
-            text: "Absolutely stunning renovation. They managed to keep the historic charm of a classic White Mountains roadside inn while upgrading every single touchpoint. The beds are impossibly comfortable.",
-            source: "Google"
-        },
-        {
-            id: "r2",
-            author: "James Harrington",
-            rating: 5,
-            date: "September 2025",
-            text: "The perfect basecamp for our Franconia Notch hiking trip. Being able to walk to Woodstock Inn Brewery for dinner after a long day on the trails was incredibly convenient.",
-            source: "TripAdvisor"
-        },
-        {
-            id: "r3",
-            author: "Emily Chen",
-            rating: 5,
-            date: "August 2025",
-            text: "We stayed in the Riverside Queen room and fell asleep to the sound of the water every night. Spotlessly clean, beautifully designed, and the check-in process was seamless.",
+            date: "June 2025",
+            text: "Very welcoming staff, loved listening to the river, and we could walk to dinner and shops; we will be back.",
             source: "Expedia"
         },
         {
-            id: "r4",
-            author: "The Miller Family",
+            id: "r2",
+            author: "Amanda",
             rating: 5,
-            date: "July 2025",
-            text: "Rented the 4-bedroom apartment for a family reunion and it exceeded all expectations. So much space for the kids to spread out, and having a full kitchen made breakfast a breeze.",
-            source: "Google"
+            date: "August 2025",
+            text: "We loved the location close to dining, shopping, and the river to relax by, and the room was clean and welcoming just like the photos.",
+            source: "Expedia"
+        },
+        {
+            id: "r3",
+            author: "Eric",
+            rating: 5,
+            date: "March 2025",
+            text: "Staff is excellent and the manager, Sage, gave great recommendations for things to do; I would stay here again.",
+            source: "Travelocity"
+        },
+        {
+            id: "r4",
+            author: "Tripadvisor Guest",
+            rating: 5,
+            date: "September 2025",
+            text: "Top notch guest experience with excellent service and a very comfortable stay.",
+            source: "TripAdvisor"
         },
         {
             id: "r5",
-            author: "David L.",
+            author: "Tripadvisor Guest",
             rating: 5,
-            date: "June 2025",
-            text: "A hidden gem in North Woodstock! The location is unbeatable, the staff is incredibly welcoming, and the attention to detail in the room decor made our anniversary weekend truly special.",
+            date: "2025",
+            text: "I loved my stay at Inn32; the room backed onto the forest so I could hear the river, and it was very comfortable, well equipped, and very clean.",
             source: "TripAdvisor"
+        },
+        {
+            id: "r6",
+            author: "Michael",
+            rating: 5,
+            date: "2025",
+            text: "Inn 32 was everything I was looking for at an affordable price point and I would certainly recommend them and stay again.",
+            source: "Expedia"
+        },
+        {
+            id: "r7",
+            author: "Tripadvisor Guest",
+            rating: 5,
+            date: "2025",
+            text: "We found Inn 32 covered all our needs with a clean room, new bathroom and above-average linens, and the location let us walk to Woodstock Inn, shops, and Cascade Falls.",
+            source: "TripAdvisor"
+        },
+        {
+            id: "r8",
+            author: "Tripadvisor Guest",
+            rating: 5,
+            date: "2025",
+            text: "Our room was spotlessly clean and very quiet at night, and although the outside has an 'old motel' look, the interior had everything we needed.",
+            source: "TripAdvisor"
+        },
+        {
+            id: "r9",
+            author: "Tripadvisor Guest",
+            rating: 5,
+            date: "2025",
+            text: "Clean, budget-friendly and safe with easy check-in, easy parking right in front of the room, and a beautiful spot by the river; I would recommend and stay again.",
+            source: "TripAdvisor"
+        },
+        {
+            id: "r10",
+            author: "Google Guest",
+            rating: 5,
+            date: "2025",
+            text: "Cozy, budget-friendly rooms in a great riverfront location with easy access to local restaurants and White Mountains attractions.",
+            source: "Google"
         }
     ],
     promotions: [],
