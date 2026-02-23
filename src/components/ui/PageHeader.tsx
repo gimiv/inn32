@@ -9,34 +9,34 @@ interface PageHeaderProps {
 }
 
 export default function PageHeader({ title, subtitle, description, backgroundImage, children }: PageHeaderProps) {
+    const isImageBg = !!backgroundImage;
+
     return (
-        <div className="relative pt-[120px] pb-16 md:pt-[160px] md:pb-24 overflow-hidden bg-slate-900 border-b border-gray-100 dark:border-slate-800">
+        <div className={`relative pt-[120px] pb-16 md:pt-[160px] md:pb-24 overflow-hidden border-b transition-colors duration-300 ${isImageBg ? 'bg-slate-900 border-transparent' : 'bg-cream dark:bg-slate-900 border-gray-100 dark:border-slate-800'}`}>
             {/* Background Layer */}
-            {backgroundImage ? (
+            {isImageBg && (
                 <>
                     <div
                         className="absolute inset-0 bg-cover bg-center"
                         style={{ backgroundImage: `url(${backgroundImage})` }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/90" />
+                    <div className="absolute inset-0 bg-black/50" />
                 </>
-            ) : (
-                <div className="absolute inset-0 bg-gradient-to-b from-slate-900 to-slate-800" />
             )}
 
             {/* Content Container */}
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white z-10">
+            <div className={`relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 ${isImageBg ? 'text-white' : 'text-navy dark:text-white'}`}>
                 <div className="max-w-3xl mx-auto">
                     {subtitle && (
-                        <span className="font-sans text-sm md:text-base font-bold uppercase tracking-[0.2em] text-white/80 mb-4 block">
+                        <span className={`font-sans text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-4 block ${isImageBg ? 'text-white/80' : 'text-mountain-blue'}`}>
                             {subtitle}
                         </span>
                     )}
-                    <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight drop-shadow-md">
+                    <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight drop-shadow-sm">
                         {title}
                     </h1>
                     {description && (
-                        <p className="font-sans text-lg md:text-xl text-white/90 leading-relaxed font-light drop-shadow-sm max-w-2xl mx-auto">
+                        <p className={`font-sans text-lg md:text-xl leading-relaxed font-light drop-shadow-sm max-w-2xl mx-auto ${isImageBg ? 'text-white/90' : 'text-charcoal dark:text-gray-300'}`}>
                             {description}
                         </p>
                     )}
