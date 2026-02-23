@@ -41,8 +41,12 @@ export default function RoomList({ limit }: RoomListProps) {
             title={room.name}
             subtitle={
                 <div className="text-right">
-                    <span className="block font-display text-2xl font-bold text-mountain-blue">${room.basePrice}</span>
-                    <span className="text-xs font-sans text-gray-500 dark:text-gray-400">/night</span>
+                    <span className="block font-display text-2xl font-bold text-navy dark:text-white group-hover:text-mountain-blue transition-colors">
+                        ${room.basePrice}
+                    </span>
+                    <span className="text-xs font-sans text-gray-500 dark:text-gray-400 group-hover:text-mountain-blue/80 transition-colors">
+                        /night
+                    </span>
                 </div>
             }
             description={room.shortDescription}
