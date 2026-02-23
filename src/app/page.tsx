@@ -23,7 +23,7 @@ export default function Home() {
             <Reviews limit={6} />
             <Events limit={3} />
             <Suspense fallback={<div className="py-20 text-center">Loading activities...</div>}>
-                <ThingsToDo limit={4} showFilters={false} />
+                <ThingsToDo limit={12} />
             </Suspense>
             <Gallery gallery={websiteData.gallery} />
             <Location property={websiteData.property} />
