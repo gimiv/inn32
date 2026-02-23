@@ -87,7 +87,7 @@ export default function ThingsToDo({ limit, showFilters = true }: ThingsToDoProp
 
                 {/* Filter Bar - Hide if limit (Home mode) */}
                 {showFilters && (
-                    <div className="flex overflow-x-auto whitespace-nowrap pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 mb-4 sm:mb-8 gap-3 hide-scrollbar relative z-10">
+                    <div className="flex overflow-x-auto whitespace-nowrap pb-4 pt-2 -mx-4 px-4 sm:mx-0 sm:px-0 mb-4 sm:mb-8 gap-3 hide-scrollbar relative z-10">
                         {categories.map((category) => (
                             <button
                                 key={category}

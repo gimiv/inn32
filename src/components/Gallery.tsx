@@ -10,7 +10,7 @@ interface GalleryProps {
 export default function Gallery({ gallery }: GalleryProps) {
     const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
 
-    // Group images into a masonry-like layout
+    // Group images into a masonry-like layout that perfectly fills a 4-column grid (7 items = 3 rows)
     const layoutPatterns = [
         'col-span-2 row-span-2', // Large
         'col-span-1 row-span-1', // Small
@@ -18,7 +18,6 @@ export default function Gallery({ gallery }: GalleryProps) {
         'col-span-1 row-span-2', // Tall
         'col-span-1 row-span-1', // Small
         'col-span-2 row-span-1', // Wide
-        'col-span-1 row-span-1', // Small
         'col-span-1 row-span-1', // Small
     ]
 

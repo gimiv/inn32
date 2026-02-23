@@ -645,15 +645,15 @@ export const websiteData: GuestWebsiteProps = {
             category: "Exterior"
         },
         {
+            id: "pool-firepit",
+            url: "/gallery/pool-firepit-night-.webp",
+            alt: "Evening Firepit Area",
+            category: "Exterior"
+        },
+        {
             id: "living-room-01",
             url: "/gallery/living-room-01--1-.webp",
             alt: "Apartment Living Room",
-            category: "Interior"
-        },
-        {
-            id: "living-room-02",
-            url: "/gallery/living-room-02.webp",
-            alt: "Apartment Living Room Alternate View",
             category: "Interior"
         },
         {
@@ -681,12 +681,6 @@ export const websiteData: GuestWebsiteProps = {
             category: "Rooms"
         },
         {
-            id: "bedroom-02",
-            url: "/gallery/bedroom-02.webp",
-            alt: "Secondary Bedroom setup",
-            category: "Rooms"
-        },
-        {
             id: "room03",
             url: "/gallery/room03.webp",
             alt: "Room 3 Interior",
@@ -711,16 +705,16 @@ export const websiteData: GuestWebsiteProps = {
             category: "Rooms"
         },
         {
-            id: "room04-bath",
-            url: "/gallery/room04-bath.webp",
-            alt: "Room 4 Bathroom Details",
-            category: "Interior"
-        },
-        {
             id: "bathroom-general",
             url: "/gallery/bathroom.webp",
             alt: "Newly Renovated Bathroom",
             category: "Interior"
+        },
+        {
+            id: "hotel-exterior",
+            url: "/gallery/hotel.webp",
+            alt: "Inn 32 Exterior Details",
+            category: "Exterior"
         }
     ]
 }
