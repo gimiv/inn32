@@ -344,49 +344,86 @@ export const websiteData: GuestWebsiteProps = {
     ],
     events: [
         {
-            id: "ice-castles",
-            title: "Ice Castles New Hampshire",
-            date: "Jan - Mar 2026",
-            location: "North Woodstock, NH",
-            image: "https://images.unsplash.com/photo-1483664852095-d6cc6870702d?auto=format&fit=crop&q=80&w=1200",
-            description: "Experience the magic of Ice Castles, an award-winning frozen attraction located just down the street. Explore ice slides, caverns, tunnels, crawl spaces, and fountains.",
-            isFeatured: true,
-            customLabel: "Must See"
-        },
-        {
-            id: "winter-fest",
-            title: "Winter Festival",
-            date: "Feb 14, 2026",
-            location: "Lincoln, NH",
-            image: "https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee?auto=format&fit=crop&q=80&w=1200",
-            description: "Join the annual Winter Festival featuring snow sculpting, local food vendors, and evening fireworks.",
-            isFeatured: false
-        },
-        {
-            id: "maple-weekend",
-            title: "NH Maple Weekend",
-            date: "Mar 21-22, 2026",
-            location: "Various Locations",
-            image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1200",
-            description: "Visit local sugar houses for tours, tastings, and fresh maple syrup demonstrations.",
-            isFeatured: false
-        },
-        {
-            id: "brewery-tour",
-            title: "Woodstock Inn Brewery Tour",
-            date: "Daily",
+            id: "brewery-music",
+            title: "Woodstock Inn Brewery Live Music Nights",
+            date: "Ongoing",
             location: "North Woodstock, NH",
             image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=1200",
-            description: "Take a tour of the historic Woodstock Inn Brewery, one of New Hampshire's premier craft breweries, located just steps away.",
-            isFeatured: true
+            description: "Regular live bands and solo acts in the pub a short walk from Inn 32; check their calendar for multiple March 2026 shows such as Mitch Alden, Dan Parkhurst, and Blue Matter.",
+            isFeatured: true,
+            customLabel: "Staff Pick"
         },
         {
-            id: "live-music",
-            title: "Live Music at the Station",
-            date: "Weekends",
+            id: "lincoln-events",
+            title: "Lincoln / Franconia Notch Event Series",
+            date: "Winter - Spring 2026",
             location: "Lincoln, NH",
-            image: "https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&q=80&w=1200",
-            description: "Enjoy live local bands every Friday and Saturday night at the old train station turned venue.",
+            image: "https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee?auto=format&fit=crop&q=80&w=1200",
+            description: "Regional calendar lists \"Live Music – Woodstock Inn Brewery\" Saturdays through March 28, plus other Franconia Notch-area happenings like guided outings and community events typically within a 15–25 minute drive.",
+            isFeatured: false
+        },
+        {
+            id: "maple-month",
+            title: "Maple Month in the White Mountains",
+            date: "March 2026",
+            location: "White Mountains, NH",
+            image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1200",
+            description: "March is Maple Month across the region: sugarhouses open for tours, tastings, and demonstrations, with several producers located within an easy drive of North Woodstock.",
+            isFeatured: true,
+            customLabel: "Local Tradition"
+        },
+        {
+            id: "bretton-woods-beach-party",
+            title: "Beach Party on the Slopes",
+            date: "Early March 2026",
+            location: "Bretton Woods, NH",
+            image: "https://images.unsplash.com/photo-1551524164-687a55dd1126?auto=format&fit=crop&q=80&w=1200",
+            description: "Spring-ski party at Bretton Woods with live music and on-snow games, roughly 45–60 minutes from Inn 32.",
+            isFeatured: false
+        },
+        {
+            id: "spring-skiing-family",
+            title: "Spring Skiing & Family Fun Week",
+            date: "Mid-March 2026",
+            location: "Bretton Woods, NH",
+            image: "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&q=80&w=1200",
+            description: "Multi-day spring event at a White Mountains ski area with kids’ races, costume days, and family activities.",
+            isFeatured: false
+        },
+        {
+            id: "maple-sugar-tours",
+            title: "Annual Maple Sugar Tours",
+            date: "Late March 2026",
+            location: "White Mountains, NH",
+            image: "https://images.unsplash.com/photo-1527960669566-f881763cd33e?auto=format&fit=crop&q=80&w=1200",
+            description: "Organized maple tours in the White Mountains, showcasing the sugaring process and offering samples; good as a half-day outing from North Woodstock.",
+            isFeatured: false
+        },
+        {
+            id: "psychic-fair",
+            title: "Psychic Fair Weekend",
+            date: "April 24–25, 2026",
+            location: "Indian Head Resort, Lincoln",
+            image: "https://images.unsplash.com/photo-1511884642898-4c92249e20b6?auto=format&fit=crop&q=80&w=1200",
+            description: "Themed weekend with psychic fair at Indian Head Resort just south of Lincoln, a short drive from Inn 32.",
+            isFeatured: false
+        },
+        {
+            id: "girlfriends-weekend",
+            title: "2026 Girlfriends Weekend Spring Fling",
+            date: "May 1–3, 2026",
+            location: "North Conway, NH",
+            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200",
+            description: "Themed weekend package at White Mountain Hotel & Resort with artisan fair, spa options, dinner, entertainment, yoga, and brunch.",
+            isFeatured: false
+        },
+        {
+            id: "alton-weagle",
+            title: "Alton Weagle Day",
+            date: "May 23, 2026",
+            location: "Mt. Washington Auto Road",
+            image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200",
+            description: "Quirky Mt. Washington Auto Road event celebrating \"first ascents\" in unusual ways; about 1–1.5 hours from Inn 32.",
             isFeatured: false
         }
     ],
