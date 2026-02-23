@@ -13,9 +13,36 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-serif'
 export const metadata: Metadata = {
     title: {
         template: `%s | ${websiteData.property.name}`,
-        default: websiteData.property.name,
+        default: `${websiteData.property.name} | ${websiteData.property.tagline}`,
     },
     description: websiteData.property.description,
+    keywords: ["Boutique Hotel", "North Woodstock NH", "White Mountains", "Franconia Notch", "Lodging", "Inn"],
+    openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: 'https://inn32.com',
+        title: websiteData.property.name,
+        description: websiteData.property.description,
+        siteName: websiteData.property.name,
+        images: [
+            {
+                url: websiteData.websiteConfig.socialImage,
+                width: 1200,
+                height: 630,
+                alt: websiteData.property.name,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: websiteData.property.name,
+        description: websiteData.property.description,
+        images: [websiteData.websiteConfig.socialImage],
+    },
+    manifest: '/site.webmanifest',
+    alternates: {
+        canonical: 'https://inn32.com',
+    },
 }
 
 export default function RootLayout({
