@@ -31,7 +31,7 @@ export default function Events({ limit }: EventsProps) {
     const displayEvents = limit ? events.slice(0, limit) : events
 
     return (
-        <section id="events" className={cn("transition-colors duration-300", isSlider ? "py-20 bg-slate-50 dark:bg-slate-900" : "pb-20 pt-4 md:pt-8 bg-transparent")}>
+        <section id="events" className={cn("transition-colors duration-300", isSlider ? "py-20 bg-white dark:bg-slate-900" : "pb-20 pt-4 md:pt-8 bg-transparent")}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {isSlider && (
                     <div className="flex items-center justify-between mb-12">

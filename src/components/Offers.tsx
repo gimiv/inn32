@@ -32,7 +32,7 @@ export default function Offers({ limit }: OffersProps) {
     if (!offers || offers.length === 0) return null;
 
     return (
-        <section id="offers" className={cn("transition-colors duration-300", isSlider ? "py-20 bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-slate-800" : "pb-20 pt-4 md:pt-8 bg-transparent")}>
+        <section id="offers" className={cn("transition-colors duration-300", isSlider ? "py-20 bg-slate-50 dark:bg-slate-900 border-t border-gray-100 dark:border-slate-800" : "pb-20 pt-4 md:pt-8 bg-transparent")}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {isSlider && (
                     <div className="transition-spacing duration-300 mb-12">
@@ -56,8 +56,8 @@ export default function Offers({ limit }: OffersProps) {
                     <div className="overflow-hidden p-4 -m-4" ref={emblaRef}>
                         <div className="flex touch-pan-y" style={{ gap: '1.5rem' }}>
                             {displayOffers.map((offer) => (
-                                <div key={offer.id} className="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_30%] min-w-0 h-full">
-                                    <div className="h-full block">
+                                <div key={offer.id} className="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_30%] min-w-0 flex">
+                                    <div className="w-full">
                                         <StandardCard
                                             image={offer.image!}
                                             title={offer.title}
