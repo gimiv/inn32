@@ -22,6 +22,7 @@ export default function Home() {
             <Hero hero={websiteData.sections.hero} />
             <RoomList limit={3} />
             <Reviews limit={6} />
+            <Offers limit={4} />
             <Events limit={3} />
             <Suspense fallback={<div className="py-20 text-center">Loading activities...</div>}>
                 <ThingsToDo limit={12} />
@@ -29,7 +30,6 @@ export default function Home() {
             <Gallery gallery={websiteData.gallery} />
             <Location property={websiteData.property} />
             <SocialReel />
-            <Offers limit={4} />
         </div>
     )
 }
