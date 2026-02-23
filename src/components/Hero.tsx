@@ -30,7 +30,9 @@ export default function Hero({ hero }: HeroProps) {
                     setIsTransitioning(false)
                 }, 500) // Half-second fade
             } else {
-                videoElement.play() // Loop if single video
+                videoElement.play().catch(e => {
+                    if (e.name !== 'AbortError') console.error("Video playback failed:", e)
+                })
             }
         }
 
@@ -42,7 +44,9 @@ export default function Hero({ hero }: HeroProps) {
     useEffect(() => {
         if (videoRef.current) {
             videoRef.current.load()
-            videoRef.current.play().catch(e => console.log("Autoplay prevented", e))
+            videoRef.current.play().catch(e => {
+                if (e.name !== 'AbortError') console.error("Autoplay prevented", e)
+            })
         }
     }, [currentVideoIndex])
 
