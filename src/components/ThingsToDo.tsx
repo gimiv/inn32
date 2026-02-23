@@ -87,13 +87,13 @@ export default function ThingsToDo({ limit, showFilters = true }: ThingsToDoProp
 
                 {/* Filter Bar - Hide if limit (Home mode) */}
                 {showFilters && (
-                    <div className="flex flex-wrap justify-start gap-3 mb-8">
+                    <div className="flex overflow-x-auto whitespace-nowrap pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 mb-4 sm:mb-8 gap-3 hide-scrollbar relative z-10">
                         {categories.map((category) => (
                             <button
                                 key={category}
                                 onClick={() => handleCategorySelect(category)}
                                 className={cn(
-                                    "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 transform",
+                                    "px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 transform flex-shrink-0",
                                     activeCategory === category
                                         ? "bg-primary text-white scale-105 shadow-md"
                                         : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700"
