@@ -61,12 +61,22 @@ export default function Offers({ limit }: OffersProps) {
                                         <StandardCard
                                             image={offer.image!}
                                             title={offer.title}
-                                            subtitle={offer.promoCode ? `Promo Code: ${offer.promoCode}` : 'Special Package'}
                                             description={offer.description}
                                             actions={
-                                                <Link href={`/offers#${offer.id}`} className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center">
-                                                    View Details <span className="ml-1">→</span>
-                                                </Link>
+                                                <div className="flex items-center justify-between w-full">
+                                                    {offer.promoCode ? (
+                                                        <span className="text-xs font-sans font-bold text-navy dark:text-white bg-cream dark:bg-slate-700 px-3 py-1.5 rounded-md uppercase tracking-wide">
+                                                            Code: {offer.promoCode}
+                                                        </span>
+                                                    ) : (
+                                                        <span className="text-xs font-sans font-medium text-gray-400 uppercase tracking-wide">
+                                                            Special Package
+                                                        </span>
+                                                    )}
+                                                    <Link href={`/offers#${offer.id}`} className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center">
+                                                        View Details <span className="ml-1">→</span>
+                                                    </Link>
+                                                </div>
                                             }
                                         />
                                     </div>
@@ -82,12 +92,22 @@ export default function Offers({ limit }: OffersProps) {
                                 <StandardCard
                                     image={offer.image!}
                                     title={offer.title}
-                                    subtitle={offer.promoCode ? `Promo Code: ${offer.promoCode}` : 'Special Package'}
                                     description={offer.description}
                                     actions={
-                                        <Link href={`/offers#${offer.id}`} className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center">
-                                            View Details <span className="ml-1">→</span>
-                                        </Link>
+                                        <div className="flex items-center justify-between w-full">
+                                            {offer.promoCode ? (
+                                                <span className="text-xs font-sans font-bold text-navy dark:text-white bg-cream dark:bg-slate-700 px-3 py-1.5 rounded-md uppercase tracking-wide">
+                                                    Code: {offer.promoCode}
+                                                </span>
+                                            ) : (
+                                                <span className="text-xs font-sans font-medium text-gray-400 uppercase tracking-wide">
+                                                    Special Package
+                                                </span>
+                                            )}
+                                            <Link href={`/offers#${offer.id}`} className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center">
+                                                View Details <span className="ml-1">→</span>
+                                            </Link>
+                                        </div>
                                     }
                                 />
                             </div>
