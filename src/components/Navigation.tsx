@@ -124,7 +124,7 @@ export default function Navigation() {
                             {navLinks.map((link) => {
                                 const isActive = pathname === link.href;
                                 return (
-                                    <a
+                                    <Link
                                         key={link.name}
                                         href={link.href}
                                         onClick={(e) => link.href.startsWith('/#') ? handleNavClick(e, link.href) : undefined}
@@ -141,7 +141,7 @@ export default function Navigation() {
                                         )}
                                     >
                                         {link.name}
-                                    </a>
+                                    </Link>
                                 )
                             })}
                         </div>
@@ -184,7 +184,7 @@ export default function Navigation() {
                         {navLinks.map((link) => {
                             const isActive = pathname === link.href;
                             return (
-                                <a
+                                <Link
                                     key={link.name}
                                     href={link.href}
                                     className={cn(
@@ -202,7 +202,7 @@ export default function Navigation() {
                                     }}
                                 >
                                     {link.name}
-                                </a>
+                                </Link>
                             )
                         })}
 
