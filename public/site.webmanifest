@@ -1,0 +1,25 @@
+{
+    "name": "Inn 32",
+    "short_name": "Inn 32",
+    "description": "Refined & Reopened. A newly revitalized boutique hotel in the heart of North Woodstock, New Hampshire.",
+    "icons": [
+        {
+            "src": "/inn32-favicon-16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/inn32-favicon-32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#1e293b",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
