@@ -229,117 +229,131 @@ export const websiteData: GuestWebsiteProps = {
             id: "woodstock-inn",
             name: "Woodstock Inn Brewery",
             category: "Food & Drink",
-            description: "Local craft beers, hearty comfort food, and a cozy atmosphere right in town.",
+            description: "Iconic brewpub with 15+ beers on tap, full restaurant, and outdoor beer garden right in town.",
             image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=800"
         },
         {
-            id: "pemi-public-house",
-            name: "Pemi Public House",
+            id: "one-love-brewery",
+            name: "One Love Brewery",
             category: "Food & Drink",
-            description: "A relaxed spot for American fare, cocktails, and gathering with friends.",
-            image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800"
+            description: "Craft brewery and full-service restaurant located in a historic mill building in Lincoln.",
+            image: "https://images.unsplash.com/photo-1559526642-c3f001ea68ee?auto=format&fit=crop&q=80&w=800"
         },
         {
-            id: "truants",
-            name: "Truant's Taverne",
+            id: "schilling-beer",
+            name: "Schilling Beer Co.",
             category: "Food & Drink",
-            description: "A local favorite featuring a classic pub atmosphere and delicious eats.",
+            description: "European-style beers with a taproom and scenic beer garden right on the river.",
             image: "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&q=80&w=800"
         },
         {
-            id: "coneheads",
-            name: "Coneheads Ice Cream",
+            id: "common-man",
+            name: "The Common Man",
             category: "Food & Drink",
-            description: "The perfect post-hike treat featuring a wide variety of ice cream flavors.",
-            image: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&q=80&w=800"
+            description: "Classic New England comfort dishes like pot roast and Nantucket Pie in a cozy, rustic setting.",
+            image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800"
         },
         // Hiking
         {
-            id: "flume",
-            name: "Flume Gorge",
+            id: "franconia-ridge",
+            name: "Franconia Ridge",
             category: "Hiking",
-            description: "Spectacular natural gorge with waterfalls, boardwalks, and dramatic rock formations.",
-            image: "https://images.unsplash.com/photo-1443632864897-15c52cd7c51e?auto=format&fit=crop&q=80&w=800"
+            description: "One of the top White Mountain day hikes for huge views along a stunning alpine ridge; best for experienced hikers.",
+            image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=800"
         },
         {
-            id: "mt-pemi",
-            name: "Mount Pemigewasset",
+            id: "mt-moosilauke",
+            name: "Mount Moosilauke",
             category: "Hiking",
-            description: "A rewarding short hike offering sweeping views of the Franconia Range.",
+            description: "Major 4,000-footer with excellent sweeping summit views above the treeline.",
             image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800"
         },
         {
-            id: "franconia-notch",
-            name: "Franconia Notch State Park",
+            id: "garfield-4000",
+            name: "Mount Garfield & 4,000 Footers",
             category: "Hiking",
-            description: "Scenic trails, lakes, and the heart of the White Mountain National Forest.",
-            image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=800"
+            description: "Praised as slightly easier big-view alternatives to Franconia Ridge with phenomenal panoramic vistas.",
+            image: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+            id: "kancamagus-trails",
+            name: "Kancamagus Highway Trails",
+            category: "Hiking",
+            description: "A mix of scenic riverside walks like Lincoln Woods, and longer backcountry routes.",
+            image: "https://images.unsplash.com/photo-1504681869696-d97721183f4b?auto=format&fit=crop&q=80&w=800"
         },
         // Attractions
         {
-            id: "clarks",
-            name: "Clark's Bears",
+            id: "lost-river",
+            name: "Lost River Gorge & Boulder Caves",
             category: "Attractions",
-            description: "Famous trained bear shows, steam train rides, and family entertainment.",
-            image: "https://images.unsplash.com/photo-1589656966895-2f33e7653e00?auto=format&fit=crop&q=80&w=800"
-        },
-        {
-            id: "whales-tale",
-            name: "Whale's Tale Waterpark",
-            category: "Attractions",
-            description: "New England's favorite waterpark, perfect for cooling off on summer days.",
-            image: "https://images.unsplash.com/photo-1582653291997-079a1c04c792?auto=format&fit=crop&q=80&w=800"
-        },
-        {
-            id: "cannon-tram",
-            name: "Cannon Mountain Tramway",
-            category: "Attractions",
-            description: "Ride the aerial tramway to the summit for stunning panoramic views.",
-            image: "https://images.unsplash.com/photo-1548281561-547e70477163?auto=format&fit=crop&q=80&w=800"
-        },
-        // Shopping
-        {
-            id: "local-works",
-            name: "Local Works Marketplace",
-            category: "Shopping",
-            description: "A curated marketplace featuring handcrafted goods and local art.",
-            image: "https://images.unsplash.com/photo-1472851294608-415522f96385?auto=format&fit=crop&q=80&w=800"
-        },
-        {
-            id: "faddens",
-            name: "Fadden’s General Store",
-            category: "Shopping",
-            description: "Historic general store known for its authentic maple syrup and souvenirs.",
-            image: "https://images.unsplash.com/photo-1527960669566-f881763cd33e?auto=format&fit=crop&q=80&w=800"
-        },
-        {
-            id: "chutters",
-            name: "Chutters",
-            category: "Shopping",
-            description: "Home to the world’s longest candy counter – a sweet tooth's paradise.",
-            image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&q=80&w=800"
-        },
-        // Seasonal
-        {
-            id: "loon",
-            name: "Loon Mountain",
-            category: "Seasonal Activities",
-            description: "World-class skiing, snowboarding, and year-round gondola adventures.",
-            image: "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&q=80&w=800"
+            description: "Signature natural attraction featuring a boardwalk through a gorgeous gorge, waterfalls, and family-friendly caves.",
+            image: "https://images.unsplash.com/photo-1443632864897-15c52cd7c51e?auto=format&fit=crop&q=80&w=800"
         },
         {
             id: "ice-castles",
-            name: "Ice Castles",
-            category: "Seasonal Activities",
-            description: "Magical, LED-lit ice sculptures and tunnels to explore in winter.",
+            name: "Ice Castles (Winter)",
+            category: "Attractions",
+            description: "Destination winter attraction in Lincoln with illuminated ice slides, caverns, and magical light walks.",
             image: "https://images.unsplash.com/photo-1612450637672-0f5ea211fb84?auto=format&fit=crop&q=80&w=800"
         },
         {
-            id: "kancamagus",
-            name: "Kancamagus Highway",
+            id: "kancamagus-byway",
+            name: "Kancamagus Scenic Byway",
+            category: "Attractions",
+            description: "Classic White Mountains drive offering breathtaking overlooks, trailheads, and river pull-offs.",
+            image: "https://images.unsplash.com/photo-1548281561-547e70477163?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+            id: "cascade-park",
+            name: "Cascade Park",
+            category: "Attractions",
+            description: "Small in-town river spot right in North Woodstock, perfect for wading, picnicking, and relaxing.",
+            image: "https://images.unsplash.com/photo-1582653291997-079a1c04c792?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+            id: "hubbard-brook",
+            name: "Hubbard Brook Experimental Forest",
+            category: "Attractions",
+            description: "Expansive forest research area offering quiet nature trails and interpretive access points.",
+            image: "https://images.unsplash.com/photo-1507026330055-662f558d16d0?auto=format&fit=crop&q=80&w=800"
+        },
+        // Shopping
+        {
+            id: "kancamagus-collectibles",
+            name: "Kancamagus Collectibles",
+            category: "Shopping",
+            description: "Small local museum and collectibles shop—a great quick stop on a rainy day to find unique souvenirs.",
+            image: "https://images.unsplash.com/photo-1527960669566-f881763cd33e?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+            id: "jeanette-fournier",
+            name: "Jeanette Fournier Fine Art",
+            category: "Shopping",
+            description: "Elegant local art gallery located right in the Woodstock area showcasing regional talent.",
+            image: "https://images.unsplash.com/photo-1472851294608-415522f96385?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+            id: "specialty-shops",
+            name: "Local Village Shops",
+            category: "Shopping",
+            description: "Explore dozens of charming small specialty and gift shops lining the streets of Woodstock and Lincoln.",
+            image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&q=80&w=800"
+        },
+        // Seasonal Activities
+        {
+            id: "winter-activities",
+            name: "Winter Sports & Festivals",
             category: "Seasonal Activities",
-            description: "One of the world's most spectacular fall foliage drives just minutes away.",
-            image: "https://images.unsplash.com/photo-1504681869696-d97721183f4b?auto=format&fit=crop&q=80&w=800"
+            description: "Explore the Ice Castles, hit the slopes at nearby ski areas, and enjoy regional winter festivals.",
+            image: "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+            id: "spring-activities",
+            name: "Spring Maple & Hiking",
+            category: "Seasonal Activities",
+            description: "Visit local sugarhouses during March Maple Month and hit the hiking trails as the snow melts out.",
+            image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800"
         }
     ],
     events: [
