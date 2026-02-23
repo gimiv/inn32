@@ -29,6 +29,7 @@ export default function Navigation() {
 
     const navLinks = [
         { name: 'Rooms', href: '/rooms' },
+        { name: 'Offers', href: '/offers' },
         { name: 'Amenities', href: '/amenities' },
         { name: 'Things To Do', href: '/things-to-do' },
         { name: 'Events', href: '/events' },

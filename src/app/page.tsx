@@ -7,6 +7,7 @@ import Reviews from '../components/Reviews'
 import Gallery from '../components/Gallery'
 import Location from '../components/Location'
 import SocialReel from '../components/SocialReel'
+import Offers from '../components/Offers'
 import { websiteData } from '../data/website-data'
 import { Suspense } from 'react'
 
@@ -28,6 +29,7 @@ export default function Home() {
             <Gallery gallery={websiteData.gallery} />
             <Location property={websiteData.property} />
             <SocialReel />
+            <Offers limit={4} />
         </div>
     )
 }
