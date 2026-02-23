@@ -18,12 +18,10 @@ export default function Logo({ className = "", isScrolled = false, variant }: Lo
     let logoSrc = '/inn32-logo-transparent-800w.png';
 
     return (
-        <div className={`inline-flex items-center gap-2 ${className}`}>
-            <img
-                src={logoSrc}
-                alt="Inn 32"
-                className={`h-12 w-auto transition-all duration-300`}
-            />
-        </div>
+        <img
+            src={logoSrc}
+            alt="Inn 32"
+            className={`transition-all duration-300 ${className || 'h-12 w-auto'}`}
+        />
     )
 };

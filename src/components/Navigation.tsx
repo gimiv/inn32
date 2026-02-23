@@ -120,19 +120,29 @@ export default function Navigation() {
 
                         {/* Desktop Nav */}
                         <div className="hidden lg:flex items-center space-x-8">
-                            {navLinks.map((link) => (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    onClick={(e) => link.href.startsWith('/#') ? handleNavClick(e, link.href) : undefined}
-                                    className={cn(
-                                        "text-sm font-medium hover:opacity-80 transition-colors font-sans",
-                                        isScrolled ? "text-navy dark:text-gray-200" : "text-white"
-                                    )}
-                                >
-                                    {link.name}
-                                </a>
-                            ))}
+                            {navLinks.map((link) => {
+                                const isActive = pathname === link.href;
+                                return (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        onClick={(e) => link.href.startsWith('/#') ? handleNavClick(e, link.href) : undefined}
+                                        className={cn(
+                                            "font-sans transition-all relative py-2",
+                                            // Base color logic
+                                            isActive
+                                                ? "text-mountain-blue font-semibold"
+                                                : isScrolled
+                                                    ? "text-navy dark:text-gray-200 hover:text-mountain-blue font-medium"
+                                                    : "text-white hover:text-white/80 font-medium",
+                                            // Active underline logic
+                                            isActive && "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-mountain-blue after:rounded-full"
+                                        )}
+                                    >
+                                        {link.name}
+                                    </a>
+                                )
+                            })}
                         </div>
 
                         {/* Desktop Action Buttons */}
@@ -170,22 +180,30 @@ export default function Navigation() {
                 {/* Mobile Menu Overlay */}
                 {isMobileMenuOpen && (
                     <div className="absolute top-full left-0 right-0 bg-white dark:bg-slate-900 shadow-lg p-4 lg:hidden flex flex-col space-y-4 animate-in slide-in-from-top-2 border-t dark:border-slate-800">
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                className="text-gray-800 dark:text-gray-200 font-medium py-3 px-2 active:bg-slate-100 dark:active:bg-slate-800 rounded-md transition-colors"
-                                onClick={(e) => {
-                                    if (link.href.startsWith('/#')) {
-                                        handleNavClick(e, link.href)
-                                    } else {
-                                        setIsMobileMenuOpen(false)
-                                    }
-                                }}
-                            >
-                                {link.name}
-                            </a>
-                        ))}
+                        {navLinks.map((link) => {
+                            const isActive = pathname === link.href;
+                            return (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    className={cn(
+                                        "font-medium py-3 px-3 rounded-md transition-colors",
+                                        isActive
+                                            ? "bg-slate-50 dark:bg-slate-800 text-mountain-blue font-semibold"
+                                            : "text-gray-800 dark:text-gray-200 active:bg-slate-100 dark:active:bg-slate-800"
+                                    )}
+                                    onClick={(e) => {
+                                        if (link.href.startsWith('/#')) {
+                                            handleNavClick(e, link.href)
+                                        } else {
+                                            setIsMobileMenuOpen(false)
+                                        }
+                                    }}
+                                >
+                                    {link.name}
+                                </a>
+                            )
+                        })}
 
                         <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400 pt-4 border-t dark:border-slate-800">
                             <Phone size={16} />
