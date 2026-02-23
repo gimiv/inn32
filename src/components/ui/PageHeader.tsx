@@ -12,7 +12,7 @@ export default function PageHeader({ title, subtitle, description, backgroundIma
     const isImageBg = !!backgroundImage;
 
     return (
-        <div className={`relative pt-[120px] pb-16 md:pt-[160px] md:pb-24 overflow-hidden border-b transition-colors duration-300 ${isImageBg ? 'bg-slate-900 border-transparent' : 'bg-cream dark:bg-slate-900 border-gray-100 dark:border-slate-800'}`}>
+        <div className={`relative py-12 md:py-16 overflow-hidden border-b transition-colors duration-300 ${isImageBg ? 'bg-slate-900 border-transparent' : 'bg-cream dark:bg-slate-900 border-gray-100 dark:border-slate-800'}`}>
             {/* Background Layer */}
             {isImageBg && (
                 <>
