@@ -17,7 +17,7 @@ export default function SocialReel() {
 
     return (
         <section id="social-reel" className="py-20 bg-slate-900 overflow-hidden">
-            <div className="container mx-auto px-4 md:px-6 mb-10 text-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
                 <div className="inline-flex items-center justify-center p-3 bg-white/10 rounded-full mb-6">
                     <Instagram className="w-6 h-6 text-white" />
                 </div>

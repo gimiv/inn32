@@ -19,7 +19,7 @@ export default function Footer() {
 
     return (
         <footer className="bg-slate-900 text-white py-12">
-            <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="mb-6 md:mb-0">
                         <Logo className="h-16 w-auto mb-4" variant="white" />
