@@ -33,7 +33,7 @@ export default function ImageCard({ href, image, title, subtitle, description }:
                         {description}
                     </p>
                     <div className="mt-auto">
-                        <span className="text-mountain-blue font-sans font-medium text-sm group-hover:text-navy dark:group-hover:text-white transition-colors flex items-center">
+                        <span className="text-navy dark:text-white font-sans font-medium text-sm group-hover:text-mountain-blue transition-colors flex items-center">
                             Explore
                             <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
