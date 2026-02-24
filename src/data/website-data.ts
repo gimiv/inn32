@@ -234,7 +234,19 @@ export const websiteData: GuestWebsiteProps = {
             maxOccupancy: 8,
             bedType: "1 King, 1 Queen, 1 Full, 1 Bunk",
             images: [
-                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/1eba0066-9216-4b5b-8eb1-ee81cee8f5a4/Sunroom.jpg"
+                "/gallery/Living_1.webp",
+                "/gallery/Kitchen_1.webp",
+                "/gallery/Kitchen_2.webp",
+                "/gallery/Dining_2.webp",
+                "/gallery/Game_Room.webp",
+                "/gallery/Sunroom.webp",
+                "/gallery/Bedroom_01.webp",
+                "/gallery/Bedroom_02.webp",
+                "/gallery/Bedroom_03.webp",
+                "/gallery/Bedroom_04.webp",
+                "/gallery/Bathroom_01a.webp",
+                "/gallery/Bathroom_01b.webp",
+                "/gallery/Bathroom_02.webp"
             ],
             amenities: ["Full Kitchen", "Living Room", "Multiple Bathrooms", "Wi-Fi"],
             available: true
