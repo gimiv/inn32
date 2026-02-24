@@ -367,6 +367,46 @@ export const websiteData: GuestWebsiteProps = {
             image: "/gallery/hubbard brooke.webp",
             link: "https://hubbardbrook.org/"
         },
+        {
+            id: "clarks-bears",
+            name: "Clark's Bears",
+            category: "Attractions",
+            description: "A nostalgic, family-friendly summer attraction featuring famous bear shows and an antique steam train ride.",
+            image: "/gallery/clarks_bears.webp",
+            link: "https://clarksbears.com/"
+        },
+        {
+            id: "pemi-moose-tours",
+            name: "Pemi Valley Moose Tours",
+            category: "Attractions",
+            description: "Guided evening tours departing from Lincoln to safely spot majestic New Hampshire moose in their natural habitat.",
+            image: "/gallery/pemi_moose_tour.webp",
+            link: "https://pemivalleymoosetours.com/"
+        },
+        {
+            id: "loon-gondola",
+            name: "Loon Mountain Gondola Summit",
+            category: "Attractions",
+            description: "Take a scenic gondola ride to the summit of Loon Mountain for expansive views, glacial caves, and mountaintop dining.",
+            image: "/gallery/loon_gondola.webp",
+            link: "https://www.loonmtn.com/summer-activities/gondola-skyride"
+        },
+        {
+            id: "alpine-adventures",
+            name: "Alpine Adventures",
+            category: "Attractions",
+            description: "Thrilling outdoor adventure park offering year-round ziplining, off-road tours, and an aerial obstacle course.",
+            image: "/gallery/alpine_adventures.webp",
+            link: "https://alpinezipline.com/"
+        },
+        {
+            id: "cannon-tramway",
+            name: "Cannon Mountain Aerial Tramway",
+            category: "Attractions",
+            description: "Ride to the summit of Cannon Mountain on this iconic cable car for striking views across multiple states and into Canada.",
+            image: "/gallery/cannon_tramway.webp",
+            link: "https://www.cannonmt.com/things-to-do/attractions/tram"
+        },
         // Shopping
         {
             id: "kancamagus-collectibles",
@@ -389,7 +429,7 @@ export const websiteData: GuestWebsiteProps = {
             name: "Local Village Shops",
             category: "Shopping",
             description: "Explore dozens of charming small specialty and gift shops lining the streets of Woodstock and Lincoln.",
-            image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/village_shops.webp"
         },
         // Seasonal Activities
         {
@@ -397,7 +437,7 @@ export const websiteData: GuestWebsiteProps = {
             name: "Winter Sports & Festivals",
             category: "Seasonal Activities",
             description: "Explore the Ice Castles, hit the slopes at nearby ski areas, and enjoy regional winter festivals.",
-            image: "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/winter_festival.webp"
         },
         {
             id: "spring-activities",
@@ -414,7 +454,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "Woodstock Inn Brewery Live Music Nights",
             date: "Ongoing",
             location: "North Woodstock, NH",
-            image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=1200",
+            image: "/gallery/live_music_pub.webp",
             description: "Regular live bands and solo acts in the pub a short walk from Inn 32; check their calendar for multiple March 2026 shows such as Mitch Alden, Dan Parkhurst, and Blue Matter.",
             isFeatured: true,
             customLabel: "Staff Pick"
@@ -424,8 +464,17 @@ export const websiteData: GuestWebsiteProps = {
             title: "Lincoln / Franconia Notch Event Series",
             date: "Winter - Spring 2026",
             location: "Lincoln, NH",
-            image: "/gallery/alton weagle day.webp",
+            image: "/gallery/pub_band.webp",
             description: "Regional calendar lists \"Live Music – Woodstock Inn Brewery\" Saturdays through March 28, plus other Franconia Notch-area happenings like guided outings and community events typically within a 15–25 minute drive.",
+            isFeatured: false
+        },
+        {
+            id: "alton-weagle-day",
+            title: "Alton Weagle Day",
+            date: "Summer 2026",
+            location: "Mount Washington, NH",
+            image: "/gallery/alton weagle day.webp",
+            description: "A beloved local tradition celebrating the eccentric mountaineer who summited Mount Washington in unconventional ways.",
             isFeatured: false
         },
         {
@@ -452,7 +501,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "Spring Skiing & Family Fun Week",
             date: "Mid-March 2026",
             location: "Bretton Woods, NH",
-            image: "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&q=80&w=1200",
+            image: "/gallery/spring_skiing_stock.webp",
             description: "Multi-day spring event at a White Mountains ski area with kids’ races, costume days, and family activities.",
             isFeatured: false
         },
@@ -488,7 +537,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "Alton Weagle Day",
             date: "May 23, 2026",
             location: "Mt. Washington Auto Road",
-            image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200",
+            image: "/gallery/alton weagle day.webp",
             description: "Quirky Mt. Washington Auto Road event celebrating \"first ascents\" in unusual ways; about 1–1.5 hours from Inn 32.",
             isFeatured: false
         }
@@ -499,7 +548,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "Top 5 Hiking Trails Near North Woodstock",
             excerpt: "Discover the breathtaking beauty of the White Mountains with our guide to the best local hiking trails for all skill levels.",
             date: "Oct 15, 2025",
-            image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1200",
+            image: "/gallery/blog_hiking.webp",
             author: "Sarah Jenkins",
             slug: "top-5-hiking-trails"
         },
@@ -508,7 +557,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "A Season for Every Traveler: When to Visit",
             excerpt: "From vibrant fall foliage to snowy winter wonderlands, find out which season suits your travel style best.",
             date: "Sep 22, 2025",
-            image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1200",
+            image: "/gallery/blog_seasons.webp",
             author: "Inn 32 Team",
             slug: "best-time-to-visit"
         },
@@ -517,7 +566,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "The Story Behind Our Renovation",
             excerpt: "Take a look inside the complete transformation of Inn 32, harmonizing modern comfort with our historic roots.",
             date: "Aug 10, 2025",
-            image: "https://images.unsplash.com/photo-1556912172-45b7abe8d7e1?auto=format&fit=crop&q=80&w=1200",
+            image: "/gallery/blog_renovation.webp",
             author: "Michael Ross",
             slug: "renovation-story"
         },
@@ -526,7 +575,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "Local Eats: A Foodie's Guide to Lincoln & Woodstock",
             excerpt: "Explore the culinary delights of our town, from cozy cafes to gourmet dining experiences just steps from your room.",
             date: "Jul 05, 2025",
-            image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80&w=1200",
+            image: "/gallery/blog_food.webp",
             author: "Sarah Jenkins",
             slug: "local-food-guide"
         }
