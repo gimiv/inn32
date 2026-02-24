@@ -85,29 +85,31 @@ export default function Blog({ limit }: BlogProps) {
 
 function BlogCard({ post }: { post: typeof websiteData.blogPosts[0] }) {
     return (
-        <StandardCard
-            image={post.image}
-            title={post.title}
-            description={post.excerpt}
-            metadata={
-                <div className="flex items-center gap-4 text-xs font-medium text-charcoal dark:text-slate-400">
-                    <div className="flex items-center">
-                        <Calendar className="w-3 h-3 mr-1 text-mountain-blue" />
-                        {post.date}
-                    </div>
-                    {post.author && (
+        <Link href={`/blog/${post.slug}`} className="block h-full">
+            <StandardCard
+                image={post.image}
+                title={post.title}
+                description={post.excerpt}
+                metadata={
+                    <div className="flex items-center gap-4 text-xs font-medium text-charcoal dark:text-slate-400">
                         <div className="flex items-center">
-                            <User className="w-3 h-3 mr-1 text-gray-brand dark:text-slate-400" />
-                            {post.author}
+                            <Calendar className="w-3 h-3 mr-1 text-mountain-blue" />
+                            {post.date}
                         </div>
-                    )}
-                </div>
-            }
-            actions={
-                <span className="inline-flex items-center text-mountain-blue font-semibold text-sm group-hover:underline">
-                    Read Story <ArrowRight className="w-4 h-4 ml-1" />
-                </span>
-            }
-        />
+                        {post.author && (
+                            <div className="flex items-center">
+                                <User className="w-3 h-3 mr-1 text-gray-brand dark:text-slate-400" />
+                                {post.author}
+                            </div>
+                        )}
+                    </div>
+                }
+                actions={
+                    <span className="inline-flex items-center text-mountain-blue font-semibold text-sm group-hover:underline">
+                        Read Story <ArrowRight className="w-4 h-4 ml-1" />
+                    </span>
+                }
+            />
+        </Link>
     )
 }
