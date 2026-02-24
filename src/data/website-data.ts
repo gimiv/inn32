@@ -132,8 +132,8 @@ export const websiteData: GuestWebsiteProps = {
             maxOccupancy: 2,
             bedType: "1 Full Bed",
             images: [
-                "/gallery/bedroom.webp",
-                "/gallery/bathroom.webp"
+                "/gallery/Room9_Bed.jpg",
+                "/gallery/Room9_Bath.jpg"
             ],
             amenities: ["Wi-Fi", "A/C", "Smart TV", "Mini Fridge"],
             available: true
