@@ -468,15 +468,7 @@ export const websiteData: GuestWebsiteProps = {
             description: "Regional calendar lists \"Live Music – Woodstock Inn Brewery\" Saturdays through March 28, plus other Franconia Notch-area happenings like guided outings and community events typically within a 15–25 minute drive.",
             isFeatured: false
         },
-        {
-            id: "alton-weagle-day",
-            title: "Alton Weagle Day",
-            date: "Summer 2026",
-            location: "Mount Washington, NH",
-            image: "/gallery/alton_weagle_day.webp",
-            description: "A beloved local tradition celebrating the eccentric mountaineer who summited Mount Washington in unconventional ways.",
-            isFeatured: false
-        },
+
         {
             id: "maple-month",
             title: "Maple Month in the White Mountains",
