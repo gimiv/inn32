@@ -73,9 +73,21 @@ export default function Offers({ limit }: OffersProps) {
                                                             Special Package
                                                         </span>
                                                     )}
-                                                    <Link href={`/offers#${offer.id}`} className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center">
-                                                        View Details <span className="ml-1">→</span>
-                                                    </Link>
+                                                    {offer.promoCode ? (
+                                                        <button
+                                                            onClick={(e) => {
+                                                                e.preventDefault();
+                                                                window.dispatchEvent(new CustomEvent('open-booking-widget', { detail: { promoCode: offer.promoCode } }));
+                                                            }}
+                                                            className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center"
+                                                        >
+                                                            Book Offer <span className="ml-1">→</span>
+                                                        </button>
+                                                    ) : (
+                                                        <Link href={`/offers#${offer.id}`} className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center">
+                                                            View Details <span className="ml-1">→</span>
+                                                        </Link>
+                                                    )}
                                                 </div>
                                             }
                                         />
@@ -104,9 +116,21 @@ export default function Offers({ limit }: OffersProps) {
                                                     Special Package
                                                 </span>
                                             )}
-                                            <Link href={`/offers#${offer.id}`} className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center">
-                                                View Details <span className="ml-1">→</span>
-                                            </Link>
+                                            {offer.promoCode ? (
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        window.dispatchEvent(new CustomEvent('open-booking-widget', { detail: { promoCode: offer.promoCode } }));
+                                                    }}
+                                                    className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center"
+                                                >
+                                                    Book Offer <span className="ml-1">→</span>
+                                                </button>
+                                            ) : (
+                                                <Link href={`/offers#${offer.id}`} className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center">
+                                                    View Details <span className="ml-1">→</span>
+                                                </Link>
+                                            )}
                                         </div>
                                     }
                                 />

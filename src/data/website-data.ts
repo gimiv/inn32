@@ -785,27 +785,29 @@ export const websiteData: GuestWebsiteProps = {
     promotions: [],
     offers: [
         {
-            id: "winter-escape",
-            title: "Winter Wonderland Escape",
-            description: "Save 20% on mid-week stays this winter. Includes complimentary hot cocoa and snowshoe rentals.",
-            image: "https://images.unsplash.com/photo-1551524164-687a55dd1126?auto=format&fit=crop&q=80&w=800",
-            validUntil: "Mar 31, 2026",
-            promoCode: "WINTER20"
+            id: "winter-weekdays",
+            title: "Winter Weekdays",
+            description: "Get 10% off Monday - Thursday until April 1st.",
+            image: "/gallery/winter_festival.webp",
+            validUntil: "Apr 01, 2026",
+            promoCode: "WINTER10"
         },
         {
-            id: "stay-longer",
-            title: "Stay Longer, Save More",
-            description: "Book 3 nights or more and receive 15% off your entire stay. Perfect for a long weekend getaway.",
-            image: "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/1eba0066-9216-4b5b-8eb1-ee81cee8f5a4/Sunroom.jpg",
-            minStay: 3,
-            promoCode: "LONGSTAY15"
+            id: "spring-7",
+            title: "Spring 7",
+            description: "Stay for seven nights and pay for 5, April 1st - June 15th.",
+            image: "/gallery/spring maple.webp",
+            minStay: 7,
+            validUntil: "Jun 15, 2026",
+            promoCode: "STAY7PAY5"
         },
         {
-            id: "romantic-getaway",
-            title: "Romantic Retreat Package",
-            description: "Includes a bottle of wine, local chocolates, and late checkout at 1:00 PM.",
-            image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&q=80&w=800",
-            promoCode: "ROMANCE"
+            id: "early-summer-20",
+            title: "Early Summer 20",
+            description: "Get 20% off any summer stays of 4+ nights (holidays excluded).",
+            image: "/gallery/group_kayaking.webp",
+            minStay: 4,
+            promoCode: "SUMMER20"
         }
     ],
     gallery: [
