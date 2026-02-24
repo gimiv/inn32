@@ -112,7 +112,7 @@ export default function ThingsToDo({ limit, showFilters = true }: ThingsToDoProp
                             {filteredItems.map((item) => (
                                 <div key={item.id} className="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_28%] min-w-0">
                                     <ImageCard
-                                        href="/things-to-do"
+                                        href={item.link || "/things-to-do"}
                                         image={item.image}
                                         title={item.name}
                                         subtitle={item.category}
@@ -139,7 +139,7 @@ export default function ThingsToDo({ limit, showFilters = true }: ThingsToDoProp
                                     transition={{ duration: 0.3 }}
                                 >
                                     <ImageCard
-                                        href="/things-to-do"
+                                        href={item.link || "/things-to-do"}
                                         image={item.image}
                                         title={item.name}
                                         subtitle={item.category}

@@ -9,8 +9,14 @@ interface ImageCardProps {
 }
 
 export default function ImageCard({ href, image, title, subtitle, description }: ImageCardProps) {
+    const isExternal = href.startsWith('http')
+
     return (
-        <Link href={href} className="group block h-full">
+        <Link
+            href={href}
+            className="group block h-full"
+            {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        >
             <div className="bg-white dark:bg-slate-800 rounded-brand-lg overflow-hidden shadow-sm border border-gray-100 dark:border-slate-700 h-full flex flex-col hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
                 <div className="aspect-[4/3] relative overflow-hidden">
                     <img

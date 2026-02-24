@@ -95,6 +95,7 @@ export interface ThingToDo {
     distance?: string
     image: string
     description: string
+    link?: string
 }
 
 export interface Event {
