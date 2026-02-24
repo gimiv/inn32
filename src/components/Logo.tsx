@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 import { useTheme } from '../context/ThemeContext'
 
 interface LogoProps {
@@ -18,10 +20,12 @@ export default function Logo({ className = "", isScrolled = false, variant }: Lo
     let logoSrc = '/inn32-logo-transparent-800w.png';
 
     return (
-        <img
+        <Image
             src={logoSrc}
             alt="Inn 32"
-            className={`transition-all duration-300 ${className || 'h-12 w-auto'}`}
+            width={800}
+            height={400} // Approximate aspect ratio from a typical logo
+            className={`transition-all duration-300 ${className || 'h-12 w-auto'} object-contain`}
         />
     )
 };

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { DM_Serif_Display, Outfit, Lora } from 'next/font/google'
 import '../index.css'
 import { ThemeProvider } from '../context/ThemeContext'
 import Navigation from '../components/Navigation'
@@ -7,8 +7,9 @@ import Footer from '../components/Footer'
 import { websiteData } from '../data/website-data'
 import Script from 'next/script'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
-const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-serif' })
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-sans' })
+const dmSerif = DM_Serif_Display({ weight: '400', subsets: ['latin'], variable: '--font-display' })
+const lora = Lora({ subsets: ['latin'], variable: '--font-serif' })
 
 export const metadata: Metadata = {
     title: {
@@ -60,6 +61,25 @@ export default function RootLayout({
         }
     `
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "LodgingBusiness",
+        "name": websiteData.property.name,
+        "image": websiteData.websiteConfig.socialImage,
+        "description": websiteData.property.description,
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": websiteData.property.address.street,
+            "addressLocality": websiteData.property.address.city,
+            "addressRegion": websiteData.property.address.state,
+            "postalCode": websiteData.property.address.zip,
+            "addressCountry": "US"
+        },
+        "telephone": websiteData.property.contact.phone,
+        "url": "https://inn32.com",
+        "priceRange": "$$"
+    }
+
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
@@ -67,10 +87,13 @@ export default function RootLayout({
                 <link rel="icon" href="/inn32-favicon-32.png" type="image/png" sizes="32x32" />
                 <link rel="icon" href="/inn32-favicon-16.png" type="image/png" sizes="16x16" />
                 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-                <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
                 <style dangerouslySetInnerHTML={{ __html: inlineStyles }} />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
             </head>
-            <body className={`${inter.variable} ${playfair.variable} font-sans antialiased text-gray-900 bg-white dark:bg-slate-900 dark:text-gray-100 transition-colors duration-300`}>
+            <body className={`${outfit.variable} ${dmSerif.variable} ${lora.variable} font-sans antialiased text-gray-900 bg-white dark:bg-slate-900 dark:text-gray-100 transition-colors duration-300`}>
                 {/* Mews Booking Engine */}
                 <Script
                     src="https://app.mews.com/distributor/distributor.min.js"

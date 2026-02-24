@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import { SectionConfig } from '../types/website'
 import { useState, useEffect, useRef } from 'react'
@@ -54,10 +55,16 @@ export default function Hero({ hero }: HeroProps) {
     return (
         <section id="hero" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
             {/* Background Image (Fallback) */}
-            <div
-                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: `url(${backgroundImage})` }}
-            />
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src={backgroundImage || ""}
+                    alt={heading || "Hero Background"}
+                    fill
+                    priority
+                    className="object-cover object-center"
+                    sizes="100vw"
+                />
+            </div>
 
             {/* Video Background with Transition */}
             {videos.length > 0 && (

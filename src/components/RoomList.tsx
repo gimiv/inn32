@@ -2,8 +2,8 @@
 
 import { useCallback, useState } from 'react'
 import Link from 'next/link'
-import useEmblaCarousel from 'embla-carousel-react'
-import { ChevronLeft, ChevronRight, Users, Bed, ArrowRight, Expand } from 'lucide-react'
+import { useCarousel } from '../hooks/useCarousel'
+import { Users, Bed, ArrowRight, Expand } from 'lucide-react'
 import { websiteData } from '../data/website-data'
 import StandardCard from './ui/StandardCard'
 import CarouselNavigation from './ui/CarouselNavigation'
@@ -16,7 +16,7 @@ interface RoomListProps {
 
 export default function RoomList({ limit }: RoomListProps) {
     const { roomTypes } = websiteData
-    const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: false, containScroll: 'trimSnaps' })
+    const { emblaRef, scrollPrev, scrollNext } = useCarousel()
     const [selectedRoomImages, setSelectedRoomImages] = useState<string[]>([])
     const [isGalleryOpen, setIsGalleryOpen] = useState(false)
 
@@ -24,14 +24,6 @@ export default function RoomList({ limit }: RoomListProps) {
         setSelectedRoomImages(images)
         setIsGalleryOpen(true)
     }
-
-    const scrollPrev = useCallback(() => {
-        if (emblaApi) emblaApi.scrollPrev()
-    }, [emblaApi])
-
-    const scrollNext = useCallback(() => {
-        if (emblaApi) emblaApi.scrollNext()
-    }, [emblaApi])
 
     // Render individual room card content to reuse in both views
     const renderRoomCard = (room: typeof roomTypes[0]) => (

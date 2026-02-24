@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
+import { useCarousel } from '../hooks/useCarousel'
 import { Star } from 'lucide-react'
 import { websiteData } from '../data/website-data'
 import { cn } from '../utils/cn'
@@ -13,15 +13,7 @@ interface ReviewsProps {
 
 export default function Reviews({ limit }: ReviewsProps) {
     const { reviews } = websiteData
-    const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: false, containScroll: 'trimSnaps' })
-
-    const scrollPrev = useCallback(() => {
-        if (emblaApi) emblaApi.scrollPrev()
-    }, [emblaApi])
-
-    const scrollNext = useCallback(() => {
-        if (emblaApi) emblaApi.scrollNext()
-    }, [emblaApi])
+    const { emblaRef, scrollPrev, scrollNext } = useCarousel()
 
     const isSlider = !!limit
     const displayReviews = limit ? reviews.slice(0, limit) : reviews

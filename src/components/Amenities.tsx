@@ -2,7 +2,7 @@
 
 import { useCallback } from 'react'
 import Link from 'next/link'
-import useEmblaCarousel from 'embla-carousel-react'
+import { useCarousel } from '../hooks/useCarousel'
 import { Wifi, Wind, Coffee, Car, Tv, Snowflake } from 'lucide-react'
 import { websiteData } from '../data/website-data'
 import CarouselNavigation from './ui/CarouselNavigation'
@@ -23,15 +23,7 @@ interface AmenitiesProps {
 
 export default function Amenities({ limit }: AmenitiesProps) {
     const { amenities } = websiteData
-    const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: false, containScroll: 'trimSnaps' })
-
-    const scrollPrev = useCallback(() => {
-        if (emblaApi) emblaApi.scrollPrev()
-    }, [emblaApi])
-
-    const scrollNext = useCallback(() => {
-        if (emblaApi) emblaApi.scrollNext()
-    }, [emblaApi])
+    const { emblaRef, scrollPrev, scrollNext } = useCarousel()
 
     return (
         <section id="amenities" className={cn("transition-colors duration-300", limit ? "py-20 bg-slate-50 dark:bg-slate-900" : "pb-20 pt-4 md:pt-8 bg-transparent")}>

@@ -3,7 +3,7 @@
 import { useCallback, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import useEmblaCarousel from 'embla-carousel-react'
+import { useCarousel } from '../hooks/useCarousel'
 import { websiteData } from '../data/website-data'
 import { cn } from '../utils/cn'
 import StandardCard from './ui/StandardCard'
@@ -16,15 +16,7 @@ interface OffersProps {
 export default function Offers({ limit }: OffersProps) {
     const { offers } = websiteData
 
-    const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: false, containScroll: 'trimSnaps' })
-
-    const scrollPrev = useCallback(() => {
-        if (emblaApi) emblaApi.scrollPrev()
-    }, [emblaApi])
-
-    const scrollNext = useCallback(() => {
-        if (emblaApi) emblaApi.scrollNext()
-    }, [emblaApi])
+    const { emblaRef, scrollPrev, scrollNext } = useCarousel()
 
     const isSlider = limit !== undefined;
     const displayOffers = limit ? offers.slice(0, limit) : offers;

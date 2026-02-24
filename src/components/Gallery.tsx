@@ -1,7 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { GalleryImage } from '../types/website'
+import LightboxGallery from './LightboxGallery'
 
 interface GalleryProps {
     gallery: GalleryImage[]
@@ -46,11 +48,12 @@ export default function Gallery({ gallery }: GalleryProps) {
                             className={`relative overflow-hidden rounded-xl group ${layoutPatterns[index % layoutPatterns.length]
                                 }`}
                         >
-                            <img
+                            <Image
                                 src={image.url}
                                 alt={image.alt}
-                                loading="lazy"
-                                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                fill
+                                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                sizes="(max-width: 768px) 50vw, 25vw"
                             />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors" />
 
@@ -71,64 +74,12 @@ export default function Gallery({ gallery }: GalleryProps) {
             </div>
 
             {/* Lightbox */}
-            {selectedImage && (
-                <div
-                    className="fixed inset-0 z-[70] bg-black/95 flex items-center justify-center p-4"
-                    onClick={() => setSelectedImage(null)}
-                >
-                    {/* Close Button */}
-                    <button
-                        onClick={() => setSelectedImage(null)}
-                        className="absolute top-4 right-4 p-2 text-white/70 hover:text-white transition-colors"
-                    >
-                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-
-                    {/* Image */}
-                    <img
-                        src={selectedImage.url}
-                        alt={selectedImage.alt}
-                        className="max-w-full max-h-[85vh] object-contain rounded-lg"
-                        onClick={(e) => e.stopPropagation()}
-                    />
-
-                    {/* Caption */}
-                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center">
-                        <p className="text-white/90 text-lg mb-1">{selectedImage.alt}</p>
-                        <span className="text-white/50 text-sm capitalize">{selectedImage.category}</span>
-                    </div>
-
-                    {/* Navigation */}
-                    <button
-                        onClick={(e) => {
-                            e.stopPropagation()
-                            const currentIndex = gallery.findIndex(img => img.id === selectedImage.id)
-                            const prevIndex = currentIndex === 0 ? gallery.length - 1 : currentIndex - 1
-                            setSelectedImage(gallery[prevIndex])
-                        }}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
-                    <button
-                        onClick={(e) => {
-                            e.stopPropagation()
-                            const currentIndex = gallery.findIndex(img => img.id === selectedImage.id)
-                            const nextIndex = currentIndex === gallery.length - 1 ? 0 : currentIndex + 1
-                            setSelectedImage(gallery[nextIndex])
-                        }}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
-                </div>
-            )}
+            <LightboxGallery
+                isOpen={!!selectedImage}
+                onClose={() => setSelectedImage(null)}
+                images={gallery.map(img => img.url)}
+                initialIndex={selectedImage ? gallery.findIndex(img => img.id === selectedImage.id) : 0}
+            />
         </section>
     )
 }

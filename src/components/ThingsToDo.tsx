@@ -4,8 +4,7 @@ import { useMemo, useCallback, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
-import useEmblaCarousel from 'embla-carousel-react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { useCarousel } from '../hooks/useCarousel'
 import { websiteData } from '../data/website-data'
 import { cn } from '../utils/cn'
 import ImageCard from './ui/ImageCard'
@@ -35,15 +34,7 @@ export default function ThingsToDo({ limit, showFilters = true }: ThingsToDoProp
         router.push(pathname + '?' + params.toString(), { scroll: false })
     }
 
-    const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: false, containScroll: 'trimSnaps' })
-
-    const scrollPrev = useCallback(() => {
-        if (emblaApi) emblaApi.scrollPrev()
-    }, [emblaApi])
-
-    const scrollNext = useCallback(() => {
-        if (emblaApi) emblaApi.scrollNext()
-    }, [emblaApi])
+    const { emblaRef, emblaApi, scrollPrev, scrollNext } = useCarousel()
 
     const categories = useMemo(() => {
         const uniqueCategories = new Set(thingsToDo.map(item => item.category))

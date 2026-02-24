@@ -2,8 +2,8 @@
 
 import { useCallback } from 'react'
 import Link from 'next/link'
-import useEmblaCarousel from 'embla-carousel-react'
-import { ChevronLeft, ChevronRight, Calendar, MapPin, Star } from 'lucide-react'
+import { useCarousel } from '../hooks/useCarousel'
+import { Calendar, MapPin, Star } from 'lucide-react'
 import { websiteData } from '../data/website-data'
 import { cn } from '../utils/cn'
 import StandardCard from './ui/StandardCard'
@@ -15,15 +15,7 @@ interface EventsProps {
 
 export default function Events({ limit }: EventsProps) {
     const { events } = websiteData
-    const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: false, containScroll: 'trimSnaps' })
-
-    const scrollPrev = useCallback(() => {
-        if (emblaApi) emblaApi.scrollPrev()
-    }, [emblaApi])
-
-    const scrollNext = useCallback(() => {
-        if (emblaApi) emblaApi.scrollNext()
-    }, [emblaApi])
+    const { emblaRef, scrollPrev, scrollNext } = useCarousel()
 
     // If limit is provided, we use the carousel view
     // If no limit (full page), we use a grid view

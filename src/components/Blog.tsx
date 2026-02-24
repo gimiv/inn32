@@ -2,8 +2,8 @@
 
 import { useCallback } from 'react'
 import Link from 'next/link'
-import useEmblaCarousel from 'embla-carousel-react'
-import { ChevronLeft, ChevronRight, Calendar, User, ArrowRight } from 'lucide-react'
+import { useCarousel } from '../hooks/useCarousel'
+import { Calendar, User, ArrowRight } from 'lucide-react'
 import { websiteData } from '../data/website-data'
 import { cn } from '../utils/cn'
 import CarouselNavigation from './ui/CarouselNavigation'
@@ -15,15 +15,7 @@ interface BlogProps {
 
 export default function Blog({ limit }: BlogProps) {
     const { blogPosts } = websiteData
-    const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: false, containScroll: 'trimSnaps' })
-
-    const scrollPrev = useCallback(() => {
-        if (emblaApi) emblaApi.scrollPrev()
-    }, [emblaApi])
-
-    const scrollNext = useCallback(() => {
-        if (emblaApi) emblaApi.scrollNext()
-    }, [emblaApi])
+    const { emblaRef, scrollPrev, scrollNext } = useCarousel()
 
     const isSlider = !!limit
     const displayPosts = limit ? blogPosts.slice(0, limit) : blogPosts

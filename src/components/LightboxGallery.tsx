@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { createPortal } from 'react-dom'
+import Image from 'next/image'
 
 interface LightboxGalleryProps {
     isOpen: boolean
@@ -97,11 +98,15 @@ export default function LightboxGallery({ isOpen, onClose, images, initialIndex 
                 <div className="flex w-full h-full touch-pan-y">
                     {images.map((src, index) => (
                         <div key={index} className="flex-[0_0_100%] min-w-0 relative flex items-center justify-center p-4">
-                            <img
-                                src={src}
-                                alt={`Gallery image ${index + 1}`}
-                                className="max-w-full max-h-[85vh] object-contain rounded-sm shadow-2xl"
-                            />
+                            <div className="relative w-full h-[85vh]">
+                                <Image
+                                    src={src}
+                                    alt={`Gallery image ${index + 1}`}
+                                    fill
+                                    className="object-contain rounded-sm shadow-2xl"
+                                    sizes="100vw"
+                                />
+                            </div>
                         </div>
                     ))}
                 </div>

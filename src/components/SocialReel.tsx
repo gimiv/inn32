@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 import useEmblaCarousel from 'embla-carousel-react'
 import { Instagram } from 'lucide-react'
 import { websiteData } from '../data/website-data'
@@ -47,10 +49,12 @@ export default function SocialReel() {
                             className="flex-[0_0_70%] sm:flex-[0_0_40%] md:flex-[0_0_25%] lg:flex-[0_0_20%] min-w-0 pl-4 relative group cursor-pointer block"
                         >
                             <div className="aspect-square relative overflow-hidden rounded-xl bg-slate-800">
-                                <img
+                                <Image
                                     src={post.image}
                                     alt={post.caption}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                                    sizes="(max-width: 640px) 70vw, (max-width: 768px) 40vw, 25vw"
                                 />
 
                                 {/* Overlay */}
