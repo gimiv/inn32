@@ -148,7 +148,7 @@ export const websiteData: GuestWebsiteProps = {
             bedType: "1 Queen Bed",
             images: [
                 "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/df0d9ff8-9d6f-44c6-b2f3-7d82d2909bbd/Room10_Bed.jpg",
-                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/083f9408-db62-4ef7-b355-1579ef649479/Room01.jpg"
+                "/gallery/bedroom-02.webp"
             ],
             amenities: ["Wi-Fi", "A/C", "Coffee Maker", "Smart TV"],
             available: true
@@ -163,7 +163,7 @@ export const websiteData: GuestWebsiteProps = {
             bedType: "1 Queen Bed",
             images: [
                 "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/07ddf86d-1f17-482b-bb5d-2f65c7039955/Room14_Bed.jpg",
-                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/44a65b52-52ae-42ec-8b48-f8ec73d6a960/Room04_02.jpg"
+                "/gallery/Room04_Bath.webp"
             ],
             amenities: ["River View", "Wi-Fi", "A/C", "Coffee Maker"],
             available: true
@@ -178,8 +178,8 @@ export const websiteData: GuestWebsiteProps = {
             maxOccupancy: 3,
             bedType: "1 Queen + 1 Full",
             images: [
-                "/gallery/Room03_Bath.webp",
-                "/gallery/room03.webp"
+                "/gallery/room03.webp",
+                "/gallery/Room03_Bath.webp"
             ],
             amenities: ["Wi-Fi", "A/C", "Microwave", "Mini Fridge"],
             available: true
@@ -193,8 +193,9 @@ export const websiteData: GuestWebsiteProps = {
             maxOccupancy: 4,
             bedType: "2 Queen Beds",
             images: [
-                "/gallery/Room04_Bath.webp",
-                "/gallery/room04-1.webp"
+                "/gallery/room04-1.webp",
+                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/44a65b52-52ae-42ec-8b48-f8ec73d6a960/Room04_02.jpg",
+                "/gallery/Room04_Bath.webp"
             ],
             amenities: ["Wi-Fi", "A/C", "Microwave", "Mini Fridge"],
             available: true
@@ -208,14 +209,17 @@ export const websiteData: GuestWebsiteProps = {
             maxOccupancy: 6,
             bedType: "2 Queen + 2 Twin",
             images: [
+                "/gallery/living-room-01--1-.webp",
+                "/gallery/living-room-02.webp",
+                "/gallery/sunroom.webp",
+                "/gallery/Kitchen_01.webp",
+                "/gallery/Dining_Room.webp",
+                "/gallery/Detail_Couch.webp",
                 "/gallery/Bedroom1.webp",
                 "/gallery/Bedroom2.webp",
                 "/gallery/Bathroom.webp",
-                "/gallery/Dining_Room.webp",
-                "/gallery/Kitchen_01.webp",
-                "/gallery/Detail_Couch.webp",
-                "/gallery/Detail_Faucet.webp",
                 "/gallery/Detail_Master.webp",
+                "/gallery/Detail_Faucet.webp",
                 "/gallery/Detail_Vanity.webp"
             ],
             amenities: ["Kitchenette", "Private Patio", "Living Area", "Wi-Fi"],
@@ -230,8 +234,7 @@ export const websiteData: GuestWebsiteProps = {
             maxOccupancy: 8,
             bedType: "1 King, 1 Queen, 1 Full, 1 Bunk",
             images: [
-                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/1eba0066-9216-4b5b-8eb1-ee81cee8f5a4/Sunroom.jpg",
-                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/0f3063bf-5bb4-44e5-97eb-16a8cbad558e/Living_Room_02.jpg"
+                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/1eba0066-9216-4b5b-8eb1-ee81cee8f5a4/Sunroom.jpg"
             ],
             amenities: ["Full Kitchen", "Living Room", "Multiple Bathrooms", "Wi-Fi"],
             available: true
