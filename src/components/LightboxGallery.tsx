@@ -9,11 +9,12 @@ import Image from 'next/image'
 interface LightboxGalleryProps {
     isOpen: boolean
     onClose: () => void
-    images: string[]
+    images: string[] | { url: string; alt: string }[]
+    altTexts?: string[]
     initialIndex?: number
 }
 
-export default function LightboxGallery({ isOpen, onClose, images, initialIndex = 0 }: LightboxGalleryProps) {
+export default function LightboxGallery({ isOpen, onClose, images, altTexts, initialIndex = 0 }: LightboxGalleryProps) {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' })
     const [selectedIndex, setSelectedIndex] = useState(initialIndex)
 
@@ -74,7 +75,7 @@ export default function LightboxGallery({ isOpen, onClose, images, initialIndex 
             </button>
 
             {/* Navigation Buttons */}
-            {images.length > 1 && (
+            {(Array.isArray(images) && images.length > 1) && (
                 <>
                     <button
                         onClick={scrollPrev}
@@ -96,25 +97,31 @@ export default function LightboxGallery({ isOpen, onClose, images, initialIndex 
             {/* Carousel */}
             <div className="w-full h-full flex items-center justify-center overflow-hidden" ref={emblaRef}>
                 <div className="flex w-full h-full touch-pan-y">
-                    {images.map((src, index) => (
-                        <div key={index} className="flex-[0_0_100%] min-w-0 relative flex items-center justify-center p-4">
-                            <div className="relative w-full h-[85vh]">
-                                <Image
-                                    src={src}
-                                    alt={`Gallery image ${index + 1}`}
-                                    fill
-                                    className="object-contain rounded-sm shadow-2xl"
-                                    sizes="100vw"
-                                />
+                    {images.map((imageData, index) => {
+                        const isObject = typeof imageData === 'object' && 'url' in imageData
+                        const src = isObject ? imageData.url : imageData
+                        const alt = isObject ? imageData.alt : (altTexts?.[index] ?? `Gallery image ${index + 1}`)
+
+                        return (
+                            <div key={index} className="flex-[0_0_100%] min-w-0 relative flex items-center justify-center p-4">
+                                <div className="relative w-full h-[85vh]">
+                                    <Image
+                                        src={src}
+                                        alt={alt}
+                                        fill
+                                        className="object-contain rounded-sm shadow-2xl"
+                                        sizes="100vw"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        )
+                    })}
                 </div>
             </div>
 
             {/* Counter */}
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-black/50 text-white text-sm font-medium rounded-full backdrop-blur-md border border-white/10">
-                {selectedIndex + 1} / {images.length}
+                {selectedIndex + 1} / {(Array.isArray(images) ? images.length : 0)}
             </div>
         </div>,
         document.body

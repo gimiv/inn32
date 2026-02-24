@@ -54,7 +54,7 @@ export default function Gallery({ gallery }: GalleryProps) {
             <LightboxGallery
                 isOpen={!!selectedImage}
                 onClose={() => setSelectedImage(null)}
-                images={gallery.map(img => img.url)}
+                images={gallery.map(img => ({ url: img.url, alt: img.alt }))}
                 initialIndex={selectedImage ? gallery.findIndex(img => img.id === selectedImage.id) : 0}
             />
         </section>

@@ -267,7 +267,7 @@ export default function Navigation({ property }: NavigationProps) {
                 </div>
                 <button
                     onClick={() => setIsBookingOpen(true)}
-                    className="flex-shrink-0 bg-primary text-white px-5 sm:px-6 py-2.5 rounded-full font-medium shadow-md active:scale-95 transition-transform text-sm sm:text-base"
+                    className="flex-shrink-0 bg-primary dark:bg-white text-white dark:text-navy px-5 sm:px-6 py-2.5 rounded-full font-bold shadow-md active:scale-95 transition-transform text-sm sm:text-base hover:bg-primary/90 dark:hover:bg-cream"
                 >
                     Book Now
                 </button>

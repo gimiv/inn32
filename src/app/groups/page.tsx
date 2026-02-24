@@ -3,8 +3,8 @@ import GroupReservations from '../../components/GroupReservations'
 import { websiteData } from '../../data/website-data'
 
 export const metadata: Metadata = {
-    title: `Group Events & Buyouts`,
-    description: `Host your wedding, retreat, or reunion at ${websiteData.property.name}.`,
+    title: 'Group Events & Buyouts',
+    description: 'Host your wedding, corporate retreat, or family reunion at Inn 32 in North Woodstock, NH. Full 24-room property buyout available in the heart of the White Mountains.',
 }
 
 import Image from 'next/image'
@@ -23,6 +23,7 @@ export default function GroupsPage() {
                             src="/group_hiking.webp"
                             alt="Group hiking in the White Mountains"
                             fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
                             className="object-cover hover:scale-105 transition-transform duration-700"
                         />
                     </div>
@@ -31,6 +32,7 @@ export default function GroupsPage() {
                             src="/gallery/group_skiing.webp"
                             alt="Friends skiing down a mountain slope"
                             fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
                             className="object-cover hover:scale-105 transition-transform duration-700"
                         />
                     </div>
@@ -39,6 +41,7 @@ export default function GroupsPage() {
                             src="/gallery/group_kayaking.webp"
                             alt="Friends kayaking on a calm mountain lake"
                             fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
                             className="object-cover hover:scale-105 transition-transform duration-700"
                         />
                     </div>

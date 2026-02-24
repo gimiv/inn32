@@ -12,8 +12,8 @@ import { websiteData } from '../data/website-data'
 import { Suspense } from 'react'
 
 export const metadata: Metadata = {
-    title: `${websiteData.property.name} | ${websiteData.property.tagline}`,
-    description: websiteData.property.description,
+    title: 'Boutique Hotel in North Woodstock, NH | White Mountains Lodging',
+    description: 'Stay at Inn 32, a newly revitalized boutique hotel on Main Street in North Woodstock, New Hampshire. 24 rooms from $79/night, minutes from Franconia Notch, Loon Mountain, and the Kancamagus Highway.',
 }
 
 export default function Home() {
