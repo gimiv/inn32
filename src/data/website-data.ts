@@ -211,13 +211,12 @@ export const websiteData: GuestWebsiteProps = {
             images: [
                 "/gallery/living-room-01--1-.webp",
                 "/gallery/living-room-02.webp",
-                "/gallery/sunroom.webp",
                 "/gallery/Kitchen_01.webp",
                 "/gallery/Dining_Room.webp",
                 "/gallery/Detail_Couch.webp",
                 "/gallery/Bedroom1.webp",
                 "/gallery/Bedroom2.webp",
-                "/gallery/Bathroom.webp",
+                "/gallery/bathroom.webp",
                 "/gallery/Detail_Master.webp",
                 "/gallery/Detail_Faucet.webp",
                 "/gallery/Detail_Vanity.webp"
