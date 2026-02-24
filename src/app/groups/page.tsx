@@ -45,7 +45,7 @@ export default function GroupsPage() {
                 </div>
             </div>
 
-            <GroupReservations />
+            <GroupReservations property={websiteData.property} />
         </PageLayout>
     )
 }

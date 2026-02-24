@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 declare global {
     interface Window {
@@ -16,12 +16,16 @@ interface BookingWidgetProps {
 }
 
 export default function BookingWidget({ isOpen, onClose, promoCode, roomId }: BookingWidgetProps) {
+    const initializedRef = useRef(false)
     const [mewsApi, setMewsApi] = useState<any>(null)
 
     // Pre-initialize Mews when script loads
     useEffect(() => {
+        if (initializedRef.current) return
+
         const initMews = () => {
-            if (window.Mews && window.Mews.Distributor && !mewsApi) {
+            if (window.Mews && window.Mews.Distributor && !initializedRef.current) {
+                initializedRef.current = true
                 window.Mews.Distributor(
                     {
                         configurationIds: ["8834fbb1-b9a1-4dbf-8e18-b2ba003e2e3d"],
@@ -52,7 +56,7 @@ export default function BookingWidget({ isOpen, onClose, promoCode, roomId }: Bo
             clearInterval(interval)
             clearTimeout(timeout)
         }
-    }, [mewsApi])
+    }, [])
 
     // Handle opening the widget
     useEffect(() => {

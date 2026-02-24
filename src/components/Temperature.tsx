@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Sun, Moon } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '../utils/cn'
 import { useTheme } from '../context/ThemeContext'
 
@@ -57,31 +56,20 @@ export default function Temperature({ className, variant = 'white' }: Temperatur
             aria-label="Toggle theme and view temperature"
         >
             <div className="relative w-5 h-5 flex items-center justify-center overflow-hidden">
-                <AnimatePresence mode="wait">
-                    {theme === 'dark' ? (
-                        <motion.div
-                            key="sun"
-                            initial={{ y: 20, opacity: 0, rotate: 90 }}
-                            animate={{ y: 0, opacity: 1, rotate: 0 }}
-                            exit={{ y: -20, opacity: 0, rotate: -90 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            <Sun className="w-4 h-4 text-amber-500" />
-                        </motion.div>
-                    ) : (
-                        <motion.div
-                            key="moon"
-                            initial={{ y: -20, opacity: 0, rotate: -90 }}
-                            animate={{ y: 0, opacity: 1, rotate: 0 }}
-                            exit={{ y: 20, opacity: 0, rotate: 90 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            <Moon className="w-4 h-4 text-slate-700" />
-                        </motion.div>
+                <Sun
+                    className={cn(
+                        "absolute w-4 h-4 text-amber-500 transition-all duration-300 transform",
+                        theme === 'dark' ? "opacity-100 translate-y-0 rotate-0" : "opacity-0 translate-y-4 rotate-90 scale-50"
                     )}
-                </AnimatePresence>
+                />
+                <Moon
+                    className={cn(
+                        "absolute w-4 h-4 text-slate-700 transition-all duration-300 transform",
+                        theme === 'dark' ? "opacity-0 -translate-y-4 -rotate-90 scale-50" : "opacity-100 translate-y-0 rotate-0"
+                    )}
+                />
             </div>
-            <span className="font-sans">{temp}°F</span>
+            {temp !== null ? <span className="font-sans">{temp}°F</span> : null}
         </button>
     )
 }

@@ -1,10 +1,11 @@
 import { cn } from '../utils/cn'
 import ContentSection from './ui/ContentSection'
 import RoomCard from './ui/RoomCard'
+import { RoomType } from '../types/website'
 
 interface RoomListProps {
     limit?: number
-    roomTypes: any[]
+    roomTypes: RoomType[]
 }
 
 export default function RoomList({ limit, roomTypes }: RoomListProps) {

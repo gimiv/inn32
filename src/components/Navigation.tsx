@@ -1,9 +1,9 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Menu, X, Phone, Sun, Moon } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
 import { cn } from '../utils/cn'
-import { websiteData } from '../data/website-data'
+import { Property } from '../types/website'
 import Logo from './Logo'
 import BookingWidget from './BookingWidget'
 import { useTheme } from '../context/ThemeContext'
@@ -12,7 +12,11 @@ import Temperature from './Temperature'
 import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
 
-export default function Navigation() {
+interface NavigationProps {
+    property: Property
+}
+
+export default function Navigation({ property }: NavigationProps) {
     const router = useRouter()
     const pathname = usePathname()
     const { theme, toggleTheme } = useTheme()
@@ -60,6 +64,30 @@ export default function Navigation() {
         }
         setIsMobileMenuOpen(false)
     }
+
+    // Scroll Lock & Focus Trap for Mobile Menu
+    useEffect(() => {
+        if (!mounted) return;
+
+        const main = document.querySelector('main')
+        const footer = document.querySelector('footer')
+
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden'
+            if (main) main.setAttribute('inert', 'true')
+            if (footer) footer.setAttribute('inert', 'true')
+        } else {
+            document.body.style.overflow = ''
+            if (main) main.removeAttribute('inert')
+            if (footer) footer.removeAttribute('inert')
+        }
+
+        return () => {
+            document.body.style.overflow = ''
+            if (main) main.removeAttribute('inert')
+            if (footer) footer.removeAttribute('inert')
+        }
+    }, [isMobileMenuOpen, mounted])
 
     useEffect(() => {
         let ticking = false;
@@ -220,7 +248,7 @@ export default function Navigation() {
 
                         <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400 pt-4 border-t dark:border-slate-800">
                             <Phone size={16} />
-                            <span>{websiteData.property.contact.phone}</span>
+                            <span>{property.contact.phone}</span>
                         </div>
                     </div>
                 )}

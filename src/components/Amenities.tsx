@@ -3,7 +3,9 @@ import { cn } from '../utils/cn'
 import ContentSection from './ui/ContentSection'
 import { Amenity } from '../types/website'
 
-const iconMap: Record<string, any> = {
+import React from 'react'
+
+const iconMap: Record<string, React.ElementType> = {
     wifi: Wifi,
     wind: Wind,
     coffee: Coffee,

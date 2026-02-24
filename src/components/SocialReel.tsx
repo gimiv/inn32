@@ -4,10 +4,13 @@ import Image from 'next/image'
 
 import useEmblaCarousel from 'embla-carousel-react'
 import { Instagram } from 'lucide-react'
-import { websiteData } from '../data/website-data'
+import { SocialPost } from '../types/website'
 
-export default function SocialReel() {
-    const { socialPosts } = websiteData
+interface SocialReelProps {
+    socialPosts: SocialPost[]
+}
+
+export default function SocialReel({ socialPosts }: SocialReelProps) {
 
     // Auto-scroll configuration
     const [emblaRef] = useEmblaCarousel({
@@ -53,6 +56,7 @@ export default function SocialReel() {
                                     src={post.image}
                                     alt={post.caption}
                                     fill
+                                    loading="lazy"
                                     className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
                                     sizes="(max-width: 640px) 70vw, (max-width: 768px) 40vw, 25vw"
                                 />

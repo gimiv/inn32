@@ -29,7 +29,7 @@ export default function Home() {
             </Suspense>
             <Gallery gallery={websiteData.gallery} />
             <Location property={websiteData.property} />
-            <SocialReel />
+            <SocialReel socialPosts={websiteData.socialPosts} />
         </div>
     )
 }

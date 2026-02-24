@@ -2,13 +2,16 @@
 
 import Link from 'next/link'
 import Logo from './Logo'
-import { websiteData } from '../data/website-data'
+import { Property } from '../types/website'
 import { useTheme } from '../context/ThemeContext'
 import { Sun, Moon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
-export default function Footer() {
-    const { property } = websiteData
+interface FooterProps {
+    property: Property
+}
+
+export default function Footer({ property }: FooterProps) {
     const currentYear = new Date().getFullYear()
     const { theme, toggleTheme } = useTheme()
     const [mounted, setMounted] = useState(false)
@@ -24,7 +27,7 @@ export default function Footer() {
                     <div className="mb-6 md:mb-0">
                         <Logo className="h-16 w-auto mb-4" variant="white" />
                         <p className="max-w-xs text-gray-500 text-sm">
-                            {websiteData.property.description}
+                            {property.description}
                         </p>
                     </div>
                     <div>

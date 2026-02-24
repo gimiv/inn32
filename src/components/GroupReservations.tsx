@@ -2,9 +2,13 @@
 
 import { useState } from 'react'
 import { Users, Calendar, Utensils, Music, Mail, Phone, Check } from 'lucide-react'
-import { websiteData } from '../data/website-data'
+import { Property } from '../types/website'
 
-export default function GroupReservations() {
+interface GroupReservationsProps {
+    property: Property
+}
+
+export default function GroupReservations({ property }: GroupReservationsProps) {
     const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -91,11 +95,11 @@ export default function GroupReservations() {
                                 <div className="space-y-4">
                                     <div className="flex items-center text-slate-600 dark:text-slate-300">
                                         <Phone className="w-5 h-5 mr-3 text-primary dark:text-blue-400" />
-                                        <span>{websiteData.property.contact.phone}</span>
+                                        <span>{property.contact.phone}</span>
                                     </div>
                                     <div className="flex items-center text-slate-600 dark:text-slate-300">
                                         <Mail className="w-5 h-5 mr-3 text-primary dark:text-blue-400" />
-                                        <span>{websiteData.property.contact.email}</span>
+                                        <span>{property.contact.email}</span>
                                     </div>
                                 </div>
                             </div>

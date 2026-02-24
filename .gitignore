@@ -1,8 +1,7 @@
-.env
 node_modules
 .next
-.next/
-out
-build
-dist
-.vercel
+tmp
+.DS_Store
+tsconfig.tsbuildinfo
+.env
+.env.*

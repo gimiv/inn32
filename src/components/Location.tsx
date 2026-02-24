@@ -4,6 +4,8 @@ import { Property } from '../types/website'
 import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
+import SectionHeader from './ui/SectionHeader'
+import ErrorBoundary from './ui/ErrorBoundary'
 import { cn } from '../utils/cn'
 
 const darkMapStyle = [
@@ -61,30 +63,38 @@ export default function Location({ property, standalone }: LocationProps) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 {!standalone && (
-                    <div className="text-center max-w-2xl mx-auto mb-12">
-                        <span className="font-sans text-sm font-semibold text-mountain-blue uppercase tracking-wider mb-2 block">
-                            Find Us
-                        </span>
-                        <h2 className="font-display text-page-title text-navy dark:text-white mb-4">
-                            Location & Contact
-                        </h2>
-                    </div>
+                    <SectionHeader
+                        label="Getting Here"
+                        title="Location & Contact"
+                        subtitle="Conveniently located in the heart of the White Mountains."
+                        align="center"
+                    />
                 )}
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                     {/* Map */}
                     <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden bg-gray-200 dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-slate-700/50">
-                        <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}>
-                            <Map
-                                defaultCenter={property.address.coordinates}
-                                defaultZoom={14}
-                                gestureHandling={'greedy'}
-                                disableDefaultUI={true}
-                                styles={mapStyle}
-                            >
-                                <Marker position={property.address.coordinates} />
-                            </Map>
-                        </APIProvider>
+                        <ErrorBoundary fallback={
+                            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 dark:bg-slate-800 p-6 text-center">
+                                <MapPin className="w-12 h-12 text-gray-400 mb-4" />
+                                <h3 className="text-lg font-medium text-navy dark:text-white mb-2">Map Unavailable</h3>
+                                <p className="text-gray-500 max-w-sm">
+                                    We couldn't load the interactive map right now. You can still use the address details provided to find us.
+                                </p>
+                            </div>
+                        }>
+                            <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}>
+                                <Map
+                                    defaultCenter={property.address.coordinates}
+                                    defaultZoom={14}
+                                    gestureHandling={'greedy'}
+                                    disableDefaultUI={true}
+                                    styles={mapStyle}
+                                >
+                                    <Marker position={property.address.coordinates} />
+                                </Map>
+                            </APIProvider>
+                        </ErrorBoundary>
                     </div>
 
                     {/* Contact Info */}

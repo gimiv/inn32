@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { ZoomIn } from 'lucide-react'
 import { GalleryImage } from '../types/website'
 import LightboxGallery from './LightboxGallery'
+import SectionHeader from './ui/SectionHeader'
 import { cn } from '../utils/cn'
 
 interface GalleryProps {
@@ -29,17 +30,12 @@ export default function Gallery({ gallery }: GalleryProps) {
         <section id="gallery" className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center max-w-2xl mx-auto mb-12">
-                    <span className="font-sans text-sm font-semibold text-mountain-blue uppercase tracking-wider mb-2 block">
-                        Visual Tour
-                    </span>
-                    <h2 className="font-display text-page-title text-navy dark:text-white mb-4">
-                        Photo Gallery
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-300 text-lg">
-                        Take a visual journey through our property.
-                    </p>
-                </div>
+                <SectionHeader
+                    label="Visual Tour"
+                    title="Photo Gallery"
+                    subtitle="Take a visual journey through our property."
+                    align="center"
+                />
 
                 {/* Gallery Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[150px] md:auto-rows-[200px]">

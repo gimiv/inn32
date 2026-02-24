@@ -6,6 +6,7 @@ import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import { websiteData } from '../data/website-data'
 import Script from 'next/script'
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-sans' })
 const dmSerif = DM_Serif_Display({ weight: '400', subsets: ['latin'], variable: '--font-display' })
@@ -94,6 +95,8 @@ export default function RootLayout({
                 />
             </head>
             <body className={`${outfit.variable} ${dmSerif.variable} ${lora.variable} font-sans antialiased text-gray-900 bg-white dark:bg-slate-900 dark:text-gray-100 transition-colors duration-300`}>
+                <GoogleTagManager gtmId="GTM-TTL7KR6Q" />
+                <GoogleAnalytics gaId="G-FGY7MWEYHF" />
                 {/* Mews Booking Engine */}
                 <Script
                     src="https://app.mews.com/distributor/distributor.min.js"
@@ -101,11 +104,11 @@ export default function RootLayout({
                 />
                 <ThemeProvider>
                     <div className="flex flex-col min-h-screen">
-                        <Navigation />
+                        <Navigation property={websiteData.property} />
                         <main className="flex-grow">
                             {children}
                         </main>
-                        <Footer />
+                        <Footer property={websiteData.property} />
                     </div>
                 </ThemeProvider>
             </body>
