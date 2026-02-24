@@ -266,28 +266,32 @@ export const websiteData: GuestWebsiteProps = {
             name: "Woodstock Inn Brewery",
             category: "Food & Drink",
             description: "Iconic brewpub with 15+ beers on tap, full restaurant, and outdoor beer garden right in town.",
-            image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/Woodstock Inn Brewing.webp",
+            link: "https://www.woodstockinnnh.com/"
         },
         {
             id: "one-love-brewery",
             name: "One Love Brewery",
             category: "Food & Drink",
             description: "Craft brewery and full-service restaurant located in a historic mill building in Lincoln.",
-            image: "https://images.unsplash.com/photo-1559526642-c3f001ea68ee?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/OneLove brewery.webp",
+            link: "https://www.onelovebrewery.com/"
         },
         {
             id: "schilling-beer",
             name: "Schilling Beer Co.",
             category: "Food & Drink",
             description: "European-style beers with a taproom and scenic beer garden right on the river.",
-            image: "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/schilling beer co.webp",
+            link: "https://schillingbeer.com/"
         },
         {
             id: "common-man",
             name: "The Common Man",
             category: "Food & Drink",
             description: "Classic New England comfort dishes like pot roast and Nantucket Pie in a cozy, rustic setting.",
-            image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/common man.webp",
+            link: "https://www.thecman.com/"
         },
         // Hiking
         {
@@ -295,28 +299,32 @@ export const websiteData: GuestWebsiteProps = {
             name: "Franconia Ridge",
             category: "Hiking",
             description: "One of the top White Mountain day hikes for huge views along a stunning alpine ridge; best for experienced hikers.",
-            image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/Franconia Ridge.webp",
+            link: "https://www.alltrails.com/trail/us/new-hampshire/mount-lafayette-and-franconia-ridge-trail-loop"
         },
         {
             id: "mt-moosilauke",
             name: "Mount Moosilauke",
             category: "Hiking",
             description: "Major 4,000-footer with excellent sweeping summit views above the treeline.",
-            image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/Mount Moosilauke.webp",
+            link: "https://www.alltrails.com/trail/us/new-hampshire/mount-moosilauke-via-gorge-brook-and-moosilauke-carriage-trail"
         },
         {
             id: "garfield-4000",
             name: "Mount Garfield & 4,000 Footers",
             category: "Hiking",
             description: "Praised as slightly easier big-view alternatives to Franconia Ridge with phenomenal panoramic vistas.",
-            image: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/Mount Garfield.webp",
+            link: "https://www.alltrails.com/trail/us/new-hampshire/mount-garfield-trail"
         },
         {
             id: "kancamagus-trails",
             name: "Kancamagus Highway Trails",
             category: "Hiking",
             description: "A mix of scenic riverside walks like Lincoln Woods, and longer backcountry routes.",
-            image: "https://images.unsplash.com/photo-1504681869696-d97721183f4b?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/kancamagus.webp",
+            link: "https://www.kancamagushighway.com/hiking/"
         },
         // Attractions
         {
@@ -324,21 +332,24 @@ export const websiteData: GuestWebsiteProps = {
             name: "Lost River Gorge & Boulder Caves",
             category: "Attractions",
             description: "Signature natural attraction featuring a boardwalk through a gorgeous gorge, waterfalls, and family-friendly caves.",
-            image: "https://images.unsplash.com/photo-1443632864897-15c52cd7c51e?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/Lost River Gorge.webp",
+            link: "https://lostrivergorge.com/"
         },
         {
             id: "ice-castles",
             name: "Ice Castles (Winter)",
             category: "Attractions",
             description: "Destination winter attraction in Lincoln with illuminated ice slides, caverns, and magical light walks.",
-            image: "https://images.unsplash.com/photo-1612450637672-0f5ea211fb84?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/ice castles.webp",
+            link: "https://icecastles.com/new-hampshire/"
         },
         {
             id: "kancamagus-byway",
             name: "Kancamagus Scenic Byway",
             category: "Attractions",
             description: "Classic White Mountains drive offering breathtaking overlooks, trailheads, and river pull-offs.",
-            image: "https://images.unsplash.com/photo-1548281561-547e70477163?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/kancamagus.webp",
+            link: "https://www.kancamagushighway.com/"
         },
         {
             id: "cascade-park",
@@ -352,7 +363,8 @@ export const websiteData: GuestWebsiteProps = {
             name: "Hubbard Brook Experimental Forest",
             category: "Attractions",
             description: "Expansive forest research area offering quiet nature trails and interpretive access points.",
-            image: "https://images.unsplash.com/photo-1507026330055-662f558d16d0?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/hubbard brooke.webp",
+            link: "https://hubbardbrook.org/"
         },
         // Shopping
         {
@@ -360,14 +372,16 @@ export const websiteData: GuestWebsiteProps = {
             name: "Kancamagus Collectibles",
             category: "Shopping",
             description: "Small local museum and collectibles shop—a great quick stop on a rainy day to find unique souvenirs.",
-            image: "https://images.unsplash.com/photo-1527960669566-f881763cd33e?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/kancamagus collectables.webp",
+            link: "https://www.facebook.com/kancamaguscollectibles/"
         },
         {
             id: "jeanette-fournier",
             name: "Jeanette Fournier Fine Art",
             category: "Shopping",
             description: "Elegant local art gallery located right in the Woodstock area showcasing regional talent.",
-            image: "https://images.unsplash.com/photo-1472851294608-415522f96385?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/fournier fine art.webp",
+            link: "https://jfournierart.com/"
         },
         {
             id: "specialty-shops",
@@ -389,8 +403,9 @@ export const websiteData: GuestWebsiteProps = {
             name: "Spring Maple & Hiking",
             category: "Seasonal Activities",
             description: "Visit local sugarhouses during March Maple Month and hit the hiking trails as the snow melts out.",
-            image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800"
-        }
+            image: "/gallery/spring maple.webp",
+            link: "https://nhmapleproducers.com/"
+        },
     ],
     events: [
         {
@@ -408,7 +423,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "Lincoln / Franconia Notch Event Series",
             date: "Winter - Spring 2026",
             location: "Lincoln, NH",
-            image: "https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee?auto=format&fit=crop&q=80&w=1200",
+            image: "/gallery/alton weagle day.webp",
             description: "Regional calendar lists \"Live Music – Woodstock Inn Brewery\" Saturdays through March 28, plus other Franconia Notch-area happenings like guided outings and community events typically within a 15–25 minute drive.",
             isFeatured: false
         },
@@ -417,7 +432,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "Maple Month in the White Mountains",
             date: "March 2026",
             location: "White Mountains, NH",
-            image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1200",
+            image: "/gallery/maple month mountains.webp",
             description: "March is Maple Month across the region: sugarhouses open for tours, tastings, and demonstrations, with several producers located within an easy drive of North Woodstock.",
             isFeatured: true,
             customLabel: "Local Tradition"
@@ -427,7 +442,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "Beach Party on the Slopes",
             date: "Early March 2026",
             location: "Bretton Woods, NH",
-            image: "https://images.unsplash.com/photo-1551524164-687a55dd1126?auto=format&fit=crop&q=80&w=1200",
+            image: "/gallery/beach party slopes.webp",
             description: "Spring-ski party at Bretton Woods with live music and on-snow games, roughly 45–60 minutes from Inn 32.",
             isFeatured: false
         },
@@ -445,7 +460,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "Annual Maple Sugar Tours",
             date: "Late March 2026",
             location: "White Mountains, NH",
-            image: "https://images.unsplash.com/photo-1527960669566-f881763cd33e?auto=format&fit=crop&q=80&w=1200",
+            image: "/gallery/annual maple sugar tours.webp",
             description: "Organized maple tours in the White Mountains, showcasing the sugaring process and offering samples; good as a half-day outing from North Woodstock.",
             isFeatured: false
         },
@@ -454,7 +469,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "Psychic Fair Weekend",
             date: "April 24–25, 2026",
             location: "Indian Head Resort, Lincoln",
-            image: "https://images.unsplash.com/photo-1511884642898-4c92249e20b6?auto=format&fit=crop&q=80&w=1200",
+            image: "/gallery/psychich fair.webp",
             description: "Themed weekend with psychic fair at Indian Head Resort just south of Lincoln, a short drive from Inn 32.",
             isFeatured: false
         },
@@ -463,7 +478,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "2026 Girlfriends Weekend Spring Fling",
             date: "May 1–3, 2026",
             location: "North Conway, NH",
-            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200",
+            image: "/gallery/2026 girlfriends weekend spring fling.webp",
             description: "Themed weekend package at White Mountain Hotel & Resort with artisan fair, spa options, dinner, entertainment, yoga, and brunch.",
             isFeatured: false
         },
