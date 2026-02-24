@@ -126,14 +126,14 @@ export const websiteData: GuestWebsiteProps = {
         {
             id: "standard-single",
             name: "Standard Single Room",
-            shortDescription: "Perfect for solo travelers or couples who value simplicity and efficiency, our Standard Single Room offers a compact yet thoughtfully designed space with a full-size bed.",
+            shortDescription: "A thoughtfully designed, compact space for solo travelers or couples.",
             basePrice: 79,
             currency: "USD",
             maxOccupancy: 2,
             bedType: "1 Full Bed",
             images: [
-                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/df0d9ff8-9d6f-44c6-b2f3-7d82d2909bbd/Room10_Bed.jpg",
-                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/083f9408-db62-4ef7-b355-1579ef649479/Room01.jpg"
+                "/gallery/bedroom.webp",
+                "/gallery/bathroom.webp"
             ],
             amenities: ["Wi-Fi", "A/C", "Smart TV", "Mini Fridge"],
             available: true
