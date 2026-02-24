@@ -14,7 +14,7 @@ export default function OffersPage() {
             title="Special Offers"
             subtitle="Enhance your stay with our curated packages and seasonal discounts."
         >
-            <Offers />
+            <Offers offers={websiteData.offers} />
         </PageLayout>
     )
 }

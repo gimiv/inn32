@@ -31,7 +31,7 @@ If there is one aspect of the renovation we are most proud of, it is the bathroo
 
 We completely demolished the small, dated bathrooms of the old motor lodge. In their place, we built massive, spa-like retreats. Every room now features a stunning, oversized walk-in glass shower. We used beautiful, floor-to-ceiling subway tile, installed premium rainfall showerheads, and equipped every vanity with bright, flattering LED mirror lighting. It’s entirely unlike anything you’d expect from an exterior-corridor building.
 
-![Cozy standard single room](/gallery/Room 9 Angle 1.webp)
+![Cozy standard single room](/gallery/Room9_Bed.webp)
 
 ## Extending the Experience Outdoors
 

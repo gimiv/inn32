@@ -97,7 +97,7 @@ export default function RootLayout({
                 {/* Mews Booking Engine */}
                 <Script
                     src="https://app.mews.com/distributor/distributor.min.js"
-                    strategy="afterInteractive"
+                    strategy="lazyOnload"
                 />
                 <ThemeProvider>
                     <div className="flex flex-col min-h-screen">

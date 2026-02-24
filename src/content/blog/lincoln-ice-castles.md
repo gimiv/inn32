@@ -12,7 +12,7 @@ What makes the Ice Castles so staggeringly impressive is the fact that the entir
 
 The process literally begins with the artists farming tens of thousands of individual icicles. Over the course of several weeks, as the temperatures drop well below freezing, these icicles are meticulously harvested and placed one by one. They are constantly sprayed with water from specialized sprinklers, allowing the ice to slowly bind together and grow organically. 
 
-![A gorgeous photo showing glowing blue ice illuminated at night](/gallery/winter_festival_stock.webp)
+![A gorgeous photo showing glowing blue ice illuminated at night](/gallery/winter_festival.webp)
 
 The final result is a massive, sprawling fortress of pure ice that can weigh over 20 million pounds. Because the water freezes naturally in the wind and cold, no two walls are ever exactly the same. The organic, dripping stalactites and sweeping archways look entirely like a setting pulled out of a fantasy novel. 
 

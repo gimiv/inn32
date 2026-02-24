@@ -15,7 +15,7 @@ export default function EventsPage() {
             title="Calendar of Events"
             subtitle="From local festivals to live music in our lounge, see what's happening during your stay."
         >
-            <Events />
+            <Events events={websiteData.events} />
         </PageLayout>
     )
 }

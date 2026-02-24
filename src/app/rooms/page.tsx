@@ -15,7 +15,10 @@ export default function RoomsPage() {
             title="Stay With Us"
             subtitle="Experience the perfect blend of modern comfort and vintage charm in our newly renovated rooms and suites."
         >
-            <RoomList />
+            {/* Room List Grid */}
+            <div className="py-20">
+                <RoomList roomTypes={websiteData.roomTypes} />
+            </div>
         </PageLayout>
     )
 }

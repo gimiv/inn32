@@ -28,7 +28,7 @@ export default function GroupsPage() {
                     </div>
                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg md:-mt-8">
                         <Image
-                            src="/group_skiing.webp"
+                            src="/gallery/group_skiing.webp"
                             alt="Friends skiing down a mountain slope"
                             fill
                             className="object-cover hover:scale-105 transition-transform duration-700"
@@ -36,7 +36,7 @@ export default function GroupsPage() {
                     </div>
                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                         <Image
-                            src="/group_kayaking.webp"
+                            src="/gallery/group_kayaking.webp"
                             alt="Friends kayaking on a calm mountain lake"
                             fill
                             className="object-cover hover:scale-105 transition-transform duration-700"

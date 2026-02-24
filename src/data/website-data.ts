@@ -252,12 +252,12 @@ export const websiteData: GuestWebsiteProps = {
         }
     ],
     amenities: [
-        { id: "wifi", name: "Free Wi-Fi", icon: "wifi", category: "Essentials" },
-        { id: "ac", name: "Air Conditioning", icon: "wind", category: "Comfort" },
-        { id: "coffee", name: "Coffee Maker", icon: "coffee", category: "Food & Drink" },
-        { id: "parking", name: "Free Parking", icon: "car", category: "Services" },
-        { id: "tv", name: "Smart TV", icon: "tv", category: "Entertainment" },
-        { id: "fridge", name: "Mini Fridge", icon: "snowflake", category: "Food & Drink" }
+        { id: "wifi", name: "Free Wi-Fi", description: "High-speed internet access throughout the property.", icon: "wifi", category: "Essentials" },
+        { id: "ac", name: "Air Conditioning", description: "Individual climate control in every room.", icon: "wind", category: "Comfort" },
+        { id: "coffee", name: "Coffee Maker", description: "In-room coffee and tea setup.", icon: "coffee", category: "Food & Drink" },
+        { id: "parking", name: "Free Parking", description: "Complimentary on-site parking for all guests.", icon: "car", category: "Services" },
+        { id: "tv", name: "Smart TV", description: "Flat-screen TV with streaming capabilities.", icon: "tv", category: "Entertainment" },
+        { id: "fridge", name: "Mini Fridge", description: "Convenient storage for snacks and beverages.", icon: "snowflake", category: "Food & Drink" }
     ],
     thingsToDo: [
         // Food & Drink

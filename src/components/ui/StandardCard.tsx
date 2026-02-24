@@ -1,4 +1,6 @@
-import { ReactNode } from 'react'
+'use client'
+
+import { ReactNode, useState } from 'react'
 import Image from 'next/image'
 
 interface StandardCardProps {
@@ -24,20 +26,27 @@ export default function StandardCard({
     imageOverlay,
     onImageClick
 }: StandardCardProps) {
+    const [isLoading, setIsLoading] = useState(true)
+
     return (
         <div className="group bg-white dark:bg-slate-800 rounded-brand-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-slate-700 h-full flex flex-col transform hover:-translate-y-1">
             {/* Image Block */}
             <div
-                className="relative h-64 overflow-hidden group/image"
+                className="relative h-64 overflow-hidden group/image bg-gray-100 dark:bg-slate-800"
                 onClick={onImageClick}
                 style={{ cursor: onImageClick ? 'pointer' : 'default' }}
             >
+                {/* Skeleton Loader */}
+                {isLoading && (
+                    <div className="absolute inset-0 bg-gray-200 dark:bg-slate-700 animate-pulse z-10" />
+                )}
                 <Image
                     src={image}
                     alt={imageAlt || title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover/image:scale-105"
+                    className={`object-cover transition-all duration-700 group-hover/image:scale-105 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    onLoad={() => setIsLoading(false)}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover/image:bg-black/10 transition-colors duration-300" />
                 {imageOverlay}

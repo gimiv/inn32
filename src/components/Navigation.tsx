@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Menu, X, Phone, Sun, Moon } from 'lucide-react'
 import { cn } from '../utils/cn'
 import { websiteData } from '../data/website-data'
@@ -62,17 +62,29 @@ export default function Navigation() {
     }
 
     useEffect(() => {
+        let ticking = false;
+
         const handleScroll = () => {
-            // If we're not on home page, always treat as scrolled (solid background)
-            if (pathname !== '/') {
-                setIsScrolled(true)
-            } else {
-                setIsScrolled(window.scrollY > 50)
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    // map visual changes here
+                    if (pathname !== '/') {
+                        setIsScrolled(true)
+                    } else {
+                        setIsScrolled(window.scrollY > 50)
+                    }
+                    ticking = false;
+                });
+                ticking = true;
             }
         }
 
         // Initial check
-        handleScroll()
+        if (pathname !== '/') {
+            setIsScrolled(true)
+        } else {
+            setIsScrolled(window.scrollY > 50)
+        }
 
         const handleOpenWidget = (e: any) => {
             setIsBookingOpen(true)
@@ -85,7 +97,7 @@ export default function Navigation() {
             }
         }
 
-        window.addEventListener('scroll', handleScroll)
+        window.addEventListener('scroll', handleScroll, { passive: true })
         window.addEventListener('open-booking-widget', handleOpenWidget)
 
         return () => {

@@ -13,7 +13,7 @@ It’s impossible to talk about family fun in the White Mountains without mentio
 ### The Bear Show
 The undisputed centerpiece of the property is the famous Bear Show. The Clark family has been raising and training rescued Black Bears for decades. The show is entirely unscripted—the bears do exactly what they want, when they want—and the trainers rely on positive reinforcement to guide them through a half-hour of hilarious antics. Watching a massive 500-pound bear confidently ride a scooter or dunk a basketball is a surreal and incredibly endearing experience.
 
-![Clark's Bears Performance](/gallery/clarks_bears_stock.webp)
+![Clark's Bears Performance](/gallery/clarks_bears.webp)
 
 ### The White Mountain Central Railroad
 After the bears, make a beeline for the train station. Clark’s operates one of the last remaining wood-burning Climax steam locomotives in the world. The 25-minute train ride takes you out of the park, across a stunning covered bridge over the Pemigewasset River, and deep into the woods—where you’ll inevitably be “held up” by the infamous Wolfman. The Wolfman is a legendary, ragged character who chases the train in a wildly entertaining, theatrical interaction that kids absolutely love.
@@ -31,7 +31,7 @@ After a day of bears and trains, shift gears on Day Two and dive directly into t
 
 Thousands of years ago, colossal glaciers moved through the valley, carving a massive gorge and piling house-sized granite boulders on top of each other. The result is a spectacular landscape where the "Lost River" constantly disappears beneath the chaotic rock piles and re-emerges in stunning waterfalls. 
 
-![A family walking in the deep forest](/gallery/blog_family.webp)
+![A family walking in the deep forest](/gallery/cascade_park.webp)
 
 ### The Boardwalks and the Caves
 The entire mile-long loop through the gorge is constructed of sturdy wooden boardwalks and staircases. You're walking directly over the rushing river and suspended halfway up the gorge walls. But the real draw is the boulder caves. 

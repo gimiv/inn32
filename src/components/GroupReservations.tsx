@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { Users, Calendar, Utensils, Music, Mail, Phone, Check } from 'lucide-react'
-import { motion } from 'framer-motion'
 import { websiteData } from '../data/website-data'
 
 export default function GroupReservations() {
@@ -48,20 +47,16 @@ export default function GroupReservations() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {benefits.map((benefit, index) => (
-                            <motion.div
+                            <div
                                 key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="bg-white dark:bg-slate-700 p-6 rounded-xl shadow-sm hover:shadow-md transition-all border border-transparent dark:border-slate-600"
+                                className="bg-white dark:bg-slate-700 p-6 rounded-xl shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1 duration-300 border border-transparent dark:border-slate-600"
                             >
                                 <div className="w-12 h-12 bg-primary/10 dark:bg-blue-900/40 rounded-full flex items-center justify-center mb-4 text-primary dark:text-blue-400">
                                     <benefit.icon className="w-6 h-6" />
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{benefit.title}</h3>
                                 <p className="text-slate-600 dark:text-gray-300">{benefit.description}</p>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

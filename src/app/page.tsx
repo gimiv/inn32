@@ -20,12 +20,12 @@ export default function Home() {
     return (
         <div className="flex flex-col min-h-screen">
             <Hero hero={websiteData.sections.hero} />
-            <RoomList limit={3} />
-            <Reviews limit={6} />
-            <Offers limit={4} />
-            <Events limit={3} />
+            <RoomList limit={3} roomTypes={websiteData.roomTypes} />
+            <Reviews limit={6} reviews={websiteData.reviews} />
+            <Offers limit={4} offers={websiteData.offers} />
+            <Events limit={3} events={websiteData.events} />
             <Suspense fallback={<div className="py-20 text-center">Loading activities...</div>}>
-                <ThingsToDo limit={12} />
+                <ThingsToDo limit={12} thingsToDo={websiteData.thingsToDo} />
             </Suspense>
             <Gallery gallery={websiteData.gallery} />
             <Location property={websiteData.property} />

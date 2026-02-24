@@ -16,7 +16,7 @@ Woodstock Inn shines when it comes to classic, highly drinkable ales.
 *   **4000 Footer IPA:** Named as a tribute to the 48 massive peaks in New Hampshire, this is a clean, classic West Coast-style IPA with a bitter bite. (Don't confuse it with the newer, hazy New England IPAs.)
 *   **Autumn Ale:** If you are visiting in late September, this seasonal release is mandatory. It’s packed with cinnamon, nutmeg, and real pumpkin.
 
-![People toasting in a local pub](/gallery/live_music_pub_stock.webp)
+![People toasting in a local pub](/gallery/live_music_pub.webp)
 
 ## The Rising Star: Schilling Beer Co.
 
@@ -41,7 +41,7 @@ Twin Barns is the perfect place to explore modern, fruit-forward flavors heavily
 *   **Lake Cruiser:** A remarkably smooth, hazy Double IPA boasting intense notes of mango and citrus without being overly bitter.
 *   **Belknap Ale:** A nod to the local mountain range, this is a fantastic, everyday amber ale.
 
-![Beers on a table](/gallery/pub_band_stock.webp)
+![Beers on a table](/gallery/pub_band.webp)
 
 ## Practical Details for the NH Beer Trail
 

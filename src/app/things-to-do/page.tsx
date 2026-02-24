@@ -17,7 +17,7 @@ export default function ThingsToDoPage() {
             subtitle="Your guide to the best dining, hiking, and attractions in the White Mountains."
         >
             <Suspense fallback={<div className="py-20 text-center font-sans">Loading activities...</div>}>
-                <ThingsToDo />
+                <ThingsToDo thingsToDo={websiteData.thingsToDo} />
             </Suspense>
         </PageLayout>
     )

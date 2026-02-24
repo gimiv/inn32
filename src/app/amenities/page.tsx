@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Amenities from '../../components/Amenities'
+import { websiteData } from '../../data/website-data'
 
 export const metadata: Metadata = {
     title: `Hotel Amenities & Services`,
@@ -14,7 +15,7 @@ export default function AmenitiesPage() {
             title="Hotel Amenities & Services"
             subtitle="Enjoy our premium amenities including complimentary breakfast, high-speed Wi-Fi, and cozy common areas."
         >
-            <Amenities />
+            <Amenities amenities={websiteData.amenities} />
         </PageLayout>
     )
 }
