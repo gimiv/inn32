@@ -270,12 +270,12 @@ export const websiteData: GuestWebsiteProps = {
             link: "https://www.woodstockinnnh.com/"
         },
         {
-            id: "one-love-brewery",
-            name: "One Love Brewery",
+            id: "base-camp-brewing",
+            name: "Base Camp Brewing",
             category: "Food & Drink",
-            description: "Craft brewery and full-service restaurant located in a historic mill building in Lincoln.",
-            image: "/gallery/OneLove brewery.webp",
-            link: "https://www.onelovebrewery.com/"
+            description: "Local craft brewery and gathering place perfect for unwinding after a long day in the mountains.",
+            image: "/gallery/basecamp_brewing.webp",
+            link: "https://basecampbrewing.com/"
         },
         {
             id: "schilling-beer",
@@ -356,7 +356,8 @@ export const websiteData: GuestWebsiteProps = {
             name: "Cascade Park",
             category: "Attractions",
             description: "Small in-town river spot right in North Woodstock, perfect for wading, picnicking, and relaxing.",
-            image: "https://images.unsplash.com/photo-1582653291997-079a1c04c792?auto=format&fit=crop&q=80&w=800"
+            image: "/gallery/cascade_park.webp",
+            link: "https://www.nhstateparks.org/find-parks-trails/franconia-notch-state-park"
         },
         {
             id: "hubbard-brook",
