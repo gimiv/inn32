@@ -473,7 +473,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "Alton Weagle Day",
             date: "Summer 2026",
             location: "Mount Washington, NH",
-            image: "/gallery/alton weagle day.webp",
+            image: "/gallery/alton_weagle_day.webp",
             description: "A beloved local tradition celebrating the eccentric mountaineer who summited Mount Washington in unconventional ways.",
             isFeatured: false
         },
@@ -537,7 +537,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "Alton Weagle Day",
             date: "May 23, 2026",
             location: "Mt. Washington Auto Road",
-            image: "/gallery/alton weagle day.webp",
+            image: "/gallery/alton_weagle_day.webp",
             description: "Quirky Mt. Washington Auto Road event celebrating \"first ascents\" in unusual ways; about 1–1.5 hours from Inn 32.",
             isFeatured: false
         }
