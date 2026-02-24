@@ -178,8 +178,8 @@ export const websiteData: GuestWebsiteProps = {
             maxOccupancy: 3,
             bedType: "1 Queen + 1 Full",
             images: [
-                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/041351dd-2733-4787-9522-a0af7b2b69ce/Room03.jpg",
-                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/083f9408-db62-4ef7-b355-1579ef649479/Room01.jpg"
+                "/gallery/Room03_Bath.webp",
+                "/gallery/room03.webp"
             ],
             amenities: ["Wi-Fi", "A/C", "Microwave", "Mini Fridge"],
             available: true
@@ -193,8 +193,8 @@ export const websiteData: GuestWebsiteProps = {
             maxOccupancy: 4,
             bedType: "2 Queen Beds",
             images: [
-                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/44a65b52-52ae-42ec-8b48-f8ec73d6a960/Room04_02.jpg",
-                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/041351dd-2733-4787-9522-a0af7b2b69ce/Room03.jpg"
+                "/gallery/Room04_Bath.webp",
+                "/gallery/room04-1.webp"
             ],
             amenities: ["Wi-Fi", "A/C", "Microwave", "Mini Fridge"],
             available: true
@@ -208,8 +208,15 @@ export const websiteData: GuestWebsiteProps = {
             maxOccupancy: 6,
             bedType: "2 Queen + 2 Twin",
             images: [
-                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/0f3063bf-5bb4-44e5-97eb-16a8cbad558e/Living_Room_02.jpg",
-                "https://images.squarespace-cdn.com/content/v1/67ffef3a58b5ce132a913b94/1eba0066-9216-4b5b-8eb1-ee81cee8f5a4/Sunroom.jpg"
+                "/gallery/Bedroom1.webp",
+                "/gallery/Bedroom2.webp",
+                "/gallery/Bathroom.webp",
+                "/gallery/Dining_Room.webp",
+                "/gallery/Kitchen_01.webp",
+                "/gallery/Detail_Couch.webp",
+                "/gallery/Detail_Faucet.webp",
+                "/gallery/Detail_Master.webp",
+                "/gallery/Detail_Vanity.webp"
             ],
             amenities: ["Kitchenette", "Private Patio", "Living Area", "Wi-Fi"],
             available: true
