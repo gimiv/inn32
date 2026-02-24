@@ -543,7 +543,7 @@ export const websiteData: GuestWebsiteProps = {
             image: "/gallery/spring maple.webp",
             author: "Inn 32 Team",
             slug: "maple-month-magic",
-            content: "March in the White Mountains signals the arrival of one of New England's sweetest traditions: Maple Month. As the days grow warmer and the nights remain freezing, the sap begins to flow in the sugar maples that dot our landscape. Here at Inn 32, we love pointing guests toward local sugarhouses where you can experience the magic firsthand.\n\nJust a short drive from North Woodstock, family-owned farms open their doors to visitors. You'll smell the wood smoke before you even pull into the driveway. Inside, you can watch sap boiling down into thick, amber syrup. Most sugarhouses offer free tours, explaining the rich history of tapping trees—a practice that dates back centuries.\n\nDon't leave without trying maple sugar candy, maple cream, or even a 'sugar on snow' treat if the weather permits. It's the perfect mid-day excursion before heading back to relax by the fire pit at the Inn."
+            // content served via markdown: 
         },
         {
             id: "2",
@@ -553,7 +553,7 @@ export const websiteData: GuestWebsiteProps = {
             image: "/gallery/blog_hiking.webp",
             author: "Inn 32 Team",
             slug: "spring-hiking-guide",
-            content: "Spring brings a rush of energy to the White Mountains as the snowpack melts and waterfalls roar back to life. However, locals know this time of year by another name: mud season. High-elevation trails are often fragile and dangerous due to lingering ice and deep mud, so early spring is the time to explore lower elevations.\n\nWe recommend sticking to trails below 3,000 feet. The Lincoln Woods Trail is a fantastic, flat walk along the Pemigewasset River that's usually clear early in the season. Another great option is the flume gorge area, where the rushing runoff makes for spectacular waterfall viewing.\n\nRemember to wear waterproof boots, stay on the center of the trail to avoid widening the muddy path, and always check trail conditions with the local ranger station before heading out. After a brisk spring hike, Inn 32's comfortable rooms are waiting to warm you up."
+            // content served via markdown: 
         },
         {
             id: "3",
@@ -563,7 +563,7 @@ export const websiteData: GuestWebsiteProps = {
             image: "/gallery/alpine_adventures.webp",
             author: "Inn 32 Team",
             slug: "summer-ziplining-adventures",
-            content: "If you're looking for an adrenaline rush right here in town, look no further than Alpine Adventures. Located just down the road from Inn 32, this is the premier destination for soaring above the White Mountain canopy.\n\nTheir zipline tours are legendary, offering breathtaking views of the Franconia Notch that you simply can't get from the ground. Whether you're a seasoned thrill-seeker or trying it for the first time, their expert guides ensure a safe and exhilarating experience.\n\nBeyond ziplining, they also offer off-road safari tours in massive 6-wheel drive Pinzgauers, taking you up steep, rugged terrain to the top of Barron Mountain. It's the perfect way to kick off the summer season with an unforgettable adventure."
+            // content served via markdown: 
         },
         {
             id: "4",
@@ -573,7 +573,7 @@ export const websiteData: GuestWebsiteProps = {
             image: "/gallery/pemi_moose_tour.webp",
             author: "Inn 32 Team",
             slug: "pemi-valley-moose-tours",
-            content: "Seeing a wild moose in its natural habitat is an iconic New Hampshire experience, but finding these elusive giants on your own can be tricky. That's why we always recommend booking an evening excursion with Pemi Valley Moose Tours.\n\nThe tours run during the summer months when moose are most active, especially at dusk. You'll board a comfortable, specially equipped bus and head north into the deep woods near the Franconia Notch and beyond. The guides are incredibly knowledgeable, sharing local history, wildlife facts, and a few tall tales along the way.\n\nWhen the spotlight finally catches that massive silhouette emerging from the treeline, it's a moment you won't forget. Remember to bring your camera, a light jacket, and a sense of wonder!"
+            // content served via markdown: 
         },
         {
             id: "5",
@@ -583,7 +583,7 @@ export const websiteData: GuestWebsiteProps = {
             image: "/gallery/group_kayaking.webp",
             author: "Inn 32 Team",
             slug: "beat-the-heat-kayaking",
-            content: "When the July heat hits, the White Mountains offer plenty of ways to cool off. Right in our backyard in North Woodstock is Cascade Park, a hidden gem sitting right on the Pemigewasset River. Here, you'll find smooth rocks, small cascading waterfalls, and crystal-clear pools perfect for wading or setting up a chair right in the shallows.\n\nIf you're looking to get out on the water, kayaking is a must. Echo Lake in Franconia Notch State Park provides stunning views of Cannon Mountain from the calmness of the water. You can rent paddleboards or kayaks right at the beach.\n\nWhether you're floating down the Pemi or simply dipping your toes in a mountain stream after a long hike, the pristine waters of our region are the perfect antidote to the summer sun."
+            // content served via markdown: 
         },
         {
             id: "6",
@@ -593,7 +593,7 @@ export const websiteData: GuestWebsiteProps = {
             image: "/gallery/clarks_bears.webp",
             author: "Inn 32 Team",
             slug: "family-fun-clarks-bears",
-            content: "August is the traditional month for final summer family getaways, and Lincoln/Woodstock is built for family fun. No trip is complete without a visit to Clark's Bears. This beloved roadside attraction has been going strong for nearly 100 years. Watch the famous trained black bear show, ride the White Mountain Central Railroad into Wolfman's territory, and enjoy the water-blaster bumper boats.\n\nJust a few miles away is another must-see: Lost River Gorge & Boulder Caves. Kids and adults alike will love exploring the boardwalks that wind through the gorge and scrambling through the glacially formed boulder caves like the 'Lemon Squeezer'.\n\nBoth of these iconic attractions are quintessentially New Hampshire, providing memories that families have been making for generations."
+            // content served via markdown: 
         },
         {
             id: "7",
@@ -603,7 +603,7 @@ export const websiteData: GuestWebsiteProps = {
             image: "/gallery/live_music_pub.webp",
             author: "Inn 32 Team",
             slug: "local-craft-breweries",
-            content: "The craft beer scene in the White Mountains has exploded in recent years, and Inn 32 is perfectly positioned to serve as your 'basecamp' for tasting them. Just a short walk down Main Street is the famous Woodstock Inn Brewery. With over a dozen beers on tap, ranging from their classic Pig's Ear Brown Ale to seasonal IPAs, it's a bustling spot with fantastic pub food and live music.\n\nIf you're willing to take a scenic 25-minute drive north to Littleton, Schilling Beer Co. is a revelation. Situated in a converted 18th-century grist mill right on the Ammonoosuc River, they specialize in European-inspired lagers and ales. Their wood-fired pizzas are the perfect pairing for a crisp pilsner on their riverside deck.\n\nWhether you are a casual fan or a serious beer enthusiast, our local breweries offer something truly special."
+            // content served via markdown: 
         },
         {
             id: "8",
@@ -613,7 +613,7 @@ export const websiteData: GuestWebsiteProps = {
             image: "/gallery/blog_fall_drive.webp",
             author: "Inn 32 Team",
             slug: "fall-foliage-drive",
-            content: "There's a reason people travel from all over the world to see autumn in the White Mountains. The explosion of color—vibrant reds, deep oranges, and golden yellows—is nothing short of spectacular. And the best way to experience it is by driving the Kancamagus Highway (Route 112).\n\nStarting right here in Woodstock, the 'Kanc' stretches for 34 miles to Conway without a single gas station or restaurant in sight. It's pure, uninterrupted wilderness. We recommend packing a picnic lunch at a local North Woodstock cafe and hitting the road early in the morning before the crowds.\n\nTake your time pulling over at the scenic overlooks. The Sabbaday Falls and Rocky Gorge stops are essential. Don't forget to have your camera ready, as the way the morning light hits the foliage is truly mesmerizing."
+            // content served via markdown: 
         },
         {
             id: "9",
@@ -623,7 +623,7 @@ export const websiteData: GuestWebsiteProps = {
             image: "/gallery/blog_renovation.webp",
             author: "Inn 32 Team",
             slug: "story-behind-inn-32-renovation",
-            content: "November brings a quiet chill to the air, making it the perfect time to hunker down and reflect. This month, we're looking back at the journey of renovating Inn 32. Our goal from day one was to create a space that offered premium, modern comforts while still honoring the rugged, historic charm of the White Mountains.\n\nWe completely redesigned our rooms to feature clean, minimalist aesthetics layered with warm, natural textures—think rich woods, luxury bedding, and modern bathroom fixtures. We wanted to provide a sanctuary where guests could truly decompress after a long day of skiing or hiking.\n\nBut a hotel is more than just rooms. Our communal spaces, like the fire pit area, were intentionally built to foster connection. We wanted to build a modern basecamp, and looking at the feedback from our incredible guests over the past year, we're so proud of what Inn 32 has become."
+            // content served via markdown: 
         },
         {
             id: "10",
@@ -633,7 +633,7 @@ export const websiteData: GuestWebsiteProps = {
             image: "/gallery/winter_festival.webp",
             author: "Inn 32 Team",
             slug: "lincoln-ice-castles",
-            content: "When winter arrives, Lincoln undergoes a magical transformation thanks to the famous Ice Castles. Built entirely by hand using hundreds of thousands of icicles, this award-winning attraction is an absolute must-see during the snowy months.\n\nWalking through the towering, glacial-like structures feels like stepping into another world. The experience is incredibly immersive, featuring ice-carved tunnels, fountains, and slides that kids (and adults) love to race down. If you visit in the evening, you're in for a treat: the entire castle is illuminated with color-changing LEDs synchronized to music.\n\nBecause the Ice Castles are located just a few minutes from Inn 32, it's an easy add-on to your evening itinerary. Just remember to book your tickets well in advance, as they sell out very quickly, and dress warmly!"
+            // content served via markdown: 
         },
         {
             id: "11",
@@ -643,7 +643,7 @@ export const websiteData: GuestWebsiteProps = {
             image: "/gallery/group_skiing.webp",
             author: "Inn 32 Team",
             slug: "skiing-cannon-and-loon",
-            content: "January means one thing in North Woodstock: prime ski season. Inn 32 is strategically located right between two of the best resorts in the East: Loon Mountain and Cannon Mountain.\n\nLoon Mountain, just a 5-minute drive away, is known for its excellent grooming, massive terrain parks, and the state-of-the-art Kancamagus 8 chairlift. It's incredibly family-friendly while still offering challenging runs on South Peak.\n\nIf you prefer old-school, rugged skiing with unparalleled views, head 10 minutes north through Franconia Notch to Cannon Mountain. It's home to the highest ski area summit in NH and boasts challenging steeps that will test even expert skiers. No matter which mountain you choose, returning to a warm room at Inn 32 makes for the perfect end to a powder day."
+            // content served via markdown: 
         },
         {
             id: "12",
@@ -653,7 +653,7 @@ export const websiteData: GuestWebsiteProps = {
             image: "/gallery/blog_food.webp",
             author: "Inn 32 Team",
             slug: "winter-getaway-dining",
-            content: "Sometimes the best mountain vacation doesn't involve breaking a sweat. February's deep freeze is the ideal excuse to slow down, indulge, and enjoy a cozy, relaxing getaway. The Lincoln/Woodstock area is packed with excellent dining options for those nights you just want to treat yourself.\n\nThe Common Man, situated in a historic mill building right in Lincoln, is a staple and a fantastic dining experience offering hearty New England comfort food by a roaring fireplace. After dinner, there's no need to rush. Head back to Inn 32, grab a blanket, and settle into the Adirondack chairs around our outdoor fire pits.\n\nIt's quiet under the stars, even in the middle of winter. Whether you're here with a partner or a group of friends, taking the time to simply enjoy the mountain air with good company is what a winter getaway is all about."
+            // content served via markdown: 
         }
     ],
     socialPosts: [

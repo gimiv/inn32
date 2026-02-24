@@ -1,6 +1,11 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+import fs from 'fs'
+import path from 'path'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 import { Calendar, User, ArrowLeft } from 'lucide-react'
 import { websiteData } from '../../../data/website-data'
 
@@ -24,6 +29,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
 }
 
+// Helper to read markdown file content
+function getPostContent(slug: string): string | null {
+    try {
+        const filePath = path.join(process.cwd(), 'src/content/blog', `${slug}.md`)
+        return fs.readFileSync(filePath, 'utf8')
+    } catch (e) {
+        return null
+    }
+}
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params
     const post = websiteData.blogPosts.find((p) => p.slug === slug)
@@ -32,8 +47,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         notFound()
     }
 
-    // Split content by paragraphs to render them distinctly
-    const paragraphs = post.content ? post.content.split('\n\n') : []
+    // Fall back to the data array content string if the markdown file isn't written yet
+    const markdownContent = getPostContent(slug) || post.content || ""
 
     return (
         <article className="min-h-screen bg-cream dark:bg-slate-900 pb-20 pt-32">
@@ -74,14 +89,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     />
                 </div>
 
-                {/* Content rendering */}
-                <div className="prose prose-lg prose-slate dark:prose-invert max-w-none font-sans text-charcoal dark:text-gray-300">
-                    {paragraphs.length > 0 ? (
-                        paragraphs.map((para, index) => (
-                            <p key={index} className="mb-6 leading-relaxed text-lg">
-                                {para}
-                            </p>
-                        ))
+                {/* Content rendering via react-markdown */}
+                <div className="prose prose-lg prose-slate dark:prose-invert max-w-none font-sans text-charcoal dark:text-gray-300
+                                prose-headings:font-display prose-headings:text-navy dark:prose-headings:text-white
+                                prose-a:text-mountain-blue hover:prose-a:text-sky-blue
+                                prose-img:rounded-xl prose-img:shadow-md">
+                    {markdownContent ? (
+                        <ReactMarkdown
+                            remarkPlugins={[remarkGfm]}
+                            rehypePlugins={[rehypeRaw]}
+                        >
+                            {markdownContent}
+                        </ReactMarkdown>
                     ) : (
                         <p className="text-lg italic text-gray-500">
                             Check back soon for the full story.
