@@ -518,45 +518,45 @@ export const websiteData: GuestWebsiteProps = {
     socialPosts: [
         {
             id: "s1",
-            image: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&q=80&w=800",
+            image: "/gallery/pool-firepit-night-.webp",
             caption: "Cozy vibes by the fire 🔥 #Inn32 #WhiteMountains #CozyGetaway",
             platform: "instagram",
-            link: "https://instagram.com"
+            link: "https://instagram.com/inn32nh"
         },
         {
             id: "s2",
-            image: "https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee?auto=format&fit=crop&q=80&w=800",
-            caption: "Fresh powder day at Loon Mountain! 🎿 Who's ready to hit the slopes? #SkiNH #LoonMountain",
+            image: "/gallery/front-view.webp",
+            caption: "Welcome to Inn 32! 🏔️ Your basecamp for all-season mountain fun. #SkiNH #LoonMountain",
             platform: "instagram",
-            link: "https://instagram.com"
+            link: "https://instagram.com/inn32nh"
         },
         {
             id: "s3",
-            image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800",
+            image: "/gallery/river-entry.webp",
             caption: "Summer sunsets on the patio are unmatched. 🌅 #NHSummer #VacationMode",
             platform: "instagram",
-            link: "https://instagram.com"
+            link: "https://instagram.com/inn32nh"
         },
         {
             id: "s4",
-            image: "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=800",
-            caption: "Breakfast is served! Local maple syrup is a must. 🥞🍁 #NHFoodie #BreakfastGoals",
+            image: "/gallery/Dining_Room.webp",
+            caption: "Gather around for a perfect evening. 🍷 #NHFoodie #DinnerGoals",
             platform: "instagram",
-            link: "https://instagram.com"
+            link: "https://instagram.com/inn32nh"
         },
         {
             id: "s5",
-            image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800",
+            image: "/gallery/hotel.webp",
             caption: "Fall foliage is peaking right now! 🍂 Don't miss the colors. #LeafPeeping #NHFall",
             platform: "instagram",
-            link: "https://instagram.com"
+            link: "https://instagram.com/inn32nh"
         },
         {
             id: "s6",
-            image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=800",
+            image: "/gallery/living-room-01--1-.webp",
             caption: "Relax and unwind in our newly renovated suites. 🛌✨ #HotelDesign #Renovation",
             platform: "instagram",
-            link: "https://instagram.com"
+            link: "https://instagram.com/inn32nh"
         }
     ],
     reviews: [
