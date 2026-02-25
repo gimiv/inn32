@@ -13,7 +13,7 @@ export default function AmenitiesPage() {
     return (
         <PageLayout
             title="Hotel Amenities & Services"
-            subtitle="Enjoy our premium amenities including complimentary breakfast, high-speed Wi-Fi, and cozy common areas."
+            subtitle="Enjoy our premium amenities including high-speed Wi-Fi, free parking, and cozy common areas."
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
                 <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-center leading-relaxed">
