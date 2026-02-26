@@ -8,7 +8,7 @@ interface ContentSectionProps {
     id: string
     isCarousel: boolean
     items: ReactNode[]
-    header: {
+    header?: {
         label: string
         title: string
         subtitle?: string
@@ -43,17 +43,19 @@ export default function ContentSection({
                 {isCarousel ? (
                     <CarouselWrapper
                         items={items}
-                        header={header}
+                        header={header!} // If isCarousel is true, header is provided
                         carouselItemClassName={carouselItemClassName}
                     />
                 ) : (
                     <>
-                        <SectionHeader
-                            label={header.label}
-                            title={header.title}
-                            subtitle={header.subtitle}
-                            align="center"
-                        />
+                        {header && (
+                            <SectionHeader
+                                label={header.label}
+                                title={header.title}
+                                subtitle={header.subtitle}
+                                align="center"
+                            />
+                        )}
                         <div className={gridClassName}>
                             {items.map((item, index) => {
                                 const itemKey = React.isValidElement(item) && item.key ? item.key : index

@@ -37,13 +37,11 @@ export default function Events({ limit, events }: EventsProps) {
             className={cn("transition-colors duration-300", isSlider ? "py-20 bg-white dark:bg-slate-800/50 border-t border-gray-100 dark:border-slate-800" : "pb-20 pt-4 md:pt-8 bg-transparent")}
             isCarousel={isSlider}
             items={eventItems}
-            header={{
+            header={isSlider ? {
                 label: "Local Happenings",
-                title: isSlider ? "Upcoming Events" : "Events Calendar",
-                subtitle: isSlider
-                    ? "Discover what's happening around North Woodstock and the White Mountains."
-                    : "Join us for local festivals, seasonal celebrations, and community gatherings."
-            }}
+                title: "Upcoming Events",
+                subtitle: "Discover what's happening around North Woodstock and the White Mountains."
+            } : undefined}
             viewAllLink={isSlider && events.length > limit ? { href: "/events", text: "View All Events" } : undefined}
             carouselItemClassName="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_30%] min-w-0 flex"
             gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr"
