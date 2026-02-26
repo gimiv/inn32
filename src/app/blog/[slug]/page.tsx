@@ -6,6 +6,7 @@ import path from 'path'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
+import matter from 'gray-matter'
 import { Calendar, User, ArrowLeft } from 'lucide-react'
 import { websiteData } from '../../../data/website-data'
 
@@ -29,11 +30,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
 }
 
-// Helper to read markdown file content
+// Helper to read markdown file content and strip frontmatter
 function getPostContent(slug: string): string | null {
     try {
         const filePath = path.join(process.cwd(), 'src/content/blog', `${slug}.md`)
-        return fs.readFileSync(filePath, 'utf8')
+        const fileString = fs.readFileSync(filePath, 'utf8')
+        const { content } = matter(fileString)
+        return content
     } catch (e) {
         return null
     }
