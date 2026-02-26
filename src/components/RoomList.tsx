@@ -16,7 +16,7 @@ export default function RoomList({ limit, roomTypes }: RoomListProps) {
     return (
         <ContentSection
             id="rooms"
-            className={cn("transition-colors duration-300", limit ? "py-20 bg-cream dark:bg-slate-800/50" : "pb-20 pt-4 md:pt-8 bg-transparent")}
+            className={cn("transition-colors duration-300", limit ? "py-20 bg-cream dark:bg-slate-800/50" : "bg-transparent")}
             isCarousel={!!limit}
             items={roomItems}
             header={limit ? {

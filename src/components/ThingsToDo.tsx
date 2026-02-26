@@ -50,7 +50,7 @@ export default function ThingsToDo({ limit, showFilters = true, thingsToDo }: Th
 
     // Render interactive grid view with filters for dedicated page
     return (
-        <section id="things-to-do" className="transition-colors duration-300 pb-20 pt-4 md:pt-8 bg-transparent">
+        <section id="things-to-do" className="transition-colors duration-300 bg-transparent">
             {showFilters && (
                 <ThingsToDoInteractive thingsToDo={thingsToDo} />
             )}

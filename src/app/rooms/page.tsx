@@ -43,9 +43,7 @@ export default function RoomsPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(roomsJsonLd) }}
             />
             {/* Room List Grid */}
-            <div className="py-20">
-                <RoomList roomTypes={websiteData.roomTypes} />
-            </div>
+            <RoomList roomTypes={websiteData.roomTypes} />
         </PageLayout>
     )
 }

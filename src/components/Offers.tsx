@@ -22,7 +22,7 @@ export default function Offers({ limit, offers }: OffersProps) {
     return (
         <ContentSection
             id="offers"
-            className={cn("transition-colors duration-300", isSlider ? "py-20 bg-slate-50 dark:bg-slate-800/50 border-t border-gray-100 dark:border-slate-800" : "pb-20 pt-4 md:pt-8 bg-transparent")}
+            className={cn("transition-colors duration-300", isSlider ? "py-20 bg-slate-50 dark:bg-slate-800/50 border-t border-gray-100 dark:border-slate-800" : "bg-transparent")}
             isCarousel={isSlider}
             items={offerItems}
             header={isSlider ? {

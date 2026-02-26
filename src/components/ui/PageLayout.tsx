@@ -18,7 +18,7 @@ export default function PageLayout({ title, subtitle, description, backgroundIma
                 description={description}
                 backgroundImage={backgroundImage}
             />
-            <main className="flex-grow">
+            <main className="flex-grow pt-10 md:pt-16 pb-20">
                 {children}
             </main>
         </div>

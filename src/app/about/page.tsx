@@ -39,7 +39,7 @@ export default function AboutPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
             />
 
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
                 {/* Our Story */}
                 <section className="mb-16">
                     <h2 className="font-display text-3xl text-navy dark:text-white mb-6">Our Story</h2>

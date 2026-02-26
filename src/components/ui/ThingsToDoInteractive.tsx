@@ -40,7 +40,7 @@ export default function ThingsToDoInteractive({ thingsToDo }: ThingsToDoInteract
 
     return (
         <>
-            <div className="flex overflow-x-auto md:justify-center whitespace-nowrap pt-2 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 mb-4 sm:mb-8 gap-3 hide-scrollbar relative z-10 w-full max-w-7xl mx-auto lg:px-8">
+            <div className="flex overflow-x-auto whitespace-nowrap pt-2 pb-4 px-4 sm:px-6 mb-4 sm:mb-8 gap-3 hide-scrollbar relative z-10 w-full max-w-7xl mx-auto lg:px-8">
                 {categories.map((category) => (
                     <button
                         key={category}
