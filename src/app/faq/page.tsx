@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const faqs = [
     {
         question: "What are the check-in and check-out times at Inn 32?",
-        answer: "Check-in is at 3:00 PM and check-out is at 11:00 AM. Early check-in or late check-out may be available upon request — please contact us at (603) 745-2416."
+        answer: "Check-in is at 3:00 PM and check-out is at 11:00 AM. Early check-in or late check-out may be available upon request — please contact us at (603) 825-4790."
     },
     {
         question: "Is parking free at Inn 32?",
@@ -46,7 +46,7 @@ const faqs = [
     },
     {
         question: "Can I book Inn 32 for a group event or wedding?",
-        answer: "Yes! Inn 32 is available for full-property buyouts, perfect for intimate weddings, family reunions, and corporate retreats. Contact our group coordinator at info@inn32.com or (603) 745-2416 to discuss your event."
+        answer: "Yes! Inn 32 is available for full-property buyouts, perfect for intimate weddings, family reunions, and corporate retreats. Contact our group coordinator at info@inn32.com or (603) 825-4790 to discuss your event."
     },
     {
         question: "What is the best time to visit North Woodstock, NH?",

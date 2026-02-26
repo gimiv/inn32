@@ -4,8 +4,8 @@ import PageLayout from '../../components/ui/PageLayout'
 import Location from '../../components/Location'
 
 export const metadata: Metadata = {
-    title: 'Location & Contact',
-    description: 'Find Inn 32 at 180 Main Street, North Woodstock, NH 03262. Minutes from Franconia Notch, Loon Mountain, and the Kancamagus Highway. Call (603) 745-2416.',
+    title: 'Location & Directions',
+    description: 'Find Inn 32 at 180 Main Street, North Woodstock, NH 03262. Minutes from Franconia Notch, Loon Mountain, and the Kancamagus Highway. Call (603) 825-4790.',
 }
 
 export default function LocationPage() {

@@ -139,7 +139,7 @@ export default function AboutPage() {
                         <p>
                             Interested in booking a group event? Reach out to our team at{' '}
                             <a href="mailto:info@inn32.com">info@inn32.com</a> or call{' '}
-                            <a href="tel:+16037452416">(603) 745-2416</a>.
+                            <a href="tel:+16038254790">(603) 825-4790</a>.
                         </p>
                     </div>
                 </section>

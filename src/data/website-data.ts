@@ -9,7 +9,7 @@ export const websiteData: GuestWebsiteProps = {
         checkInTime: "15:00",
         checkOutTime: "11:00",
         contact: {
-            phone: "(603) 745-2416",
+            phone: "(603) 825-4790",
             email: "info@inn32.com",
             instagram: "@inn32nh"
         },
