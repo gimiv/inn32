@@ -27,7 +27,7 @@ export default function GroupsPage() {
                             className="object-cover hover:scale-105 transition-transform duration-700"
                         />
                     </div>
-                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg md:-mt-8">
+                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg md:mt-8">
                         <Image
                             src="/gallery/group_skiing.webp"
                             alt="Friends skiing down a mountain slope"
