@@ -1,5 +1,5 @@
 ---
-title: "Spring Hiking in the White Mountains: Navigating Mud Season and Finding Open Trails"
+title: "Spring Hiking and Navigating Mud Season"
 slug: spring-hiking-guide
 date: 2024-04-15
 author: "Inn 32 Staff"

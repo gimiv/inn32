@@ -1,5 +1,5 @@
 ---
-title: "Winter Wonderland: Ice Castles in Lincoln and the Magic of the Season Near North Woodstock"
+title: "Visiting the Ice Castles in Lincoln"
 slug: lincoln-ice-castles
 date: 2024-12-01
 author: "Inn 32 Staff"

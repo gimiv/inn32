@@ -1,5 +1,5 @@
 ---
-title: "Cannon Mountain vs Loon Mountain: Choosing Your White Mountains Ski Experience Near North Woodstock"
+title: "Cannon vs. Loon Mountain: A Local Ski Guide"
 slug: skiing-cannon-and-loon
 date: 2024-11-15
 author: "Inn 32 Staff"

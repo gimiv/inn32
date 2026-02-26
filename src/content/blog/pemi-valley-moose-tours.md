@@ -1,5 +1,5 @@
 ---
-title: "Evening Moose Tours in the Pemigewasset Valley: Spotting Maine's Iconic Mammal Near North Woodstock"
+title: "Evening Moose Tours in the Pemigewasset Valley"
 slug: pemi-valley-moose-tours
 date: 2024-05-15
 author: "Inn 32 Staff"

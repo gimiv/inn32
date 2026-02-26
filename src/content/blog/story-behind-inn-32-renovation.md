@@ -1,5 +1,5 @@
 ---
-title: "The Story Behind Inn 32: Inside Our 2025 Renovation and Design Philosophy"
+title: "Inside the 2025 Renovation of Inn 32"
 slug: story-behind-inn-32-renovation
 date: 2025-01-20
 author: "Inn 32 Staff"

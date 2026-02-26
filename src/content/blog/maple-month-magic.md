@@ -1,5 +1,5 @@
 ---
-title: "Maple Month Magic: NH's Sweetest Season Near North Woodstock"
+title: "A Guide to New Hampshire Maple Month"
 slug: maple-month-magic
 date: 2024-03-01
 author: "Inn 32 Staff"

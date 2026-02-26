@@ -1,5 +1,5 @@
 ---
-title: "Family Fun Near North Woodstock: Clark's Bears and Lost River Gorge Adventures"
+title: "Visiting Clark's Bears and Lost River Gorge"
 slug: family-fun-clarks-bears
 date: 2024-06-15
 author: "Inn 32 Staff"

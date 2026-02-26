@@ -1,5 +1,5 @@
 ---
-title: "Beat the Heat: Summer Kayaking and Water Adventures Near North Woodstock"
+title: "Where to Kayak and Swim Near North Woodstock"
 slug: beat-the-heat-kayaking
 date: 2024-07-01
 author: "Inn 32 Staff"

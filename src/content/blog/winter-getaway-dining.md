@@ -1,5 +1,5 @@
 ---
-title: "Winter Dining Guide: Cozy Restaurants and Romantic Dinners Near North Woodstock"
+title: "A Winter Dining Guide to North Woodstock and Lincoln"
 slug: winter-getaway-dining
 date: 2024-12-15
 author: "Inn 32 Staff"

@@ -537,7 +537,7 @@ export const websiteData: GuestWebsiteProps = {
     blogPosts: [
         {
             id: "1",
-            title: "Maple Month Magic in the White Mountains",
+            title: "A Guide to New Hampshire Maple Month",
             excerpt: "Discover the sweet tradition of New Hampshire's Maple Month. We guide you through the best local sugarhouses and tasting tours near Inn 32.",
             date: "Mar 10, 2025",
             image: "/gallery/spring maple.webp",
@@ -547,7 +547,7 @@ export const websiteData: GuestWebsiteProps = {
         },
         {
             id: "2",
-            title: "Spring Hiking Guide: Mud Season Survival",
+            title: "Spring Hiking and Navigating Mud Season",
             excerpt: "Spring in the White Mountains is uniquely beautiful and challenging. Learn how to navigate 'mud season' and which lower-elevation trails offer the best early-season payoffs.",
             date: "Apr 15, 2025",
             image: "/gallery/blog_hiking.webp",
@@ -557,7 +557,7 @@ export const websiteData: GuestWebsiteProps = {
         },
         {
             id: "3",
-            title: "Welcoming Summer: Ziplining and Aerial Adventures",
+            title: "Ziplining at Alpine Adventures",
             excerpt: "As the weather warms up, it's time to take to the skies! A spotlight on Alpine Adventures and the thrill of ziplining through the dense mountain canopy.",
             date: "May 20, 2025",
             image: "/gallery/alpine_adventures.webp",
@@ -567,7 +567,7 @@ export const websiteData: GuestWebsiteProps = {
         },
         {
             id: "4",
-            title: "Pemi Valley Moose Tours: A Majestic Evening",
+            title: "Evening Moose Tours in the Pemigewasset Valley",
             excerpt: "One of the most unforgettable experiences in the region is spotting a wild moose. Join us as we recount an evening tour into the heart of moose country.",
             date: "Jun 12, 2025",
             image: "/gallery/pemi_moose_tour.webp",
@@ -577,7 +577,7 @@ export const websiteData: GuestWebsiteProps = {
         },
         {
             id: "5",
-            title: "Beat the Heat: Kayaking and River Wading",
+            title: "Where to Kayak and Swim Near North Woodstock",
             excerpt: "Summer is in full swing. Dive into the best spots for a refreshing dip, from the relaxing shallows of Cascade Park to kayaking on pristine mountain lakes.",
             date: "Jul 08, 2025",
             image: "/gallery/group_kayaking.webp",
@@ -587,7 +587,7 @@ export const websiteData: GuestWebsiteProps = {
         },
         {
             id: "6",
-            title: "Family Fun at Clark's Bears and Lost River",
+            title: "Visiting Clark's Bears and Lost River Gorge",
             excerpt: "August is peak family vacation time. Read our itinerary for an action-packed weekend featuring the famous Clark's Bears and the boardwalks of Lost River Gorge.",
             date: "Aug 05, 2025",
             image: "/gallery/clarks_bears.webp",
@@ -597,7 +597,7 @@ export const websiteData: GuestWebsiteProps = {
         },
         {
             id: "7",
-            title: "Local Pints: A Guide to Woodstock's Craft Breweries",
+            title: "The Best Local Craft Breweries in North Woodstock",
             excerpt: "After a long day of exploring, nothing beats a cold craft beer. We review local favorites, including the Woodstock Inn Brewery and the scenic Schilling Beer Co.",
             date: "Sep 15, 2025",
             image: "/gallery/live_music_pub.webp",
@@ -607,7 +607,7 @@ export const websiteData: GuestWebsiteProps = {
         },
         {
             id: "8",
-            title: "Chasing Colors: The Ultimate Fall Foliage Drive",
+            title: "Driving the Kancamagus Highway During Peak Foliage",
             excerpt: "The White Mountains transform into a sea of red, orange, and gold. Join us for a scenic drive down the Kancamagus Highway during peak leaf-peeping season.",
             date: "Oct 01, 2025",
             image: "/gallery/blog_fall_drive.webp",
@@ -617,7 +617,7 @@ export const websiteData: GuestWebsiteProps = {
         },
         {
             id: "9",
-            title: "Cozying Up: The Story Behind Our Renovation",
+            title: "Inside the 2025 Renovation of Inn 32",
             excerpt: "As the crisp November air sets in, we reflect on the complete transformation of Inn 32. Take a look inside how we harmonized modern comfort with historic roots.",
             date: "Nov 05, 2025",
             image: "/gallery/blog_renovation.webp",
@@ -627,7 +627,7 @@ export const websiteData: GuestWebsiteProps = {
         },
         {
             id: "10",
-            title: "Winter Wonderlands: The Lincoln Ice Castles",
+            title: "Visiting the Ice Castles in Lincoln",
             excerpt: "Step into a fairy tale this winter. We explore the mesmerizing, illuminated pathways of the famous Ice Castles just minutes from our door.",
             date: "Dec 18, 2025",
             image: "/gallery/winter_festival.webp",
@@ -637,7 +637,7 @@ export const websiteData: GuestWebsiteProps = {
         },
         {
             id: "11",
-            title: "Hitting the Slopes: Skiing Cannon and Loon",
+            title: "Cannon vs. Loon Mountain: A Local Ski Guide",
             excerpt: "The snow is falling, and the mountains are calling. A breakdown of the varied terrain, stunning views, and fresh powder at Cannon Mountain and Loon Mountain Resort.",
             date: "Jan 10, 2026",
             image: "/gallery/group_skiing.webp",
@@ -647,7 +647,7 @@ export const websiteData: GuestWebsiteProps = {
         },
         {
             id: "12",
-            title: "A Winter Getaway: Dining and Relaxing in the Mountains",
+            title: "A Winter Dining Guide to North Woodstock and Lincoln",
             excerpt: "Embrace the chill. February is the perfect time for a romantic or cozy group getaway, complete with fine local dining at The Common Man and evening fire pits at Inn 32.",
             date: "Feb 14, 2026",
             image: "/gallery/blog_food.webp",

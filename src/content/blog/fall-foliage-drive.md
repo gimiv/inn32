@@ -1,5 +1,5 @@
 ---
-title: "Peak Foliage on the Kancamagus Highway: The Ultimate Fall Drive Near North Woodstock"
+title: "Driving the Kancamagus Highway During Peak Foliage"
 slug: fall-foliage-drive
 date: 2024-09-15
 author: "Inn 32 Staff"

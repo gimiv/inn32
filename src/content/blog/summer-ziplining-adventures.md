@@ -1,5 +1,5 @@
 ---
-title: "Soaring Through the Canopy: Summer Ziplining at Alpine Adventures Near North Woodstock"
+title: "Ziplining at Alpine Adventures"
 slug: summer-ziplining-adventures
 date: 2024-06-01
 author: "Inn 32 Staff"

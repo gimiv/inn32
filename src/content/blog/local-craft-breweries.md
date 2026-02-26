@@ -1,5 +1,5 @@
 ---
-title: "Craft Beer Paradise: Local Breweries Near North Woodstock"
+title: "The Best Local Craft Breweries in North Woodstock"
 slug: local-craft-breweries
 date: 2024-07-15
 author: "Inn 32 Staff"

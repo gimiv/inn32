@@ -15,14 +15,15 @@ interface GalleryProps {
 export default function Gallery({ gallery }: GalleryProps) {
     const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
 
-    // Group images into a masonry-like layout that perfectly fills a 4-column grid (7 items = 3 rows)
+    // Group images into a masonry-like layout that perfectly fills a 4-column grid on desktop (7 items = 3 rows)
+    // On mobile (2-cols), everything defaults to 1x1 to prevent awkward gaps and orphaned items.
     const layoutPatterns = [
-        'col-span-2 row-span-2', // Large
+        'md:col-span-2 md:row-span-2', // Large (Desktop only)
         'col-span-1 row-span-1', // Small
         'col-span-1 row-span-1', // Small
-        'col-span-1 row-span-2', // Tall
+        'md:col-span-1 md:row-span-2', // Tall (Desktop only)
         'col-span-1 row-span-1', // Small
-        'col-span-2 row-span-1', // Wide
+        'md:col-span-2 md:row-span-1', // Wide (Desktop only)
         'col-span-1 row-span-1', // Small
     ]
 
