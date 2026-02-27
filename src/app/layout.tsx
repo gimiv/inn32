@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { DM_Serif_Display, Outfit, Lora } from 'next/font/google'
 import '../index.css'
 import { ThemeProvider } from '../context/ThemeContext'
@@ -11,6 +11,12 @@ import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-sans' })
 const dmSerif = DM_Serif_Display({ weight: '400', subsets: ['latin'], variable: '--font-display' })
 const lora = Lora({ subsets: ['latin'], variable: '--font-serif' })
+
+export const viewport: Viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    viewportFit: 'cover',
+}
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://inn32.com'),

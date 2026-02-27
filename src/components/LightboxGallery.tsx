@@ -64,14 +64,14 @@ export default function LightboxGallery({ isOpen, onClose, images, altTexts, ini
     if (!isOpen) return null
 
     return createPortal(
-        <div className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center animate-in fade-in duration-200 [padding-top:max(env(safe-area-inset-top),0.75rem)] [padding-bottom:max(env(safe-area-inset-bottom),0.75rem)]">
             {/* Close Button */}
             <button
                 onClick={onClose}
-                className="absolute top-4 right-4 md:top-8 md:right-8 z-50 p-2 text-white/70 hover:text-white transition-colors bg-white/10 hover:bg-white/20 rounded-full"
+                className="absolute right-4 md:right-8 z-50 p-2 text-white/70 hover:text-white transition-colors bg-white/10 hover:bg-white/20 rounded-full [top:max(env(safe-area-inset-top),1rem)] md:[top:max(env(safe-area-inset-top),2rem)]"
                 aria-label="Close gallery"
             >
-                <X className="w-8 h-8" />
+                <X className="w-7 h-7 md:w-8 md:h-8" />
             </button>
 
             {/* Navigation Buttons */}
@@ -103,8 +103,8 @@ export default function LightboxGallery({ isOpen, onClose, images, altTexts, ini
                         const alt = isObject ? imageData.alt : (altTexts?.[index] ?? `Gallery image ${index + 1}`)
 
                         return (
-                            <div key={index} className="flex-[0_0_100%] min-w-0 relative flex items-center justify-center p-4">
-                                <div className="relative w-full h-[85vh]">
+                            <div key={index} className="flex-[0_0_100%] min-w-0 relative flex items-center justify-center p-4 md:p-6">
+                                <div className="relative w-full h-[78dvh] md:h-[85vh]">
                                     <Image
                                         src={src}
                                         alt={alt}
@@ -120,7 +120,7 @@ export default function LightboxGallery({ isOpen, onClose, images, altTexts, ini
             </div>
 
             {/* Counter */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-black/50 text-white text-sm font-medium rounded-full backdrop-blur-md border border-white/10">
+            <div className="absolute left-1/2 -translate-x-1/2 px-4 py-1.5 bg-black/50 text-white text-sm font-medium rounded-full backdrop-blur-md border border-white/10 [bottom:max(env(safe-area-inset-bottom),1rem)] md:bottom-8">
                 {selectedIndex + 1} / {(Array.isArray(images) ? images.length : 0)}
             </div>
         </div>,
