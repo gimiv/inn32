@@ -43,7 +43,7 @@ export default function Events({ limit, events }: EventsProps) {
                 subtitle: "Discover what's happening around North Woodstock and the White Mountains."
             } : undefined}
             viewAllLink={isSlider && events.length > limit ? { href: "/events", text: "View All Events" } : undefined}
-            carouselItemClassName="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_30%] min-w-0 flex"
+            carouselItemClassName="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_48%] lg:flex-[0_0_32%] min-w-0"
             gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr"
         />
     )

@@ -42,7 +42,7 @@ export default function ThingsToDo({ limit, showFilters = true, thingsToDo }: Th
                     subtitle: "North Woodstock is your gateway to the White Mountains."
                 }}
                 viewAllLink={{ href: "/things-to-do", text: "See All Activities" }}
-                carouselItemClassName="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_28%] min-w-0 flex"
+                carouselItemClassName="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_48%] lg:flex-[0_0_32%] min-w-0"
                 gridClassName=""
             />
         )

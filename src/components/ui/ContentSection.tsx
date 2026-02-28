@@ -30,7 +30,7 @@ export default function ContentSection({
     items,
     header,
     viewAllLink,
-    carouselItemClassName = "flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_30%] min-w-0 flex",
+    carouselItemClassName = "flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_48%] lg:flex-[0_0_32%] min-w-0",
     gridClassName = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr",
     className,
     containerClassName = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
