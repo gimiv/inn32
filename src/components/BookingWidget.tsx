@@ -73,10 +73,9 @@ export default function BookingWidget({ isOpen, onClose, promoCode, roomId }: Bo
                     }
                 )
             } else {
-                console.warn('Mews script has not finished loading.')
-                // Keep trying to open once it loads ? 
-                // In actual UX, you'd show a "Loading..." spinner, but it loads very fast.
-                onClose()
+                // Keep the request open while the lazy-loaded Mews script initializes.
+                // The background poll sets mewsApi, which re-runs this effect and opens it.
+                console.info('Waiting for the Mews booking engine to load.')
             }
         }
 
