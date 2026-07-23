@@ -65,6 +65,12 @@ export default function Navigation({ property }: NavigationProps) {
         setIsMobileMenuOpen(false)
     }
 
+    useEffect(() => {
+        if (pathname === '/booking') {
+            setIsBookingOpen(true)
+        }
+    }, [pathname])
+
     // Scroll Lock & Focus Trap for Mobile Menu
     useEffect(() => {
         if (!mounted) return;
