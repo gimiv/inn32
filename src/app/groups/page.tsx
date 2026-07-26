@@ -1,10 +1,27 @@
 import { Metadata } from 'next'
 import GroupReservations from '../../components/GroupReservations'
 import { websiteData } from '../../data/website-data'
+import { canonicalUrl } from '../../lib/seo'
+
+const TITLE = 'Group Events & Buyouts'
+const DESCRIPTION = 'Host your wedding, corporate retreat, or family reunion at Inn 32 in North Woodstock, NH. Full 24-room property buyout available in the heart of the White Mountains.'
 
 export const metadata: Metadata = {
-    title: 'Group Events & Buyouts',
-    description: 'Host your wedding, corporate retreat, or family reunion at Inn 32 in North Woodstock, NH. Full 24-room property buyout available in the heart of the White Mountains.',
+    title: TITLE,
+    description: DESCRIPTION,
+    alternates: { canonical: canonicalUrl('/groups') },
+    openGraph: {
+        url: canonicalUrl('/groups'),
+        title: TITLE,
+        description: DESCRIPTION,
+        images: [{ url: canonicalUrl('/group_hiking.webp'), width: 1200, height: 630, alt: 'Group hiking in the White Mountains near Inn 32' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: TITLE,
+        description: DESCRIPTION,
+        images: [canonicalUrl('/group_hiking.webp')],
+    },
 }
 
 import Image from 'next/image'

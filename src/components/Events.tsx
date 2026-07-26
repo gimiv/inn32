@@ -24,7 +24,7 @@ export default function Events({ limit, events }: EventsProps) {
             title={event.title}
             description={event.description || ""}
             actions={
-                <Link href={`/events#${event.id}`} className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center">
+                <Link href={`/events#${event.id}`} className="text-blue-700 hover:text-navy dark:text-blue-300 dark:hover:text-white font-medium transition-colors flex items-center">
                     Event Details <span className="ml-1">→</span>
                 </Link>
             }

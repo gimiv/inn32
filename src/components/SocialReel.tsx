@@ -26,7 +26,7 @@ export default function SocialReel({ socialPosts }: SocialReelProps) {
                 <div className="inline-flex items-center justify-center p-3 bg-white/10 rounded-full mb-6">
                     <Instagram className="w-6 h-6 text-white" />
                 </div>
-                <span className="font-sans text-sm font-semibold text-mountain-blue uppercase tracking-wider mb-2 block">
+                <span className="font-sans text-sm font-semibold text-blue-300 uppercase tracking-wider mb-2 block">
                     Our Community
                 </span>
                 <h2 className="font-display text-page-title text-white mb-4">

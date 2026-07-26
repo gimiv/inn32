@@ -1,10 +1,27 @@
 import { Metadata } from 'next'
 import PageLayout from '../../components/ui/PageLayout'
 import { websiteData } from '../../data/website-data'
+import { canonicalUrl } from '../../lib/seo'
+
+const TITLE = 'Frequently Asked Questions'
+const DESCRIPTION = 'Common questions about staying at Inn 32 in North Woodstock, NH — check-in/check-out times, parking, pet policy, nearby attractions, and more.'
 
 export const metadata: Metadata = {
-    title: 'Frequently Asked Questions',
-    description: 'Common questions about staying at Inn 32 in North Woodstock, NH — check-in/check-out times, parking, pet policy, nearby attractions, and more.',
+    title: TITLE,
+    description: DESCRIPTION,
+    alternates: { canonical: canonicalUrl('/faq') },
+    openGraph: {
+        url: canonicalUrl('/faq'),
+        title: TITLE,
+        description: DESCRIPTION,
+        images: [{ url: canonicalUrl('/gallery/front-view.webp'), width: 1200, height: 630, alt: 'Inn 32 boutique hotel in North Woodstock, New Hampshire' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: TITLE,
+        description: DESCRIPTION,
+        images: [canonicalUrl('/gallery/front-view.webp')],
+    },
 }
 
 const faqs = [
@@ -38,7 +55,7 @@ const faqs = [
     },
     {
         question: "Does Inn 32 have a pool or hot tub?",
-        answer: "Inn 32 features an outdoor fire pit area by the river — perfect for relaxing in the evening. The Pemigewasset River is also accessible for wading during summer months."
+        answer: "Inn 32 does not currently advertise an on-site pool or hot tub; contact the property to confirm current amenities. We do have an outdoor fire pit area by the river, and the Pemigewasset River is accessible for wading during summer months."
     },
     {
         question: "What types of rooms are available at Inn 32?",

@@ -60,7 +60,7 @@ Beyond The Common Man, the region offers diverse dining experiences:
 
 ### Woodstock Inn Brewery
 
-We've detailed this [craft brewery establishment](/local-craft-breweries) in depth, but its significance as dining destination deserves emphasis. The combination of on-site brewing and quality food creates unique experience. Pair quality beer with elevated pub cuisine.
+We've detailed this [craft brewery establishment](/blog/local-craft-breweries) in depth, but its significance as dining destination deserves emphasis. The combination of on-site brewing and quality food creates unique experience. Pair quality beer with elevated pub cuisine.
 
 **Winter Advantage** - Warm interior, fireplace, and river views create perfect winter ambiance. Hot food and beer pair excellently for winter comfort.
 

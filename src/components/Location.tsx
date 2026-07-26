@@ -1,7 +1,8 @@
 'use client'
 
+import { useState } from 'react'
+import dynamic from 'next/dynamic'
 import { Property } from '../types/website'
-import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import SectionHeader from './ui/SectionHeader'
@@ -50,14 +51,48 @@ const lightMapStyle = [
     { featureType: "water", elementType: "labels.text.stroke", stylers: [{ color: "#eff6ff" }] }
 ]
 
+const GoogleMapEmbed = dynamic(() => import('./GoogleMapEmbed'), {
+    ssr: false,
+    loading: () => (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-slate-800" role="status">
+            <span className="text-sm text-gray-500 dark:text-gray-400">Loading map…</span>
+        </div>
+    ),
+})
+
 interface LocationProps {
     property: Property;
     standalone?: boolean;
 }
 
+function MapUnavailable({ directionsHref }: { directionsHref: string }) {
+    return (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 dark:bg-slate-800 p-6 text-center">
+            <MapPin className="w-12 h-12 text-gray-400 mb-4" aria-hidden="true" />
+            <h3 className="text-lg font-medium text-navy dark:text-white mb-2">Map Unavailable</h3>
+            <p className="text-gray-500 max-w-sm mb-4">
+                We couldn&apos;t load the interactive map right now. You can still get directions below.
+            </p>
+            <a
+                href={directionsHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 rounded-full bg-navy text-white text-sm font-medium hover:bg-mountain-blue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mountain-blue focus-visible:ring-offset-2"
+            >
+                Get Directions
+            </a>
+        </div>
+    )
+}
+
 export default function Location({ property, standalone }: LocationProps) {
     const { theme } = useTheme();
     const mapStyle = theme === 'dark' ? darkMapStyle : lightMapStyle;
+    const [showMap, setShowMap] = useState(false)
+    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+    const { lat, lng } = property.address.coordinates
+    const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`
+
     return (
         <section id="location" className={cn("transition-colors duration-300", standalone ? "pb-20 pt-4 md:pt-8 bg-transparent" : "py-20 bg-gray-50 dark:bg-slate-800/50")}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,27 +109,44 @@ export default function Location({ property, standalone }: LocationProps) {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                     {/* Map */}
                     <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden bg-gray-200 dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-slate-700/50">
-                        <ErrorBoundary fallback={
-                            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 dark:bg-slate-800 p-6 text-center">
-                                <MapPin className="w-12 h-12 text-gray-400 mb-4" />
-                                <h3 className="text-lg font-medium text-navy dark:text-white mb-2">Map Unavailable</h3>
-                                <p className="text-gray-500 max-w-sm">
-                                    We couldn't load the interactive map right now. You can still use the address details provided to find us.
+                        {showMap && apiKey ? (
+                            <ErrorBoundary fallback={<MapUnavailable directionsHref={directionsHref} />}>
+                                <GoogleMapEmbed apiKey={apiKey} center={property.address.coordinates} mapStyle={mapStyle} />
+                            </ErrorBoundary>
+                        ) : (
+                            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-6 text-center">
+                                <MapPin className="w-10 h-10 text-gray-400 dark:text-gray-500" aria-hidden="true" />
+                                <p className="font-medium text-navy dark:text-white">
+                                    {property.address.street}<br />
+                                    {property.address.city}, {property.address.state} {property.address.zip}
                                 </p>
+                                {!apiKey && (
+                                    <p className="text-sm text-gray-700 dark:text-gray-300 max-w-xs">
+                                        Interactive map unavailable — use directions below.
+                                    </p>
+                                )}
+                                <div className="flex flex-col sm:flex-row gap-3">
+                                    {apiKey && (
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowMap(true)}
+                                            aria-label="Show interactive map of Inn 32's location"
+                                            className="px-5 py-2.5 rounded-full bg-navy text-white text-sm font-medium hover:bg-mountain-blue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mountain-blue focus-visible:ring-offset-2"
+                                        >
+                                            Show interactive map
+                                        </button>
+                                    )}
+                                    <a
+                                        href={directionsHref}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-5 py-2.5 rounded-full border border-gray-300 dark:border-slate-600 text-navy dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mountain-blue focus-visible:ring-offset-2"
+                                    >
+                                        Get Directions
+                                    </a>
+                                </div>
                             </div>
-                        }>
-                            <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}>
-                                <Map
-                                    defaultCenter={property.address.coordinates}
-                                    defaultZoom={14}
-                                    gestureHandling={'greedy'}
-                                    disableDefaultUI={true}
-                                    styles={mapStyle}
-                                >
-                                    <Marker position={property.address.coordinates} />
-                                </Map>
-                            </APIProvider>
-                        </ErrorBoundary>
+                        )}
                     </div>
 
                     {/* Contact Info */}
@@ -190,4 +242,3 @@ export default function Location({ property, standalone }: LocationProps) {
         </section>
     )
 }
-

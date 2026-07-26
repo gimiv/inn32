@@ -198,7 +198,7 @@ The contrast between outdoor winter cold and indoor warmth makes the Inn 32 retr
 
 While Ice Castles is spectacular, winter offers other activities near North Woodstock:
 
-- Skiing at Cannon Mountain or Loon Mountain (see our [skiing guide](/skiing-cannon-and-loon))
+- Skiing at Cannon Mountain or Loon Mountain (see our [skiing guide](/blog/skiing-cannon-and-loon))
 - Snowshoeing and cross-country skiing
 - Winter dining experiences
 - Holiday events and seasonal celebrations

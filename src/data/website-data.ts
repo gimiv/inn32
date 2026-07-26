@@ -32,7 +32,7 @@ export const websiteData: GuestWebsiteProps = {
         fontFamily: "Inter",
         metaTitle: "Inn 32 | North Woodstock, NH",
         metaDescription: "A newly revitalized boutique hotel in the heart of the White Mountains. Modern comforts, vintage charm.",
-        socialImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200"
+        socialImage: "/gallery/front-view.webp"
     },
     sections: {
         hero: {
@@ -44,11 +44,10 @@ export const websiteData: GuestWebsiteProps = {
                 heading: "Your White Mountains Gateway",
                 subheading: "Your basecamp for all-season mountain fun in the heart of the White Mountains.",
                 ctaText: "Book Your Stay",
-                ctaLink: "https://inn32.com/booking",
+                ctaLink: "/booking",
                 secondaryCtaText: "View Rooms",
                 secondaryCtaLink: "#rooms",
-                backgroundImage: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&q=80&w=2000",
-                backgroundVideos: ["/hero.mp4"]
+                backgroundImage: "/gallery/front-view.webp"
             }
         },
         rooms: {
@@ -238,7 +237,7 @@ export const websiteData: GuestWebsiteProps = {
                 "/gallery/Kitchen_2.webp",
                 "/gallery/Dining_2.webp",
                 "/gallery/Game_Room.webp",
-                "/gallery/Sunroom.webp",
+                "/gallery/sunroom.webp",
                 "/gallery/Bedroom_01.webp",
                 "/gallery/Bedroom_02.webp",
                 "/gallery/Bedroom_03.webp",
@@ -308,7 +307,7 @@ export const websiteData: GuestWebsiteProps = {
             category: "Hiking",
             description: "Major 4,000-footer with excellent sweeping summit views above the treeline.",
             image: "/gallery/Mount Moosilauke.webp",
-            link: "https://www.alltrails.com/trail/us/new-hampshire/mount-moosilauke-via-gorge-brook-and-moosilauke-carriage-trail"
+            link: "https://www.fs.usda.gov/main/whitemountain/home"
         },
         {
             id: "garfield-4000",
@@ -324,7 +323,7 @@ export const websiteData: GuestWebsiteProps = {
             category: "Hiking",
             description: "A mix of scenic riverside walks like Lincoln Woods, and longer backcountry routes.",
             image: "/gallery/kancamagus.webp",
-            link: "https://www.kancamagushighway.com/hiking/"
+            link: "https://www.kancamagushighway.com/"
         },
         // Attractions
         {
@@ -448,92 +447,7 @@ export const websiteData: GuestWebsiteProps = {
             link: "https://nhmapleproducers.com/"
         },
     ],
-    events: [
-        {
-            id: "brewery-music",
-            title: "Woodstock Inn Brewery Live Music Nights",
-            date: "Ongoing",
-            location: "North Woodstock, NH",
-            image: "/gallery/live_music_pub.webp",
-            description: "Regular live bands and solo acts in the pub a short walk from Inn 32; check their calendar for multiple March 2026 shows such as Mitch Alden, Dan Parkhurst, and Blue Matter.",
-            isFeatured: true,
-            customLabel: "Staff Pick"
-        },
-        {
-            id: "lincoln-events",
-            title: "Lincoln / Franconia Notch Event Series",
-            date: "Winter - Spring 2026",
-            location: "Lincoln, NH",
-            image: "/gallery/pub_band.webp",
-            description: "Regional calendar lists \"Live Music – Woodstock Inn Brewery\" Saturdays through March 28, plus other Franconia Notch-area happenings like guided outings and community events typically within a 15–25 minute drive.",
-            isFeatured: false
-        },
-
-        {
-            id: "maple-month",
-            title: "Maple Month in the White Mountains",
-            date: "March 2026",
-            location: "White Mountains, NH",
-            image: "/gallery/maple month mountains.webp",
-            description: "March is Maple Month across the region: sugarhouses open for tours, tastings, and demonstrations, with several producers located within an easy drive of North Woodstock.",
-            isFeatured: true,
-            customLabel: "Local Tradition"
-        },
-        {
-            id: "bretton-woods-beach-party",
-            title: "Beach Party on the Slopes",
-            date: "Early March 2026",
-            location: "Bretton Woods, NH",
-            image: "/gallery/beach party slopes.webp",
-            description: "Spring-ski party at Bretton Woods with live music and on-snow games, roughly 45–60 minutes from Inn 32.",
-            isFeatured: false
-        },
-        {
-            id: "spring-skiing-family",
-            title: "Spring Skiing & Family Fun Week",
-            date: "Mid-March 2026",
-            location: "Bretton Woods, NH",
-            image: "/gallery/spring_skiing_stock.webp",
-            description: "Multi-day spring event at a White Mountains ski area with kids’ races, costume days, and family activities.",
-            isFeatured: false
-        },
-        {
-            id: "maple-sugar-tours",
-            title: "Annual Maple Sugar Tours",
-            date: "Late March 2026",
-            location: "White Mountains, NH",
-            image: "/gallery/annual maple sugar tours.webp",
-            description: "Organized maple tours in the White Mountains, showcasing the sugaring process and offering samples; good as a half-day outing from North Woodstock.",
-            isFeatured: false
-        },
-        {
-            id: "psychic-fair",
-            title: "Psychic Fair Weekend",
-            date: "April 24–25, 2026",
-            location: "Indian Head Resort, Lincoln",
-            image: "/gallery/psychich fair.webp",
-            description: "Themed weekend with psychic fair at Indian Head Resort just south of Lincoln, a short drive from Inn 32.",
-            isFeatured: false
-        },
-        {
-            id: "girlfriends-weekend",
-            title: "2026 Girlfriends Weekend Spring Fling",
-            date: "May 1–3, 2026",
-            location: "North Conway, NH",
-            image: "/gallery/2026 girlfriends weekend spring fling.webp",
-            description: "Themed weekend package at White Mountain Hotel & Resort with artisan fair, spa options, dinner, entertainment, yoga, and brunch.",
-            isFeatured: false
-        },
-        {
-            id: "alton-weagle",
-            title: "Alton Weagle Day",
-            date: "May 23, 2026",
-            location: "Mt. Washington Auto Road",
-            image: "/gallery/alton_weagle_day.webp",
-            description: "Quirky Mt. Washington Auto Road event celebrating \"first ascents\" in unusual ways; about 1–1.5 hours from Inn 32.",
-            isFeatured: false
-        }
-    ],
+    events: [],
     blogPosts: [
         {
             id: "1",
@@ -789,7 +703,7 @@ export const websiteData: GuestWebsiteProps = {
             title: "Winter Weekdays",
             description: "Get 10% off Monday - Thursday until April 1st.",
             image: "/gallery/winter_festival.webp",
-            validUntil: "Apr 01, 2026",
+            validUntil: "2026-04-01",
             promoCode: "WINTER10"
         },
         {
@@ -798,7 +712,7 @@ export const websiteData: GuestWebsiteProps = {
             description: "Stay for seven nights and pay for 5, April 1st - June 15th.",
             image: "/gallery/spring maple.webp",
             minStay: 7,
-            validUntil: "Jun 15, 2026",
+            validUntil: "2026-06-15",
             promoCode: "STAY7PAY5"
         },
         {

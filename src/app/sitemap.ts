@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next'
 import { websiteData } from '../data/website-data'
+import { CANONICAL_ORIGIN } from '../lib/seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://inn32.com'
+    const baseUrl = CANONICAL_ORIGIN
 
     const staticPages = [
         { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 1 },
@@ -16,6 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${baseUrl}/location`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
         { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
         { url: `${baseUrl}/faq`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
+        { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.3 },
+        { url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.3 },
     ]
 
     const blogPages = websiteData.blogPosts.map((post) => ({

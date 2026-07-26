@@ -62,12 +62,12 @@ function OfferCard({ offer }: { offer: Offer }) {
                                 e.preventDefault();
                                 window.dispatchEvent(new CustomEvent('open-booking-widget', { detail: { promoCode: offer.promoCode } }));
                             }}
-                            className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center"
+                            className="text-blue-700 hover:text-navy dark:text-blue-300 dark:hover:text-white font-medium transition-colors flex items-center"
                         >
                             Book Offer <span className="ml-1">→</span>
                         </button>
                     ) : (
-                        <Link href={`/offers#${offer.id}`} className="text-mountain-blue hover:text-navy dark:hover:text-white font-medium transition-colors flex items-center">
+                        <Link href={`/offers#${offer.id}`} className="text-blue-700 hover:text-navy dark:text-blue-300 dark:hover:text-white font-medium transition-colors flex items-center">
                             View Details <span className="ml-1">→</span>
                         </Link>
                     )}

@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+const config = {
     darkMode: 'class',
     content: [
         "./index.html",
@@ -63,3 +63,5 @@ export default {
         require('@tailwindcss/typography'),
     ],
 }
+
+export default config

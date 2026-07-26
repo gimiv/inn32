@@ -14,6 +14,7 @@ interface RoomCardProps {
         images: string[]
         maxOccupancy: number
         bedType: string
+        mewsCategoryId?: string
     }
 }
 
@@ -61,7 +62,7 @@ export default function RoomCard({ room }: RoomCardProps) {
                 }
                 actions={
                     <button
-                        onClick={() => window.dispatchEvent(new CustomEvent('open-booking-widget', { detail: { roomId: room.id } }))}
+                        onClick={() => window.dispatchEvent(new CustomEvent('open-booking-widget', { detail: { mewsCategoryId: room.mewsCategoryId } }))}
                         className="flex items-center justify-center w-full py-3 bg-navy text-white rounded-brand-md hover:bg-mountain-blue transition-colors font-sans font-medium shadow-brand-sm hover:shadow-brand-md"
                     >
                         Check Availability

@@ -1,6 +1,17 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { resolveMewsOpenCall } from '../utils/mews'
+
+const MEWS_IFRAME_TITLE = 'Inn 32 secure booking engine'
+const MEWS_CONFIGURATION_ID = '8834fbb1-b9a1-4dbf-8e18-b2ba003e2e3d'
+
+export function labelMewsIframes(root: ParentNode = document): void {
+    root.querySelectorAll<HTMLIFrameElement>('iframe').forEach((iframe) => {
+        const identity = `${iframe.id} ${iframe.name} ${iframe.src}`.toLowerCase()
+        if (identity.includes('mews')) iframe.setAttribute('title', MEWS_IFRAME_TITLE)
+    })
+}
 
 declare global {
     interface Window {
@@ -12,93 +23,82 @@ interface BookingWidgetProps {
     isOpen: boolean
     onClose: () => void
     promoCode?: string
-    roomId?: string
+    mewsCategoryId?: string
 }
 
-export default function BookingWidget({ isOpen, onClose, promoCode, roomId }: BookingWidgetProps) {
+export default function BookingWidget({ isOpen, onClose, promoCode, mewsCategoryId }: BookingWidgetProps) {
     const initializedRef = useRef(false)
     const [mewsApi, setMewsApi] = useState<any>(null)
 
-    // Pre-initialize Mews when script loads
+    useEffect(() => {
+        labelMewsIframes()
+        const observer = new MutationObserver(() => labelMewsIframes())
+        observer.observe(document.body, { childList: true, subtree: true })
+        return () => observer.disconnect()
+    }, [])
+
     useEffect(() => {
         if (initializedRef.current) return
 
         const initMews = () => {
-            if (window.Mews && window.Mews.Distributor && !initializedRef.current) {
+            if (window.Mews?.Distributor && !initializedRef.current) {
                 initializedRef.current = true
                 window.Mews.Distributor(
-                    {
-                        configurationIds: ["8834fbb1-b9a1-4dbf-8e18-b2ba003e2e3d"],
-                    },
-                    (api: any) => {
-                        console.log('Mews API initialized on background:', api)
-                        setMewsApi(api)
-                    }
+                    { configurationIds: [MEWS_CONFIGURATION_ID] },
+                    (api: any) => setMewsApi(api)
                 )
             }
         }
 
-        // Try immediately
         initMews()
-
-        // Fallback polling in case the Next.js <Script> loads slightly later
-        const interval = setInterval(() => {
-            if (window.Mews && window.Mews.Distributor) {
+        const interval = window.setInterval(() => {
+            if (window.Mews?.Distributor) {
                 initMews()
-                clearInterval(interval)
+                window.clearInterval(interval)
             }
         }, 500)
-
-        // Stop polling after 10 seconds to avoid infinite background loops
-        const timeout = setTimeout(() => clearInterval(interval), 10000)
+        const timeout = window.setTimeout(() => window.clearInterval(interval), 10000)
 
         return () => {
-            clearInterval(interval)
-            clearTimeout(timeout)
+            window.clearInterval(interval)
+            window.clearTimeout(timeout)
         }
     }, [])
 
-    // Handle opening the widget
     useEffect(() => {
-        if (isOpen) {
-            if (mewsApi) {
-                openMews(mewsApi)
-            } else if (window.Mews && window.Mews.Distributor) {
-                // Failsafe in case the user clicked immediately before background init succeeded
-                window.Mews.Distributor(
-                    { configurationIds: ["8834fbb1-b9a1-4dbf-8e18-b2ba003e2e3d"] },
-                    (api: any) => {
-                        setMewsApi(api)
-                        openMews(api)
-                    }
-                )
-            } else {
-                // Keep the request open while the lazy-loaded Mews script initializes.
-                // The background poll sets mewsApi, which re-runs this effect and opens it.
-                console.info('Waiting for the Mews booking engine to load.')
-            }
+        if (!isOpen) return
+
+        if (mewsApi) {
+            openMews(mewsApi)
+        } else if (window.Mews?.Distributor) {
+            window.Mews.Distributor(
+                { configurationIds: [MEWS_CONFIGURATION_ID] },
+                (api: any) => {
+                    setMewsApi(api)
+                    openMews(api)
+                }
+            )
         }
 
         function openMews(api: any) {
-            const openOptions: any = {}
-            if (roomId) {
-                openOptions.resourceCategoryId = roomId
-            }
+            labelMewsIframes()
+            const call = resolveMewsOpenCall(mewsCategoryId)
+            const hasVoucherSetter = typeof api.setVoucherCode === 'function'
 
-            if (promoCode) {
-                if (typeof api.setVoucherCode === 'function') {
-                    api.setVoucherCode(promoCode)
-                    api.open(openOptions)
-                } else {
-                    api.open({ ...openOptions, voucherCode: promoCode })
-                }
+            if (promoCode && hasVoucherSetter) api.setVoucherCode(promoCode)
+
+            if (call.method === 'showRates') {
+                api.showRates(call.categoryId)
+            } else if (promoCode && !hasVoucherSetter) {
+                api.open({ voucherCode: promoCode })
             } else {
-                api.open(openOptions)
+                api.open()
             }
 
-            onClose() // Reset our internal open state so it can be re-triggered later
+            labelMewsIframes()
+            onClose()
         }
-    }, [isOpen, mewsApi, onClose, promoCode, roomId])
+    }, [isOpen, mewsApi, onClose, promoCode, mewsCategoryId])
 
     return null
 }
