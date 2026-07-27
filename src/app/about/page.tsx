@@ -101,13 +101,13 @@ export default function AboutPage() {
                             North Woodstock is a year-round destination in the heart of the White Mountains.
                             In summer, guests hike Franconia Ridge, kayak the Pemi, and explore Lost River Gorge.
                             Fall brings some of the most spectacular foliage in New England, especially along the
-                            nearby Kancamagus Highway. Winter means skiing at Loon Mountain (5 minutes away) and
-                            Cannon Mountain (10 minutes), plus the famous Ice Castles in Lincoln. Spring brings
+                            nearby Kancamagus Highway. Winter means skiing at nearby Loon Mountain and
+                            Cannon Mountain, plus the famous Ice Castles in Lincoln. Spring brings
                             Maple Month, wildflowers, and the quiet beauty of the mountains emerging from snow.
                         </p>
                         <p>
                             The Woodstock Inn Brewery is a short walk from our front door. The Common Man, Schilling
-                            Beer Co., and dozens of local restaurants are all within a few minutes&apos; drive. Cascade
+                            Beer Co., and dozens of local restaurants are all nearby. Cascade
                             Park — a favorite swimming hole on the Pemigewasset River — is right in town.
                         </p>
                     </div>

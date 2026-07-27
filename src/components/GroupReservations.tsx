@@ -116,7 +116,7 @@ export default function GroupReservations({ property }: GroupReservationsProps) 
             </section>
 
             {/* Content & Form Split */}
-            <section className="pt-8 pb-20">
+            <section id="group-inquiry" className="pt-8 pb-20 scroll-mt-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col lg:flex-row gap-16">
                         {/* Text Content */}

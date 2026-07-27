@@ -355,8 +355,7 @@ export const websiteData: GuestWebsiteProps = {
             name: "Cascade Park",
             category: "Attractions",
             description: "Small in-town river spot right in North Woodstock, perfect for wading, picnicking, and relaxing.",
-            image: "/gallery/cascade_park.webp",
-            link: "https://www.nhstateparks.org/find-parks-trails/franconia-notch-state-park"
+            image: "/gallery/cascade_park.webp"
         },
         {
             id: "hubbard-brook",

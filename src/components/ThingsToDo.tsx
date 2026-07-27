@@ -41,7 +41,7 @@ export default function ThingsToDo({ limit, showFilters = true, thingsToDo }: Th
                     title: "Things To Do",
                     subtitle: "North Woodstock is your gateway to the White Mountains."
                 }}
-                viewAllLink={{ href: "/things-to-do", text: "See All Activities" }}
+                viewAllLink={{ href: "/things-to-do", text: "Explore the Insider Guide" }}
                 carouselItemClassName="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_48%] lg:flex-[0_0_32%] min-w-0"
                 gridClassName=""
             />

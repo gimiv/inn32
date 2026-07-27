@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import Amenities from '../../components/Amenities'
+import ExperienceHighlights from '../../components/ExperienceHighlights'
 import { websiteData } from '../../data/website-data'
+import { experienceHighlights } from '../../data/guest-content'
 import { canonicalUrl } from '../../lib/seo'
 
 const TITLE = 'Hotel Amenities & Services'
@@ -30,8 +32,15 @@ export default function AmenitiesPage() {
     return (
         <PageLayout
             title="Hotel Amenities & Services"
-            subtitle="Enjoy our premium amenities including high-speed Wi-Fi, free parking, and cozy common areas."
+            subtitle="Simple comforts for an easy stay — free Wi-Fi, free on-site parking, individual climate control, and in-room coffee."
         >
+            <ExperienceHighlights
+                highlights={experienceHighlights}
+                header={{
+                    label: 'The Experience',
+                    title: 'What a Stay Here Feels Like',
+                }}
+            />
             <Amenities amenities={websiteData.amenities} />
         </PageLayout>
     )

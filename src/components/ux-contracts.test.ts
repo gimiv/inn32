@@ -39,7 +39,7 @@ test('homepage keeps discovery modules intentionally bounded', () => {
     assert.match(source, /<Events\s+limit=\{3\}/)
     assert.match(source, /<ThingsToDo\s+limit=\{6\}/)
     assert.match(source, /websiteData\.gallery\.slice\(0,\s*8\)/)
-    assert.match(source, /websiteData\.socialPosts\.slice\(0,\s*8\)/)
+    assert.doesNotMatch(source, /<SocialReel|import SocialReel/, 'Gallery is the single homepage image-discovery module')
 })
 
 test('hero alt text is truthful daylight property description', () => {

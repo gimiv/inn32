@@ -1,11 +1,12 @@
 import { Metadata } from 'next'
 import ThingsToDo from '../../components/ThingsToDo'
+import InsiderGuide from '../../components/InsiderGuide'
 import { websiteData } from '../../data/website-data'
 import { Suspense } from 'react'
 import { canonicalUrl } from '../../lib/seo'
 
-const TITLE = 'Things To Do'
-const DESCRIPTION = 'Inn 32 sits at the crossroads of the White Mountains\' best attractions. Walk to craft breweries and local shops in North Woodstock, drive five minutes to Loon Mountain or Lost River Gorge, or set off on a day hike up Franconia Ridge — one of New England\'s most iconic trails. From scenic drives along the Kancamagus Highway to moose tours and aerial adventures, there is something for every season and every traveler.'
+const TITLE = 'Things To Do — Inn 32 Insider Guide'
+const DESCRIPTION = 'Inn 32 sits at the crossroads of the White Mountains\' best attractions. Walk to craft breweries and local shops in North Woodstock, take a short drive to Loon Mountain or Lost River Gorge, or set off on a day hike up Franconia Ridge — one of New England\'s most iconic trails. From scenic drives along the Kancamagus Highway to moose tours and aerial adventures, there is something for every season and every traveler.'
 
 export const metadata: Metadata = {
     title: TITLE,
@@ -30,9 +31,11 @@ import PageLayout from '../../components/ui/PageLayout'
 export default function ThingsToDoPage() {
     return (
         <PageLayout
-            title="Explore the Area"
-            subtitle="Your guide to the best dining, hiking, and attractions in the White Mountains."
+            title="Inn 32 Insider Guide"
+            subtitle="Our picks for dining, hiking, and attractions in the White Mountains — grouped by the kind of day you want."
         >
+            <InsiderGuide thingsToDo={websiteData.thingsToDo} />
+
             <Suspense fallback={<div className="py-20 text-center font-sans">Loading activities...</div>}>
                 <ThingsToDo thingsToDo={websiteData.thingsToDo} />
             </Suspense>
