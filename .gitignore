@@ -5,5 +5,6 @@ tmp
 tsconfig.tsbuildinfo
 .env
 .env.*
+!.env.example
 scripts/oauth-client.json
 secrets/

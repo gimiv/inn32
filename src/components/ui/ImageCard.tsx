@@ -45,7 +45,7 @@ export default function ImageCard({ href, image, title, subtitle, description }:
                         {description}
                     </p>
                     <div className="mt-auto">
-                        <span className="text-mountain-blue dark:text-blue-400 group-hover:text-amber-500 font-sans font-medium hover:underline flex items-center mt-2 decoration-2 underline-offset-4 decoration-mountain-blue/30 group-hover:decoration-amber-500/50 transition-colors">
+                        <span className="text-blue-700 dark:text-blue-300 group-hover:text-amber-700 dark:group-hover:text-amber-300 font-sans font-medium hover:underline flex items-center mt-2 decoration-2 underline-offset-4 decoration-blue-700/30 group-hover:decoration-amber-700/50 transition-colors">
                             More Info
                             <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                         </span>

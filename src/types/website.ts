@@ -43,8 +43,6 @@ export interface SectionContent {
     secondaryCtaText?: string
     secondaryCtaLink?: string
     backgroundImage?: string
-    backgroundVideo?: string // kept for backward compatibility if needed, though we will prefer the array
-    backgroundVideos?: string[]
     [key: string]: any
 }
 
@@ -79,6 +77,8 @@ export interface RoomType {
     images: string[]
     amenities: string[]
     available: boolean
+    /** Real Mews category UUID, if known. Local `id` slugs must never be sent to Mews. */
+    mewsCategoryId?: string
 }
 
 export interface Amenity {

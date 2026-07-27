@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import { websiteData } from '../data/website-data'
 import Script from 'next/script'
 import { GoogleTagManager } from '@next/third-parties/google'
+import { CANONICAL_ORIGIN, canonicalUrl } from '../lib/seo'
 
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-sans' })
 const dmSerif = DM_Serif_Display({ weight: '400', subsets: ['latin'], variable: '--font-display' })
@@ -19,17 +20,18 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://inn32.com'),
+    metadataBase: new URL(CANONICAL_ORIGIN),
     title: {
         template: `%s | ${websiteData.property.name} — North Woodstock, NH`,
         default: `${websiteData.property.name} | Boutique Hotel in North Woodstock, NH — White Mountains Lodging`,
     },
     description: "Inn 32 is a newly revitalized boutique hotel in North Woodstock, New Hampshire — minutes from Franconia Notch, Loon Mountain, and the White Mountain National Forest. Modern comforts, vintage charm, 24 rooms from $79/night.",
     keywords: ["Boutique Hotel", "North Woodstock NH", "White Mountains", "Franconia Notch", "Lodging", "Inn", "Loon Mountain", "New Hampshire Hotel", "White Mountain National Forest", "NH Lodging"],
+    alternates: { canonical: canonicalUrl('/') },
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://inn32.com',
+        url: canonicalUrl('/'),
         title: `${websiteData.property.name} — Boutique Hotel in North Woodstock, NH`,
         description: "Newly revitalized boutique hotel in the heart of the White Mountains. 24 rooms from $79/night, minutes from Franconia Notch and Loon Mountain.",
         siteName: websiteData.property.name,
@@ -77,14 +79,14 @@ export default function RootLayout({
         "@type": "LodgingBusiness",
         "name": websiteData.property.name,
         "description": websiteData.property.description,
-        "url": "https://inn32.com",
+        "url": canonicalUrl('/'),
         "telephone": websiteData.property.contact.phone,
         "email": websiteData.property.contact.email,
         "image": [
-            "https://inn32.com/gallery/front-view.webp",
-            "https://inn32.com/gallery/pool-firepit-night-.webp",
-            "https://inn32.com/gallery/river-entry.webp",
-            "https://inn32.com/gallery/living-room-01--1-.webp"
+            canonicalUrl('/gallery/front-view.webp'),
+            canonicalUrl('/gallery/pool-firepit-night-.webp'),
+            canonicalUrl('/gallery/river-entry.webp'),
+            canonicalUrl('/gallery/living-room-01--1-.webp'),
         ],
         "address": {
             "@type": "PostalAddress",
@@ -110,13 +112,6 @@ export default function RootLayout({
             "name": a.name,
             "value": true
         })),
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": String(websiteData.reviews.length),
-            "bestRating": "5",
-            "worstRating": "1"
-        },
         "review": websiteData.reviews.slice(0, 5).map(r => ({
             "@type": "Review",
             "author": { "@type": "Person", "name": r.author },
@@ -124,23 +119,6 @@ export default function RootLayout({
             "datePublished": r.date,
             "reviewBody": r.text
         })),
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Room Types",
-            "itemListElement": websiteData.roomTypes.map(room => ({
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "HotelRoom",
-                    "name": room.name,
-                    "description": room.shortDescription,
-                    "bed": { "@type": "BedDetails", "typeOfBed": room.bedType, "numberOfBeds": 1 },
-                    "occupancy": { "@type": "QuantitativeValue", "maxValue": room.maxOccupancy }
-                },
-                "price": String(room.basePrice),
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock"
-            }))
-        },
         "sameAs": [
             "https://instagram.com/inn32nh"
         ],
@@ -148,7 +126,7 @@ export default function RootLayout({
             "@type": "AdministrativeArea",
             "name": "White Mountains, New Hampshire"
         },
-        "tourBookingPage": "https://inn32.com"
+        "tourBookingPage": canonicalUrl('/')
     }
 
     return (

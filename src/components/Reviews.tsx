@@ -22,7 +22,7 @@ export default function Reviews({ limit, reviews }: ReviewsProps) {
                 ))}
             </div>
             <p className="font-sans text-charcoal dark:text-gray-300 italic mb-6 flex-grow leading-relaxed">
-                "{review.text}"
+                &ldquo;{review.text}&rdquo;
             </p>
             <div>
                 <p className="font-display font-bold text-navy dark:text-white tracking-wide">{review.author}</p>

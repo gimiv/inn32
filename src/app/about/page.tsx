@@ -2,10 +2,27 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import PageLayout from '../../components/ui/PageLayout'
+import { canonicalUrl } from '../../lib/seo'
+
+const TITLE = 'About Inn 32'
+const DESCRIPTION = 'The story behind Inn 32 — a classic roadside inn in North Woodstock, NH, fully reimagined in 2025. Modern comforts meet vintage White Mountains charm on Main Street.'
 
 export const metadata: Metadata = {
-    title: 'About Inn 32',
-    description: 'The story behind Inn 32 — a classic roadside inn in North Woodstock, NH, fully reimagined in 2025. Modern comforts meet vintage White Mountains charm on Main Street.',
+    title: TITLE,
+    description: DESCRIPTION,
+    alternates: { canonical: canonicalUrl('/about') },
+    openGraph: {
+        url: canonicalUrl('/about'),
+        title: TITLE,
+        description: DESCRIPTION,
+        images: [{ url: canonicalUrl('/gallery/front-view.webp'), width: 1200, height: 630, alt: 'Inn 32 exterior on Main Street in North Woodstock, New Hampshire' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: TITLE,
+        description: DESCRIPTION,
+        images: [canonicalUrl('/gallery/front-view.webp')],
+    },
 }
 
 export default function AboutPage() {
@@ -25,7 +42,7 @@ export default function AboutPage() {
                 "postalCode": "03262",
                 "addressCountry": "US"
             },
-            "url": "https://inn32.com"
+            "url": canonicalUrl('/')
         }
     }
 

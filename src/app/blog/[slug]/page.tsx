@@ -6,9 +6,10 @@ import path from 'path'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
-import matter from 'gray-matter'
 import { Calendar, User, ArrowLeft } from 'lucide-react'
 import { websiteData } from '../../../data/website-data'
+import { stripFrontmatter } from '../../../utils/frontmatter'
+import { canonicalUrl } from '../../../lib/seo'
 
 export function generateStaticParams() {
     return websiteData.blogPosts.map((post) => ({
@@ -24,9 +25,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         return { title: 'Post Not Found' }
     }
 
+    const title = `${post.title} | Inn 32 Blog`
+
     return {
-        title: `${post.title} | Inn 32 Blog`,
+        title,
         description: post.excerpt,
+        alternates: { canonical: canonicalUrl(`/blog/${slug}`) },
+        openGraph: {
+            url: canonicalUrl(`/blog/${slug}`),
+            title,
+            description: post.excerpt,
+            images: [{ url: canonicalUrl(post.image), width: 1200, height: 630, alt: post.title }],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description: post.excerpt,
+            images: [canonicalUrl(post.image)],
+        },
     }
 }
 
@@ -35,8 +51,7 @@ function getPostContent(slug: string): string | null {
     try {
         const filePath = path.join(process.cwd(), 'src/content/blog', `${slug}.md`)
         const fileString = fs.readFileSync(filePath, 'utf8')
-        const { content } = matter(fileString)
-        return content
+        return stripFrontmatter(fileString)
     } catch (e) {
         return null
     }
@@ -58,22 +73,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         "@type": "Article",
         "headline": post.title,
         "description": post.excerpt,
-        "image": `https://inn32.com${post.image}`,
+        "image": canonicalUrl(post.image),
         "datePublished": new Date(post.date).toISOString(),
         "author": {
             "@type": "Organization",
             "name": post.author || "Inn 32",
-            "url": "https://inn32.com"
+            "url": canonicalUrl('/')
         },
         "publisher": {
             "@type": "Organization",
             "name": "Inn 32",
-            "url": "https://inn32.com",
-            "logo": { "@type": "ImageObject", "url": "https://inn32.com/inn32-logo-transparent-800w.png" }
+            "url": canonicalUrl('/'),
+            "logo": { "@type": "ImageObject", "url": canonicalUrl('/inn32-logo-transparent-800w.png') }
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://inn32.com/blog/${slug}`
+            "@id": canonicalUrl(`/blog/${slug}`)
         }
     }
 

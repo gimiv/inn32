@@ -21,7 +21,7 @@ export default function SectionHeader({
     if (align === 'center') {
         return (
             <div className={cn("text-center max-w-2xl mx-auto mb-12", className)}>
-                <span className="font-sans text-sm font-semibold text-mountain-blue uppercase tracking-wider mb-2 block">
+                <span className="font-sans text-sm font-semibold text-blue-700 dark:text-blue-300 uppercase tracking-wider mb-2 block">
                     {label}
                 </span>
                 <h2 className="font-display text-page-title text-navy dark:text-white mb-4">
@@ -44,7 +44,7 @@ export default function SectionHeader({
     return (
         <div className={cn("flex flex-col md:flex-row justify-between items-end gap-6 mb-12 text-center md:text-left", className)}>
             <div className="w-full md:w-auto">
-                <span className="font-sans text-sm font-semibold text-mountain-blue uppercase tracking-wider mb-2 block">
+                <span className="font-sans text-sm font-semibold text-blue-700 dark:text-blue-300 uppercase tracking-wider mb-2 block">
                     {label}
                 </span>
                 <h2 className="font-display text-page-title text-navy dark:text-white mb-4">

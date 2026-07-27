@@ -178,7 +178,7 @@ If time allows only one mountain:
 With 3+ days, you might:
 - Full day at Loon + full day at Cannon + day of other activities
 - Two days at one mountain (learning multiple runs) + one day at other mountain
-- Mix skiing with non-ski activities (see our [Ice Castles guide](/lincoln-ice-castles) and [winter dining suggestions](/winter-getaway-dining))
+- Mix skiing with non-ski activities (see our [Ice Castles guide](/blog/lincoln-ice-castles) and [winter dining suggestions](/blog/winter-getaway-dining))
 
 ## Equipment and Preparation
 
@@ -258,9 +258,9 @@ This maximizes ski time while maintaining comfort and recovery time.
 If your group includes non-skiers or wants mixed activities:
 
 - Partners can hike [White Mountains trails](/things-to-do) while one person skis
-- Families can combine ski days with [Ice Castles](/lincoln-ice-castles) visits
-- [Brewery visits](/local-craft-breweries) work perfectly for après-ski recovery
-- [Dining experiences](/winter-getaway-dining) complement ski day energy burns
+- Families can combine ski days with [Ice Castles](/blog/lincoln-ice-castles) visits
+- [Brewery visits](/blog/local-craft-breweries) work perfectly for après-ski recovery
+- [Dining experiences](/blog/winter-getaway-dining) complement ski day energy burns
 
 ## Your White Mountains Ski Adventure
 
