@@ -7,6 +7,7 @@ import { cn } from '../../utils/cn'
 interface ContentSectionProps {
     id: string
     isCarousel: boolean
+    mobileStack?: boolean
     items: ReactNode[]
     header?: {
         label: string
@@ -27,6 +28,7 @@ interface ContentSectionProps {
 export default function ContentSection({
     id,
     isCarousel,
+    mobileStack = false,
     items,
     header,
     viewAllLink,
@@ -45,6 +47,7 @@ export default function ContentSection({
                         items={items}
                         header={header!} // If isCarousel is true, header is provided
                         carouselItemClassName={carouselItemClassName}
+                        mobileStack={mobileStack}
                     />
                 ) : (
                     <>

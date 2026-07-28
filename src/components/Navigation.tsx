@@ -43,6 +43,11 @@ export default function Navigation({ property }: NavigationProps) {
     }, [pathname])
 
     useEffect(() => {
+        document.body.classList.toggle('has-mobile-booking-bar', isScrolled)
+        return () => document.body.classList.remove('has-mobile-booking-bar')
+    }, [isScrolled])
+
+    useEffect(() => {
         const main = document.querySelector('main')
         const footer = document.querySelector('footer')
 
@@ -266,18 +271,17 @@ export default function Navigation({ property }: NavigationProps) {
                 inert={isMobileMenuOpen}
                 aria-hidden={isMobileMenuOpen}
                 className={cn(
-                    'fixed inset-x-0 bottom-0 z-50 flex items-center justify-between border-t border-gray-200 bg-white/90 p-4 pb-safe shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] backdrop-blur-md transition-transform duration-500 dark:border-slate-800 dark:bg-slate-900/90 lg:hidden',
+                    'mobile-booking-bar fixed inset-x-0 bottom-0 z-50 flex min-h-16 items-center justify-between gap-3 border-t border-gray-200 bg-white/90 px-4 pt-2.5 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] backdrop-blur-md transition-transform duration-500 dark:border-slate-800 dark:bg-slate-900/90 lg:hidden',
                     isScrolled ? 'translate-y-0' : 'translate-y-full'
                 )}
             >
-                <div className="min-w-0 pr-3">
-                    <p className="truncate text-[10px] font-medium uppercase tracking-wider text-gray-600 dark:text-gray-300 sm:text-xs">Book Your Stay</p>
-                    <p className="truncate text-xs font-semibold text-gray-900 dark:text-white sm:text-sm">Check live rates and availability</p>
+                <div className="min-w-0">
+                    <p className="truncate text-sm font-semibold text-gray-900 dark:text-white">Check live rates</p>
                 </div>
                 <button
                     type="button"
                     onClick={() => setIsBookingOpen(true)}
-                    className="flex-shrink-0 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-md transition-transform hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 active:scale-95 dark:bg-white dark:text-navy sm:px-6 sm:text-base"
+                    className="flex-shrink-0 rounded-full bg-primary px-4 py-2.5 text-sm font-bold text-white shadow-md transition-transform hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 active:scale-95 dark:bg-white dark:text-navy"
                 >
                     Book Now
                 </button>

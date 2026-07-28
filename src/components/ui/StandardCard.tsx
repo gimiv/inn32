@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import Image from 'next/image'
+import { cn } from '../../utils/cn'
 
 interface StandardCardProps {
     image: string
@@ -11,6 +12,7 @@ interface StandardCardProps {
     actions?: ReactNode
     imageOverlay?: ReactNode
     onImageClick?: () => void
+    compactOnMobile?: boolean
 }
 
 export default function StandardCard({
@@ -22,13 +24,14 @@ export default function StandardCard({
     metadata,
     actions,
     imageOverlay,
-    onImageClick
+    onImageClick,
+    compactOnMobile = false
 }: StandardCardProps) {
     return (
         <div className="group bg-white dark:bg-slate-800 rounded-brand-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-slate-700 h-full flex flex-col transform hover:-translate-y-1">
             {/* Image Block */}
             <div
-                className="relative h-64 overflow-hidden group/image bg-gray-100 dark:bg-slate-800"
+                className={cn("relative overflow-hidden group/image bg-gray-100 dark:bg-slate-800", compactOnMobile ? "h-48 md:h-64" : "h-64")}
                 onClick={onImageClick}
                 style={{ cursor: onImageClick ? 'pointer' : 'default' }}
             >
@@ -47,11 +50,11 @@ export default function StandardCard({
             </div>
 
             {/* Content Block */}
-            <div className="p-6 md:p-8 flex flex-col flex-grow">
+            <div className={cn("flex flex-col flex-grow", compactOnMobile ? "p-5 md:p-8" : "p-6 md:p-8")}>
                 {/* Header */}
-                <div className="flex justify-between items-start mb-4">
+                <div className={cn("flex justify-between items-start", compactOnMobile ? "mb-3 md:mb-4" : "mb-4")}>
                     <div>
-                        <h3 className="font-display text-2xl font-bold text-navy dark:text-white mb-1 group-hover:text-mountain-blue transition-colors">
+                        <h3 className={cn("font-display font-bold text-navy dark:text-white mb-1 group-hover:text-mountain-blue transition-colors", compactOnMobile ? "text-xl md:text-2xl" : "text-2xl")}>
                             {title}
                         </h3>
                     </div>
@@ -63,14 +66,14 @@ export default function StandardCard({
                 </div>
 
                 {/* Body */}
-                <p className="text-gray-600 dark:text-gray-400 font-sans leading-relaxed mb-6 line-clamp-3">
+                <p className={cn("text-gray-600 dark:text-gray-400 font-sans leading-relaxed", compactOnMobile ? "mb-4 line-clamp-2 md:line-clamp-3 md:mb-6" : "mb-6 line-clamp-3")}>
                     {description}
                 </p>
 
                 {/* Footer / Actions */}
-                <div className="mt-auto pt-6 border-t border-gray-100 dark:border-slate-700">
+                <div className={cn("mt-auto border-t border-gray-100 dark:border-slate-700", compactOnMobile ? "pt-4 md:pt-6" : "pt-6")}>
                     {metadata && (
-                        <div className="flex flex-wrap gap-4 text-sm font-sans font-medium text-charcoal dark:text-gray-300 mb-6">
+                        <div className={cn("flex flex-wrap gap-4 text-sm font-sans font-medium text-charcoal dark:text-gray-300", compactOnMobile ? "mb-4 md:mb-6" : "mb-6")}>
                             {metadata}
                         </div>
                     )}

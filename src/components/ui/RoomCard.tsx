@@ -26,6 +26,7 @@ export default function RoomCard({ room }: RoomCardProps) {
             <StandardCard
                 image={room.images[0]}
                 imageAlt={room.name}
+                compactOnMobile
                 title={room.name}
                 subtitle={
                     <div className="text-right">

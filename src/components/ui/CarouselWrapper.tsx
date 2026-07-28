@@ -14,10 +14,16 @@ interface CarouselWrapperProps {
         subtitle?: string
     }
     carouselItemClassName: string
+    mobileStack?: boolean
 }
 
-export default function CarouselWrapper({ items, header, carouselItemClassName }: CarouselWrapperProps) {
-    const { emblaRef, scrollPrev, scrollNext, selectedIndex, scrollSnaps, scrollTo } = useCarousel({ dragFree: true })
+export default function CarouselWrapper({ items, header, carouselItemClassName, mobileStack = false }: CarouselWrapperProps) {
+    const { emblaRef, scrollPrev, scrollNext, selectedIndex, scrollSnaps, scrollTo } = useCarousel({
+        dragFree: true,
+        breakpoints: {
+            '(max-width: 767px)': { active: !mobileStack },
+        },
+    })
 
     return (
         <>
@@ -25,17 +31,23 @@ export default function CarouselWrapper({ items, header, carouselItemClassName }
                 label={header.label}
                 title={header.title}
                 subtitle={header.subtitle}
+                className={mobileStack ? "mb-8 md:mb-12" : undefined}
                 align="left"
             >
                 <CarouselNavigation onPrev={scrollPrev} onNext={scrollNext} />
             </SectionHeader>
 
-            <div className="overflow-hidden p-4 -m-4" ref={emblaRef}>
-                <div className="flex touch-pan-y" style={{ gap: '1.5rem' }}>
+            <div
+                className={cn(
+                    mobileStack ? "md:overflow-hidden md:p-4 md:-m-4" : "overflow-hidden p-4 -m-4"
+                )}
+                ref={emblaRef}
+            >
+                <div className={cn(mobileStack ? "grid gap-6 md:flex md:touch-pan-y" : "flex gap-6 touch-pan-y")}>
                     {items.map((item, index) => {
                         const itemKey = React.isValidElement(item) && item.key ? item.key : index
                         return (
-                            <div key={itemKey} className={carouselItemClassName}>
+                            <div key={itemKey} className={cn(mobileStack && "w-full", carouselItemClassName)}>
                                 <div className="w-full h-full block">
                                     {item}
                                 </div>
@@ -46,21 +58,23 @@ export default function CarouselWrapper({ items, header, carouselItemClassName }
             </div>
 
             {/* Mobile Navigation Dots */}
-            <div className="flex md:hidden justify-center items-center gap-2 mt-6">
-                {scrollSnaps.map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => scrollTo(index)}
-                        className={cn(
-                            "w-2 h-2 rounded-full transition-all duration-300",
-                            index === selectedIndex
-                                ? "bg-mountain-blue w-6"
-                                : "bg-gray-300 dark:bg-slate-600"
-                        )}
-                        aria-label={`Go to slide ${index + 1}`}
-                    />
-                ))}
-            </div>
+            {!mobileStack && (
+                <div className="flex md:hidden justify-center items-center gap-2 mt-6">
+                    {scrollSnaps.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => scrollTo(index)}
+                            className={cn(
+                                "w-2 h-2 rounded-full transition-all duration-300",
+                                index === selectedIndex
+                                    ? "bg-mountain-blue w-6"
+                                    : "bg-gray-300 dark:bg-slate-600"
+                            )}
+                            aria-label={`Go to slide ${index + 1}`}
+                        />
+                    ))}
+                </div>
+            )}
         </>
     )
 }

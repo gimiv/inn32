@@ -9,15 +9,17 @@ interface RoomListProps {
 }
 
 export default function RoomList({ limit, roomTypes }: RoomListProps) {
-    const roomItems = roomTypes.map((room) => (
+    const visibleRoomTypes = limit ? roomTypes.slice(0, limit) : roomTypes
+    const roomItems = visibleRoomTypes.map((room) => (
         <RoomCard key={room.id} room={room} />
     ))
 
     return (
         <ContentSection
             id="rooms"
-            className={cn("transition-colors duration-300", limit ? "py-20 bg-cream dark:bg-slate-800/50" : "bg-transparent")}
+            className={cn("transition-colors duration-300", limit ? "py-12 md:py-20 bg-cream dark:bg-slate-800/50" : "bg-transparent")}
             isCarousel={!!limit}
+            mobileStack={!!limit}
             items={roomItems}
             header={limit ? {
                 label: "Stay With Us",
