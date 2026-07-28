@@ -24,3 +24,13 @@
   scrollbar-width: none;
   /* Firefox */
 }
+
+.mobile-booking-bar {
+  padding-bottom: max(0.625rem, env(safe-area-inset-bottom));
+}
+
+@media (max-width: 1023px) {
+  body.has-mobile-booking-bar {
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+  }
+}
