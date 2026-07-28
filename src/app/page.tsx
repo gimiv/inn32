@@ -6,7 +6,11 @@ import ThingsToDo from '../components/ThingsToDo'
 import Reviews from '../components/Reviews'
 import Gallery from '../components/Gallery'
 import Location from '../components/Location'
-import SocialReel from '../components/SocialReel'
+import FaqPreview from '../components/FaqPreview'
+import WhyInn32 from '../components/WhyInn32'
+import ExperienceHighlights from '../components/ExperienceHighlights'
+import GroupBuyoutCta from '../components/GroupBuyoutCta'
+import { experienceHighlights } from '../data/guest-content'
 import Offers from '../components/Offers'
 import { websiteData } from '../data/website-data'
 import { filterActiveOffers, filterUpcomingEvents, nowIso } from '../utils/dates'
@@ -43,15 +47,26 @@ export default function Home() {
         <div className="flex flex-col min-h-screen">
             <Hero hero={websiteData.sections.hero} />
             <RoomList limit={3} roomTypes={websiteData.roomTypes} />
+            <WhyInn32 />
             <Reviews limit={3} reviews={websiteData.reviews} />
+            <ExperienceHighlights
+                highlights={experienceHighlights}
+                header={{
+                    label: 'The Experience',
+                    title: 'Staying at Inn 32',
+                    subtitle: 'The little things that make a mountain stay easy.',
+                }}
+                viewAllLink={{ href: '/amenities', text: 'View All Amenities' }}
+            />
             <Offers limit={3} offers={activeOffers} />
+            <GroupBuyoutCta />
             <Events limit={3} events={upcomingEvents} />
             <Suspense fallback={<div className="py-20 text-center">Loading activities...</div>}>
                 <ThingsToDo limit={6} thingsToDo={websiteData.thingsToDo} />
             </Suspense>
             <Gallery gallery={websiteData.gallery.slice(0, 8)} />
             <Location property={websiteData.property} />
-            <SocialReel socialPosts={websiteData.socialPosts.slice(0, 8)} />
+            <FaqPreview />
         </div>
     )
 }
