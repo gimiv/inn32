@@ -7,7 +7,6 @@ import Reviews from '../components/Reviews'
 import Gallery from '../components/Gallery'
 import Location from '../components/Location'
 import FaqPreview from '../components/FaqPreview'
-import WhyInn32 from '../components/WhyInn32'
 import ExperienceHighlights from '../components/ExperienceHighlights'
 import GroupBuyoutCta from '../components/GroupBuyoutCta'
 import { experienceHighlights } from '../data/guest-content'
@@ -47,7 +46,6 @@ export default function Home() {
         <div className="flex flex-col min-h-screen">
             <Hero hero={websiteData.sections.hero} />
             <RoomList limit={3} roomTypes={websiteData.roomTypes} />
-            <WhyInn32 />
             <Reviews limit={3} reviews={websiteData.reviews} />
             <ExperienceHighlights
                 highlights={experienceHighlights}

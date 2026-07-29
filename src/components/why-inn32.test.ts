@@ -41,8 +41,8 @@ test('WhyInn32 keeps a semantic heading and a detail link without extra booking 
     assert.doesNotMatch(src, /book now/i)
 })
 
-test('homepage renders Why Inn 32 immediately after Rooms and before Reviews', () => {
+test('homepage no longer renders the redundant Why Inn 32 section', () => {
     const src = read('src/app/page.tsx')
-    assert.match(src, /<WhyInn32\s*\/>/)
-    assert.match(src, /<RoomList[\s\S]*<WhyInn32[\s\S]*<Reviews/)
+    assert.doesNotMatch(src, /WhyInn32/)
+    assert.match(src, /<ExperienceHighlights[\s\S]*title:\s*['"]Staying at Inn 32['"]/)
 })

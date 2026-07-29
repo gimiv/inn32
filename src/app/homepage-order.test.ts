@@ -5,13 +5,12 @@ import path from 'node:path'
 
 const read = (relativePath: string) => fs.readFileSync(path.join(process.cwd(), relativePath), 'utf8')
 
-// Target homepage pacing: Hero → Rooms → Why Inn 32 → Reviews → Experience
+// Target homepage pacing: Hero → Rooms → Reviews → Experience
 // highlights → active Offers → Group CTA → (conditional Events) → Insider
 // Guide teaser → Gallery → Location → FAQ preview.
 const SECTION_ORDER = [
     '<Hero',
     '<RoomList',
-    '<WhyInn32',
     '<Reviews',
     '<ExperienceHighlights',
     '<Offers',
@@ -51,6 +50,13 @@ test('homepage stays lean: no newsletter modal, overlays, or duplicate booking U
     assert.doesNotMatch(src, /newsletter/i)
     assert.doesNotMatch(src, /Modal|Overlay/i)
     assert.doesNotMatch(src, /BookingWidget/, 'booking CTA lives in the shared layout, not duplicated on the homepage')
+})
+
+test('homepage uses Staying at Inn 32 as its single property-benefits section', () => {
+    const src = read('src/app/page.tsx')
+    assert.doesNotMatch(src, /WhyInn32/, 'the redundant Why Inn 32 section must not be imported or rendered')
+    assert.match(src, /<ExperienceHighlights[\s\S]*title:\s*['"]Staying at Inn 32['"]/, 'Staying at Inn 32 must remain')
+    assert.match(src, /<RoomList[\s\S]*<Reviews[\s\S]*<ExperienceHighlights/)
 })
 
 test('homepage ThingsToDo teaser links to the Insider Guide', () => {
