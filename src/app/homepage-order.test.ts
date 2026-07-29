@@ -5,11 +5,14 @@ import path from 'node:path'
 
 const read = (relativePath: string) => fs.readFileSync(path.join(process.cwd(), relativePath), 'utf8')
 
-// Target homepage pacing: Hero → Rooms → Why Inn 32 → Reviews → Experience
-// highlights → active Offers → Group CTA → (conditional Events) → Insider
-// Guide teaser → Gallery → Location → FAQ preview.
+// Target homepage pacing: Hero → Stay/Explore/Gather intent panels → Rooms →
+// Why Inn 32 → Reviews → Experience highlights → active Offers → Group CTA →
+// (conditional Events) → Insider Guide teaser → Location → FAQ preview.
+// The homepage Gallery module was retired in favor of StayExploreGather;
+// gallery data/routes/components remain intact elsewhere.
 const SECTION_ORDER = [
     '<Hero',
+    '<StayExploreGather',
     '<RoomList',
     '<WhyInn32',
     '<Reviews',
@@ -18,7 +21,6 @@ const SECTION_ORDER = [
     '<GroupBuyoutCta',
     '<Events',
     '<ThingsToDo',
-    '<Gallery',
     '<Location',
     '<FaqPreview',
 ]
@@ -44,6 +46,7 @@ test('homepage ends its discovery flow with FAQ instead of a duplicate social ga
     const src = read('src/app/page.tsx')
     assert.match(src, /<Location[\s\S]*<FaqPreview/)
     assert.doesNotMatch(src, /<SocialReel|import SocialReel/)
+    assert.doesNotMatch(src, /<Gallery\b|import Gallery from/, 'the homepage Gallery module was retired for StayExploreGather')
 })
 
 test('homepage stays lean: no newsletter modal, overlays, or duplicate booking UI', () => {

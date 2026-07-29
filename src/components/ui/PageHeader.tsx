@@ -12,7 +12,7 @@ export default function PageHeader({ title, subtitle, description, backgroundIma
     const isImageBg = !!backgroundImage;
 
     return (
-        <div className={`relative py-12 md:py-16 overflow-hidden border-b transition-colors duration-300 ${isImageBg ? 'bg-slate-900 border-transparent' : 'bg-cream dark:bg-slate-900 border-gray-100 dark:border-slate-800'}`}>
+        <div className={`relative py-12 md:py-16 overflow-hidden border-b transition-colors duration-300 ${isImageBg ? 'bg-spruce border-transparent' : 'bg-linen dark:bg-spruce border-gray-100 dark:border-slate-800'}`}>
             {/* Background Layer */}
             {isImageBg && (
                 <>
@@ -20,14 +20,14 @@ export default function PageHeader({ title, subtitle, description, backgroundIma
                         className="absolute inset-0 bg-cover bg-center"
                         style={{ backgroundImage: `url(${backgroundImage})` }}
                     />
-                    <div className="absolute inset-0 bg-black/50" />
+                    <div className="absolute inset-0 bg-spruce/70" />
                 </>
             )}
 
             {/* Content Container */}
-            <div className={`relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 ${isImageBg ? 'text-white' : 'text-navy dark:text-white'}`}>
+            <div className={`relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 ${isImageBg ? 'text-linen' : 'text-spruce dark:text-linen'}`}>
                 <div className="max-w-3xl mx-auto">
-                    <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight drop-shadow-sm">
+                    <h1 className="font-display text-page-title md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight drop-shadow-sm">
                         {title}
                     </h1>
                     {(subtitle || description) && (

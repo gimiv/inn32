@@ -41,8 +41,9 @@ export const websiteData: GuestWebsiteProps = {
             order: 0,
             title: "Hero",
             content: {
-                heading: "Your White Mountains Gateway",
-                subheading: "Your basecamp for all-season mountain fun in the heart of the White Mountains.",
+                eyebrow: "North Woodstock, New Hampshire",
+                heading: "Main Street. River behind. Mountains ahead.",
+                subheading: "24 rooms reimagined in 2025 on Main Street in North Woodstock — your basecamp in the White Mountains.",
                 ctaText: "Book Your Stay",
                 ctaLink: "/booking",
                 secondaryCtaText: "View Rooms",

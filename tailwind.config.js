@@ -24,6 +24,10 @@ const config = {
                 'light-gray': '#E8E5DF',
                 primary: '#1C3A5E', // Mapped to Navy for backward compat
                 secondary: '#F8F6F1', // Mapped to Cream for backward compat
+                // Mountain Main Street shell palette (nav/footer/hero/page shell)
+                spruce: '#152925', // deep spruce-navy shell background
+                linen: '#F6EFE2', // warm linen/cream shell surface
+                rust: '#A8502E', // restrained copper/rust booking accent
             },
             fontFamily: {
                 display: ['"DM Serif Display"', 'Georgia', '"Times New Roman"', 'serif'],

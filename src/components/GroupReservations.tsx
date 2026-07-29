@@ -98,6 +98,7 @@ export default function GroupReservations({ property }: GroupReservationsProps) 
             {/* Benefits Section */}
             <section className="pb-12 pt-4 md:pt-8 bg-transparent transition-colors duration-300">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 className="sr-only">Group stay options</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {benefits.map((benefit, index) => (
                             <div
@@ -121,7 +122,7 @@ export default function GroupReservations({ property }: GroupReservationsProps) 
                     <div className="flex flex-col lg:flex-row gap-16">
                         {/* Text Content */}
                         <div className="lg:w-1/2">
-                            <span className="font-sans text-sm font-semibold text-mountain-blue uppercase tracking-wider mb-2 block">
+                            <span className="font-sans text-sm font-semibold text-rust uppercase tracking-wider mb-2 block">
                                 Group Accommodations
                             </span>
                             <h2 className="font-display text-page-title text-navy dark:text-white mb-6">

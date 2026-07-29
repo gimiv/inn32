@@ -53,6 +53,7 @@ export default function RoomsPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(roomsJsonLd) }}
             />
+            <h2 className="sr-only">Available room types</h2>
             {/* Room List Grid */}
             <RoomList roomTypes={websiteData.roomTypes} />
         </PageLayout>

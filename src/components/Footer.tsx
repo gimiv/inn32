@@ -21,39 +21,39 @@ export default function Footer({ property }: FooterProps) {
     }, [])
 
     return (
-        <footer className="bg-slate-900 text-white py-12">
+        <footer className="bg-spruce text-linen py-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="mb-6 md:mb-0">
                         <Logo className="h-16 w-auto mb-4" variant="white" />
-                        <p className="max-w-xs text-gray-300 text-sm">
+                        <p className="max-w-xs text-linen/70 text-sm">
                             {property.description}
                         </p>
                     </div>
                     <div>
-                        <h4 className="text-lg font-semibold mb-4">Contact</h4>
-                        <div className="space-y-2 text-gray-300">
+                        <h2 className="text-lg font-semibold mb-4">Contact</h2>
+                        <div className="space-y-2 text-linen/70">
                             <p>{property.address.street}</p>
                             <p>{property.address.city}, {property.address.state} {property.address.zip}</p>
-                            <p className="mt-4"><a href={`tel:${property.contact.phone}`} className="hover:text-white transition-colors">{property.contact.phone}</a></p>
-                            <p><a href={`mailto:${property.contact.email}`} className="hover:text-white transition-colors">{property.contact.email}</a></p>
+                            <p className="mt-4"><a href={`tel:${property.contact.phone}`} className="hover:text-linen transition-colors">{property.contact.phone}</a></p>
+                            <p><a href={`mailto:${property.contact.email}`} className="hover:text-linen transition-colors">{property.contact.email}</a></p>
                         </div>
                     </div>
                     <div>
-                        <h4 className="text-lg font-semibold mb-4">Navigate</h4>
-                        <div className="flex flex-col space-y-2 text-gray-300 mb-8">
-                            <Link href="/rooms" className="hover:text-white transition-colors">Rooms</Link>
-                            <Link href="/amenities" className="hover:text-white transition-colors">Amenities</Link>
-                            <Link href="/things-to-do" className="hover:text-white transition-colors">Things To Do</Link>
-                            <Link href="/location" className="hover:text-white transition-colors">Location</Link>
-                            <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-widget'))} className="hover:text-white transition-colors text-left w-fit">Book Now</button>
+                        <h2 className="text-lg font-semibold mb-4">Navigate</h2>
+                        <div className="flex flex-col space-y-2 text-linen/70 mb-8">
+                            <Link href="/rooms" className="hover:text-linen transition-colors">Rooms</Link>
+                            <Link href="/amenities" className="hover:text-linen transition-colors">Amenities</Link>
+                            <Link href="/things-to-do" className="hover:text-linen transition-colors">Things To Do</Link>
+                            <Link href="/location" className="hover:text-linen transition-colors">Location</Link>
+                            <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-widget'))} className="hover:text-linen transition-colors text-left w-fit">Book Now</button>
                         </div>
-                        <h4 className="text-lg font-semibold mb-4">Preferences</h4>
+                        <h2 className="text-lg font-semibold mb-4">Preferences</h2>
                         <div className="flex items-center gap-3">
-                            <span className="text-gray-300 text-sm">Theme</span>
+                            <span className="text-linen/70 text-sm">Theme</span>
                             <button
                                 onClick={toggleTheme}
-                                className="p-2 rounded-full bg-slate-800 hover:bg-slate-700 text-gray-300 transition-colors"
+                                className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-linen/70 transition-colors"
                                 aria-label="Toggle theme"
                             >
                                 {mounted ? (theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />) : <div className="w-[18px] h-[18px]" />}
@@ -62,11 +62,11 @@ export default function Footer({ property }: FooterProps) {
                     </div>
                 </div>
             </div>
-            <div className="border-t border-slate-700 mt-12 pt-8 text-center text-gray-300 text-sm">
+            <div className="border-t border-white/10 mt-12 pt-8 text-center text-linen/70 text-sm">
                 <p>&copy; {currentYear} {property.name}. All rights reserved.</p>
                 <div className="mt-3 flex justify-center gap-5">
-                    <Link href="/privacy" className="underline-offset-4 hover:text-white hover:underline">Privacy</Link>
-                    <Link href="/terms" className="underline-offset-4 hover:text-white hover:underline">Terms</Link>
+                    <Link href="/privacy" className="underline-offset-4 hover:text-linen hover:underline">Privacy</Link>
+                    <Link href="/terms" className="underline-offset-4 hover:text-linen hover:underline">Terms</Link>
                 </div>
             </div>
         </footer>

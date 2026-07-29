@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
 import Hero from '../components/Hero'
+import StayExploreGather from '../components/StayExploreGather'
 import RoomList from '../components/RoomList'
 import Events from '../components/Events'
 import ThingsToDo from '../components/ThingsToDo'
 import Reviews from '../components/Reviews'
-import Gallery from '../components/Gallery'
 import Location from '../components/Location'
 import FaqPreview from '../components/FaqPreview'
 import WhyInn32 from '../components/WhyInn32'
@@ -46,6 +46,7 @@ export default function Home() {
     return (
         <div className="flex flex-col min-h-screen">
             <Hero hero={websiteData.sections.hero} />
+            <StayExploreGather />
             <RoomList limit={3} roomTypes={websiteData.roomTypes} />
             <WhyInn32 />
             <Reviews limit={3} reviews={websiteData.reviews} />
@@ -64,7 +65,6 @@ export default function Home() {
             <Suspense fallback={<div className="py-20 text-center">Loading activities...</div>}>
                 <ThingsToDo limit={6} thingsToDo={websiteData.thingsToDo} />
             </Suspense>
-            <Gallery gallery={websiteData.gallery.slice(0, 8)} />
             <Location property={websiteData.property} />
             <FaqPreview />
         </div>
