@@ -6,7 +6,7 @@ import path from 'node:path'
 const read = (relativePath: string) => fs.readFileSync(path.join(process.cwd(), relativePath), 'utf8')
 
 // Target homepage pacing: Hero → Stay/Explore/Gather intent panels → Rooms →
-// Why Inn 32 → Reviews → Experience highlights → active Offers → Group CTA →
+// Why Inn 32 → Reviews → active Offers → Group CTA →
 // (conditional Events) → Insider Guide teaser → Location → FAQ preview.
 // The homepage Gallery module was retired in favor of StayExploreGather;
 // gallery data/routes/components remain intact elsewhere.
@@ -16,7 +16,6 @@ const SECTION_ORDER = [
     '<RoomList',
     '<WhyInn32',
     '<Reviews',
-    '<ExperienceHighlights',
     '<Offers',
     '<GroupBuyoutCta',
     '<Events',
@@ -54,6 +53,7 @@ test('homepage stays lean: no newsletter modal, overlays, or duplicate booking U
     assert.doesNotMatch(src, /newsletter/i)
     assert.doesNotMatch(src, /Modal|Overlay/i)
     assert.doesNotMatch(src, /BookingWidget/, 'booking CTA lives in the shared layout, not duplicated on the homepage')
+    assert.doesNotMatch(src, /ExperienceHighlights/, 'amenity storytelling belongs on the dedicated Amenities page, not duplicated on the homepage')
 })
 
 test('homepage ThingsToDo teaser links to the Insider Guide', () => {

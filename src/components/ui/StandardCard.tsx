@@ -13,6 +13,7 @@ interface StandardCardProps {
     imageOverlay?: ReactNode
     onImageClick?: () => void
     compactOnMobile?: boolean
+    headingLevel?: 2 | 3
 }
 
 export default function StandardCard({
@@ -25,8 +26,11 @@ export default function StandardCard({
     actions,
     imageOverlay,
     onImageClick,
-    compactOnMobile = false
+    compactOnMobile = false,
+    headingLevel = 3
 }: StandardCardProps) {
+    const HeadingTag = `h${headingLevel}` as 'h2' | 'h3'
+
     return (
         <div className="group bg-white dark:bg-slate-800 rounded-brand-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-slate-700 h-full flex flex-col transform hover:-translate-y-1">
             {/* Image Block */}
@@ -54,9 +58,9 @@ export default function StandardCard({
                 {/* Header */}
                 <div className={cn("flex justify-between items-start", compactOnMobile ? "mb-3 md:mb-4" : "mb-4")}>
                     <div>
-                        <h3 className={cn("font-display font-bold text-navy dark:text-white mb-1 group-hover:text-mountain-blue transition-colors", compactOnMobile ? "text-xl md:text-2xl" : "text-2xl")}>
+                        <HeadingTag className={cn("font-display font-bold text-navy dark:text-white mb-1 group-hover:text-mountain-blue transition-colors", compactOnMobile ? "text-xl md:text-2xl" : "text-2xl")}>
                             {title}
-                        </h3>
+                        </HeadingTag>
                     </div>
                     {subtitle && (
                         <div className="flex-shrink-0 ml-4">

@@ -60,11 +60,10 @@ test('ExperienceHighlights stays compact on mobile with a keyboard-accessible ho
     assert.match(src, /aria-label=["'][^"']*experience/i)
 })
 
-test('homepage shows at most 4 highlights with a View all amenities link, between Reviews and Offers', () => {
+test('homepage avoids duplicating the amenities experience carousel', () => {
     const src = read('src/app/page.tsx')
-    assert.match(src, /<ExperienceHighlights[\s\S]*?highlights=\{experienceHighlights\}/)
-    assert.match(src, /viewAllLink/)
-    assert.match(src, /<Reviews[\s\S]*<ExperienceHighlights[\s\S]*<Offers/)
+    assert.doesNotMatch(src, /ExperienceHighlights|experienceHighlights/)
+    assert.match(src, /<Reviews[\s\S]*<Offers/)
 })
 
 test('amenities page leads with experience highlights above the basic amenity grid', () => {

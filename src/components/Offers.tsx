@@ -14,17 +14,30 @@ interface OffersProps {
 export default function Offers({ limit, offers }: OffersProps) {
     const isSlider = limit !== undefined;
     const displayOffers = limit ? offers.slice(0, limit) : offers;
+    const isCarousel = isSlider && displayOffers.length > 1;
+    const isSingle = isSlider && displayOffers.length === 1;
 
     if (!offers || offers.length === 0) return null;
 
-    const offerItems = displayOffers.map(offer => <OfferCard key={offer.id} offer={offer} />);
+    const offerItems = displayOffers.map(offer => (
+        <OfferCard key={offer.id} offer={offer} headingLevel={isSlider ? 3 : 2} />
+    ));
 
     return (
         <ContentSection
             id="offers"
-            className={cn("transition-colors duration-300", isSlider ? "py-20 bg-slate-50 dark:bg-slate-800/50 border-t border-gray-100 dark:border-slate-800" : "bg-transparent")}
-            isCarousel={isSlider}
+            className={cn(
+                "transition-colors duration-300",
+                isSlider
+                    ? cn(
+                        "bg-slate-50 dark:bg-slate-800/50 border-t border-gray-100 dark:border-slate-800",
+                        isSingle ? "py-12 md:py-16" : "py-20"
+                    )
+                    : "bg-transparent"
+            )}
+            isCarousel={isCarousel}
             items={offerItems}
+            gridClassName={isSingle ? "grid max-w-xl mx-auto" : undefined}
             header={isSlider ? {
                 label: "Special Packages",
                 title: "Current Offers",
@@ -39,11 +52,12 @@ export default function Offers({ limit, offers }: OffersProps) {
     )
 }
 
-function OfferCard({ offer }: { offer: Offer }) {
+function OfferCard({ offer, headingLevel }: { offer: Offer; headingLevel: 2 | 3 }) {
     return (
         <StandardCard
             image={offer.image!}
             title={offer.title}
+            headingLevel={headingLevel}
             description={offer.description}
             actions={
                 <div className="flex items-center justify-between w-full">
