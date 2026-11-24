@@ -7,15 +7,15 @@ export interface NavLink {
 export const PRIMARY_NAV_LINKS: NavLink[] = [
     { name: 'Rooms', href: '/rooms' },
     { name: 'Offers', href: '/offers' },
+    { name: 'Seasonal Rentals', href: '/seasonal' },
     { name: 'Things To Do', href: '/things-to-do' },
-    { name: 'Amenities', href: '/amenities' },
     { name: 'Location', href: '/location' },
 ]
 
 /** Lower-priority destinations, shown in the desktop "More" menu. */
 export const SECONDARY_NAV_LINKS: NavLink[] = [
+    { name: 'Amenities', href: '/amenities' },
     { name: 'Events', href: '/events' },
-    { name: 'Seasonal Rentals', href: '/seasonal' },
     { name: 'Groups', href: '/groups' },
     { name: 'Blog', href: '/blog' },
 ]
