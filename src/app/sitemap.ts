@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 1 },
         { url: `${baseUrl}/rooms`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 },
         { url: `${baseUrl}/offers`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
+        { url: `${baseUrl}/seasonal`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
         { url: `${baseUrl}/amenities`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
         { url: `${baseUrl}/things-to-do`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
         { url: `${baseUrl}/events`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.7 },
