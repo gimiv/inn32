@@ -698,12 +698,29 @@ export const websiteData: GuestWebsiteProps = {
     promotions: [],
     offers: [
         {
-            id: "winter-weekdays",
-            title: "Winter Weekdays",
-            description: "Get 10% off Monday - Thursday until April 1st.",
-            image: "/gallery/winter_festival.webp",
-            validUntil: "2026-04-01",
-            promoCode: "WINTER10"
+            id: "powder-day-midweek",
+            title: "Powder Day Midweek",
+            description: "Saw the snow forecast? Book within 3 days of arrival and save 15% on Sunday to Thursday nights. Holidays excluded.",
+            image: "/gallery/group_skiing.webp",
+            validUntil: "2027-03-31",
+            promoCode: "POWDERDAY"
+        },
+        {
+            id: "fourth-night-free",
+            title: "Fourth Night Free",
+            description: "Make it a real ski trip: stay 4 nights and the 4th night is on us, through March 31. Holiday weeks excluded.",
+            image: "/gallery/ice castles.webp",
+            minStay: 4,
+            validUntil: "2027-03-31",
+            promoCode: "SKI4PAY3"
+        },
+        {
+            id: "apres-crew",
+            title: "Après Crew",
+            description: "Bringing the whole crew? Book 3 or more rooms for the same dates and every room gets 10% off.",
+            image: "/gallery/live_music_pub.webp",
+            validUntil: "2027-03-31",
+            promoCode: "CREW10"
         },
         {
             id: "spring-7",
@@ -720,6 +737,7 @@ export const websiteData: GuestWebsiteProps = {
             description: "Get 20% off any summer stays of 4+ nights (holidays excluded).",
             image: "/gallery/group_kayaking.webp",
             minStay: 4,
+            validUntil: "2026-09-07",
             promoCode: "SUMMER20"
         }
     ],

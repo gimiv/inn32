@@ -6,7 +6,7 @@ import PageLayout from '../../components/ui/PageLayout'
 import { canonicalUrl } from '../../lib/seo'
 
 const TITLE = 'Special Offers & Packages'
-const DESCRIPTION = 'Make the most of your White Mountains getaway with exclusive deals at Inn 32 in North Woodstock, NH. Whether you are planning a winter weekday escape, an extended spring retreat, or a summer family adventure, our seasonal packages help you save while enjoying everything the region has to offer.'
+const DESCRIPTION = 'Make the most of your White Mountains getaway with exclusive deals at Inn 32 in North Woodstock, NH. Whether you are chasing a midweek powder day, planning a longer ski trip, or bringing the whole crew, our seasonal packages help you save while enjoying everything the region has to offer.'
 
 export const metadata: Metadata = {
     title: TITLE,
