@@ -1,4 +1,4 @@
-import { validateGroupInquiry, type GroupInquiryInput, type NormalizedGroupInquiry } from '../../../utils/groupInquiry'
+import { validateGroupInquiry, SEASONAL_STAY_INQUIRY_TYPE, type GroupInquiryInput, type NormalizedGroupInquiry } from '../../../utils/groupInquiry'
 import { sendResendEmail } from '../../../lib/resend'
 
 export const runtime = 'nodejs'
@@ -111,7 +111,8 @@ export async function POST(request: Request): Promise<Response> {
     }
 
     const { data } = result
-    const subject = `New group inquiry: ${data.eventType} — ${data.firstName} ${data.lastName}`
+    const kind = data.eventType === SEASONAL_STAY_INQUIRY_TYPE ? 'seasonal' : 'group'
+    const subject = `New ${kind} inquiry: ${data.eventType} — ${data.firstName} ${data.lastName}`
 
     const sendResult = await sendResendEmail({
         apiKey,

@@ -15,6 +15,7 @@ export const PRIMARY_NAV_LINKS: NavLink[] = [
 /** Lower-priority destinations, shown in the desktop "More" menu. */
 export const SECONDARY_NAV_LINKS: NavLink[] = [
     { name: 'Events', href: '/events' },
+    { name: 'Seasonal Rentals', href: '/seasonal' },
     { name: 'Groups', href: '/groups' },
     { name: 'Blog', href: '/blog' },
 ]

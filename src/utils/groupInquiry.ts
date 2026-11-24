@@ -33,6 +33,11 @@ export const GROUP_INQUIRY_EVENT_TYPES = [
     'Other',
 ] as const
 
+/** Sent by the /seasonal page form. Accepted by the API but not offered in the Groups dropdown. */
+export const SEASONAL_STAY_INQUIRY_TYPE = 'Seasonal / Monthly Stay'
+
+const ACCEPTED_INQUIRY_TYPES: readonly string[] = [...GROUP_INQUIRY_EVENT_TYPES, SEASONAL_STAY_INQUIRY_TYPE]
+
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const PHONE_PATTERN = /^[0-9+()\-. ]+$/
 const CONTROL_CHARACTER_PATTERN = /[\u0000-\u001F\u007F]/
@@ -90,7 +95,7 @@ export function validateGroupInquiry(input: GroupInquiryInput): GroupInquiryVali
     }
 
     const eventTypeRaw = (asString(input.eventType) ?? '').trim()
-    const isKnownEventType = (GROUP_INQUIRY_EVENT_TYPES as readonly string[]).includes(eventTypeRaw)
+    const isKnownEventType = ACCEPTED_INQUIRY_TYPES.includes(eventTypeRaw)
     if (!isKnownEventType) {
         errors.eventType = 'Select a valid event type.'
     }
